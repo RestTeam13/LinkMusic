@@ -1,0 +1,33 @@
+*,*::before,*::after{
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+.app{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  background: #272a2d;
+}
+
+.app-header{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  animation: 5s 0s roll infinite linear;
+  margin-top: 10px;
+}
+
+@keyframes roll {
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
