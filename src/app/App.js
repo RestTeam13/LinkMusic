@@ -1,15 +1,16 @@
 import React from "react";
 import './styles.css'
 import logo from './logo.svg'
+import Header from "./Header";
 
 function App() {
   return (
-    <div className="app">
-        Дед лайн :D
-      <header className="app-header">
-          <img src={logo} alt="logo"/>Дед ролл
-      </header>
-    </div>
+      <div>
+          <Header/>
+      </div>
+
+
+
   );
 }
 
