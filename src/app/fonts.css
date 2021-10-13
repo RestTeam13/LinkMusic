@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("../fonts/Bebas Neue/BebasNeueBook.otf");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("../fonts/Bebas Neue/BebasNeueBold.otf");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Gilroy Regular";
+  src: url("../fonts/Gilroy/Gilroy-Regular.ttf");
+}
+@font-face {
+  font-family: "Gilroy Regular";
+  src: url("../fonts/Gilroy/Gilroy-RegularItalic.ttf");
+  font-style: italic;
+}
+@font-face {
+  font-family: "Gilroy Regular";
+  src: url("../fonts/Gilroy/Gilroy-Light.ttf");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Gilroy Regular";
+  src: url("../fonts/Gilroy/Gilroy-LightItalic.ttf");
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Gilroy Regular";
+  src: url("../fonts/Gilroy/Gilroy-Bold.ttf");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Gilroy Regular";
+  src: url("../fonts/Gilroy/Gilroy-BoldItalic.ttf");
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Gilroy Regular Heavy";
+  src: url("../fonts/Gilroy/Gilroy-Heavy.ttf");
+}
+
+/*# sourceMappingURL=fonts.css.map */

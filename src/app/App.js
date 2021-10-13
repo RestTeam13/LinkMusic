@@ -1,12 +1,14 @@
 import React from "react";
 import './styles.css'
-import logo from './logo.svg'
+import './fonts.css'
 import Header from "./Header";
+import BlockCatalog from "./Block-catalog";
 
 function App() {
   return (
       <div>
           <Header/>
+          <BlockCatalog/>
       </div>
 
 
