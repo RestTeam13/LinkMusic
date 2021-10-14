@@ -29,7 +29,6 @@ function BlockCatalog() {
                         <p className="catalog-row__item-name">
                             Малиновский
                         </p>
-                        
                     </div>
                     <div className="catalog-row__item">
                         <div className="catalog-row__item-img">
@@ -38,7 +37,6 @@ function BlockCatalog() {
                         <p className="catalog-row__item-name">
                             Николай Басков
                         </p>
-                        
                     </div>
                     <div className="catalog-row__item">
                         <div className="catalog-row__item-img">
@@ -47,7 +45,6 @@ function BlockCatalog() {
                         <p className="catalog-row__item-name">
                             BARINOV
                         </p>
-                        
                     </div>
                     <div className="catalog-row__item">
                         <div className="catalog-row__item-img">
@@ -56,7 +53,6 @@ function BlockCatalog() {
                         <p className="catalog-row__item-name">
                             Kevin McCoy
                         </p>
-                        
                     </div>
                     <div className="catalog-row__item">
                         <div className="catalog-row__item-img">
@@ -65,7 +61,6 @@ function BlockCatalog() {
                         <p className="catalog-row__item-name">
                             Элджей
                         </p>
-                        
                     </div>
                 </div>
                 <div className="catalog-row">
