@@ -90,7 +90,6 @@ function BlockForm() {
                     <div className="block-form__sponsors-img">
                         <img src="images/block-form_sponsors-6.png" alt=""/>
                     </div>
-
                 </div>
             </div>
         </div>

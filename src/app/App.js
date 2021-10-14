@@ -4,6 +4,7 @@ import './fonts.css'
 import Header from "./Header";
 import BlockCatalog from "./BlockCatalog";
 import BlockForm from "./BlockForm";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
           <Header/>
           <BlockCatalog/>
           <BlockForm/>
+          <Footer/>
       </div>
   );
 }
