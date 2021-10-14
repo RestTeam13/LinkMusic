@@ -68,6 +68,145 @@
   opacity: 0.7;
 }
 
+.block-suggestion {
+  background: #F4F4F4;
+  padding: 86px 0 30px;
+}
+
+.suggestion-row {
+  display: flex;
+  width: 100%;
+}
+
+.suggestion-column__text-part {
+  display: flex;
+  flex-flow: column;
+  max-width: 332px;
+  width: 100%;
+  margin-right: 35px;
+}
+
+.suggestion-column__title {
+  font-family: "Bebas Neue";
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.suggestion-column__text {
+  margin-top: 45px;
+  font-size: 16px;
+  line-height: 22px;
+  font-family: "Gilroy-Semibold";
+}
+
+.suggestion-column__btn {
+  margin-top: 50px;
+}
+
+.suggestion-column__slider {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.suggestion-slider__item {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  margin-right: 20px;
+  padding: 15px 30px 30px 30px;
+  border-radius: 5px;
+  max-width: 380px;
+  width: 100%;
+  color: #FFFFFF;
+}
+.suggestion-slider__item:last-child {
+  margin-right: 0;
+}
+
+.suggestion-slider__item_1 {
+  padding: 50px 30px 30px 30px;
+  background: linear-gradient(90deg, #3479FF 0%, #343CFF 100%);
+}
+
+.suggestion-slider__item_2 {
+  padding: 0 30px 30px 30px;
+  background: linear-gradient(77.81deg, #DA1AA4 -19.28%, #FF6534 100%);
+}
+
+.suggestion-slider__item_3 {
+  padding: 0 30px 30px 30px;
+  background: linear-gradient(90deg, #3479FF 0%, #343CFF 100%);
+}
+.suggestion-slider__item_3 img {
+  clip-path: polygon(0 0, 78% 0, 78% 100%, 0% 100%);
+  margin-left: 100px;
+}
+
+.suggestion-slider__item_4 {
+  background: linear-gradient(77.81deg, #EE38BB -19.28%, #F7BA44 100%);
+}
+
+.suggestion-slider__item_5 {
+  background: linear-gradient(77.81deg, #DA1AA4 -19.28%, #FF6534 100%);
+}
+
+.suggestion-slider__text-part {
+  width: 100%;
+}
+
+.suggestion-slider__title {
+  font-size: 26px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.suggestion-slider__text {
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 100;
+  margin-top: 15px;
+}
+
+.suggestion-slider__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.suggestion-slider__btn-wrapper {
+  position: relative;
+  display: flex;
+  width: 46px;
+  height: 46px;
+}
+
+.suggestion-slider__btn {
+  font-size: 0;
+  border: 3px solid #D4AA00;
+  box-sizing: border-box;
+  width: 100%;
+  cursor: pointer;
+  transition: ease-in-out all 0.3s;
+  background: transparent;
+  border-radius: 50%;
+}
+
+.suggestion-slider__arrow {
+  width: 10px;
+  height: 17px;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  z-index: 10;
+}
+
+.suggestion-slider__arrow_rotate {
+  transform: translate(50%, -50%) rotate(180deg);
+}
+
 .block-catalog {
   padding: 0 0 150px 0;
 }
