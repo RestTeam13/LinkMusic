@@ -12,7 +12,7 @@ function BlockForm() {
                             <img src="images/block-form__left-column-img.svg" alt=""/>
                         </div>
                         <p className="block-form__left-title">Опишите свои потребности - и мы свяжемся с вами</p>
-                        <p className="block-form__left-test">Мы обрабатываем все запросы и можем найти индивидуальное решение для каждого клиента</p>
+                        <p className="block-form__left-text">Мы обрабатываем все запросы и можем найти индивидуальное решение для каждого клиента</p>
 
                     </div>
                     <div className="block-form__column">
@@ -72,25 +72,48 @@ function BlockForm() {
                     </div>
                 </div>
                 <div className="block-form__sponsors">
-                    <div className="block-form__sponsors-img">
-                        <img src="images/block-form_sponsors-1.png" alt=""/>
+                    <div className="block-form__sponsors-img-wrapper">
+                        <div className="block-form__sponsors-img block-form__sponsors-img_1">
+
+                        </div>
                     </div>
-                    <div className="block-form__sponsors-img">
-                        <img src="images/block-form_sponsors-2.png" alt=""/>
+
+                    <div className="block-form__sponsors-img-wrapper">
+                        <div className="block-form__sponsors-img block-form__sponsors-img_2">
+
+                        </div>
                     </div>
-                    <div className="block-form__sponsors-img">
-                        <img src="images/block-form_sponsors-3.png" alt=""/>
+
+                    <div className="block-form__sponsors-img-wrapper">
+                        <div className="block-form__sponsors-img block-form__sponsors-img_3">
+
+                        </div>
                     </div>
-                    <div className="block-form__sponsors-img">
-                        <img src="images/block-form_sponsors-4.png" alt=""/>
+
+                    <div className="block-form__sponsors-img-wrapper">
+                        <div className="block-form__sponsors-img block-form__sponsors-img_4">
+
+                        </div>
                     </div>
-                    <div className="block-form__sponsors-img">
-                        <img src="images/block-form_sponsors-5.png" alt=""/>
+
+                    <div className="block-form__sponsors-img-wrapper">
+                        <div className="block-form__sponsors-img block-form__sponsors-img_5">
+
+                        </div>
                     </div>
-                    <div className="block-form__sponsors-img">
-                        <img src="images/block-form_sponsors-6.png" alt=""/>
+
+                    <div className="block-form__sponsors-img-wrapper">
+                        <div className="block-form__sponsors-img block-form__sponsors-img_6">
+
+                        </div>
                     </div>
                 </div>
+            </div>
+            <div className="vector__bg vector__bg_3">
+                <img src="images/vector-bg_form-left2.svg" alt=""/>
+            </div>
+            <div className="vector__bg vector__bg_4">
+                <img src="images/vector-bg_catalog-right.svg" alt=""/>
             </div>
         </div>
     );
