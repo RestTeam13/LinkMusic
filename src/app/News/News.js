@@ -1,13 +1,26 @@
 import React from "react";
 import './style.css'
+import NewsArticle from "./NewsArticle";
 
+
+const newsArticles = [
+    {
+        img: 'images/news-article1.png',
+        imgAlt: 'test',
+        date: '29.09.2021',
+        title: 'Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.'
+    },
+    {
+        img: 'images/news-article2.png',
+        imgAlt: 'test',
+        date: '29.09.2021',
+        title: 'Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.'
+    }
+]
 
 class News extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            currentSlide: 0
-        }
     }
 
 
@@ -15,14 +28,11 @@ class News extends React.Component {
         return (
             <div className='block news'>
                 <div className="content">
-                    <div className="vinyl-record">
-                        <svg className='vinyl-record__center' viewBox="0 0 226 226">
-                            <path d="M113,113m-100,0a100,100 0 1,1 200,0a100,100 0 1,1 -200,0" fill="#fff" id="tophalf"/>
-                            <text>
-                                <textPath xlinkHref="#tophalf" startOffset="0%">Стань частью Link Music - </textPath>
-                                <textPath xlinkHref="#tophalf" startOffset="56%">Стань частью Link Music - </textPath>
-                            </text>
-                        </svg>
+                    <div className="vinyl-record"/>
+                    <div className="news__article-list">
+                        {newsArticles.map(({img, imgAlt, date, title}) => {
+                            return (<NewsArticle img={img} imgAlt={imgAlt} date={date} title={title}/>)
+                        })}
                     </div>
                 </div>
             </div>

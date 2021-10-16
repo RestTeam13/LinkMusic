@@ -2,7 +2,7 @@ import React from "react";
 import '../styles.css'
 
 
-class ReleaseSliderSlide extends React.Component {
+class ReleaseSliderMainSlide extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -10,7 +10,7 @@ class ReleaseSliderSlide extends React.Component {
     render() {
         let {bg} = this.props
         return (
-            <div style={{backgroundImage: `url(${bg})`}} className='block release-slider__slide'>
+            <div className='block release-slider__slide'>
                 <div className="release-slider__slide-content">
                     <p className="release-slider__slide-title">Расскажи <br/> всем о релизе</p>
                     <p className="release-slider__slide-subtitle">Создай уникальную страницу своего <br/> музыкального
@@ -23,4 +23,4 @@ class ReleaseSliderSlide extends React.Component {
 
 }
 
-export default ReleaseSliderSlide;
+export default ReleaseSliderMainSlide;

@@ -1,7 +1,7 @@
 //<!-- Release Slider --!>
-
 .release-slider {
   position: relative;
+  z-index: 1;
 }
 
 .release-slider__button {
@@ -14,29 +14,103 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: #ffffff;
+  background: #ffffff center no-repeat;
   z-index: 5;
 
   &::before {
+    position: relative;
+    right: 2px;
     content: '';
-    display: block;
-    width: 11px;
-    height: 22px;
+    width: 30px;
+    height: 40px;
     background: #0000FF;
-    -webkit-mask: url('img/arrow.svg') center no-repeat;
+    -webkit-mask: url(img/arrow.svg) center no-repeat;
     -webkit-mask-size: contain;
+  }
+
+  &:hover{
+    &::before{
+      background: #D4AA00;
+    }
   }
 }
 
 .release-slider__button_next {
   left: unset;
   right: calc((100% - 60px) / 2 - 640px);
-  transform: scale(1, -1);
+  transform: scale(-1, 1);
+}
+
+.release-slider__pagination {
+  display: flex;
+  position: absolute;
+  width: 220px;
+  justify-content: space-between;
+  left: calc((100% - 220px) / 2 - 17%); //ToDo Сделать адаптивную ширину
+  bottom: 22px;
+  z-index: 5;
+}
+
+.release-slider__pagination-item {
+  font-family: 'Bebas Neue', sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 40px;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+  opacity: 0.4;
+  position: relative;
+  cursor: pointer;
+
+  &.active {
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 4px;
+      height: 4px;
+      background: #ffffff;
+      border-radius: 50%;
+      bottom: -5px;
+      left: 50%;
+    }
+
+    opacity: 1;
+  }
+
+  &:hover{
+    opacity: 1;
+  }
+}
+
+.vinyl-record__center {
+  display: block;
+  width: 226px;
+  height: 226px;
+  border-radius: 50%;
+  animation: 15s rotate-vinyl linear infinite;
+  position: absolute;
+  bottom: -113px;
+  left: calc((100% - 226px) / 2);
+
+  text {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
 }
 
 .release-slider__slide {
   padding-top: 125px;
   height: 685px;
+  background: url('') center no-repeat;
+  background-size: 100%;
 }
 
 .release-slider__slide-content {
@@ -65,7 +139,7 @@
   margin-left: 127px;
 }
 
-.release-slider__slide-button{
+.release-slider__slide-button {
   margin-top: 32px;
   margin-left: 127px;
   width: 214px;
@@ -81,6 +155,9 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #FFFFFF;
+  &:hover{
+    opacity: 0.8;
+  }
 
 }
 

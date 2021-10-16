@@ -5,6 +5,7 @@
   padding: 0;
   border: none;
   box-sizing: border-box;
+  transition: 0.1s all ease-in-out;
 }
 
 img {
@@ -51,6 +52,10 @@ button {
   display: block;
   width: 158px;
   height: 47px;
+
+  &:hover{//ToDo Сделать анимацию "волн" при наведении
+    opacity: 0.8;
+  }
 }
 
 .main-menu__list {
@@ -69,6 +74,10 @@ button {
 
   color: #0C0B0B;
   text-decoration: none;
+
+  &:hover{
+    color: #0000FF;
+  }
 }
 
 .main-menu__personal-area {
@@ -89,7 +98,13 @@ button {
     height: 163px;
     background: url(imageScss/avatar-area.svg) center no-repeat;
     background-size: contain;
-    opacity: 0.5;
+    opacity: 0;
+  }
+
+  &:hover{
+    &::before{
+      opacity: 0.5;
+    }
   }
 }
 

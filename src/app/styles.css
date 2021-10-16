@@ -52,6 +52,7 @@
   padding: 0;
   border: none;
   box-sizing: border-box;
+  transition: 0.1s all ease-in-out;
 }
 
 img {
@@ -97,6 +98,9 @@ button {
   width: 158px;
   height: 47px;
 }
+.main-menu__logo:hover {
+  opacity: 0.8;
+}
 
 .main-menu__list {
   display: flex;
@@ -114,6 +118,9 @@ button {
   color: #0C0B0B;
   text-decoration: none;
 }
+.main-menu__list-item:hover {
+  color: #0000FF;
+}
 
 .main-menu__personal-area-button {
   position: relative;
@@ -129,6 +136,9 @@ button {
   height: 163px;
   background: url(imageScss/avatar-area.svg) center no-repeat;
   background-size: contain;
+  opacity: 0;
+}
+.main-menu__personal-area-button:hover::before {
   opacity: 0.5;
 }
 
