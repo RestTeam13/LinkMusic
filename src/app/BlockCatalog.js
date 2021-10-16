@@ -154,7 +154,10 @@ function BlockCatalog() {
                 </div>
             </div>
             <div className="vector__bg vector__bg_1">
-                <img src="images/vector-bg_left.svg" alt=""/>
+                <img src="images/vector-bg_catalog-left.svg" alt=""/>
+            </div>
+            <div className="vector__bg vector__bg_2">
+                <img src="images/vector-bg_catalog-right.svg" alt=""/>
             </div>
         </div>
     );

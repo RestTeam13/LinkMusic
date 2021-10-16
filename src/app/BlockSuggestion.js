@@ -76,22 +76,22 @@ function BlockSuggestion() {
                                 </div>
                             </div>
                         </div>
-                        
-
 
                     </div>
+
                 </div>
                 <div className="suggestion-slider__btns">
                     <div className="suggestion-slider__btn-wrapper">
                         <button className="suggestion-slider__btn"></button>
-                        <img className="suggestion-slider__arrow" src="images/suggestion-slider_arrow.svg" alt=""/>
+                        <div className="suggestion-slider__arrow"/>
                     </div>
                     <div className="suggestion-slider__btn-wrapper">
                         <button className="suggestion-slider__btn"></button>
-                        <img className="suggestion-slider__arrow suggestion-slider__arrow_rotate" src="images/suggestion-slider_arrow.svg" alt=""/>
-                    </div>
+                        <div className="suggestion-slider__arrow suggestion-slider__arrow_rotate"/>                    </div>
                 </div>
-
+            </div>
+            <div className="vector__bg vector__bg_5">
+                <img src="images/vector-bg_suggestion.svg" alt=""/>
             </div>
         </div>
     );
