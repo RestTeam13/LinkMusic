@@ -110,10 +110,10 @@ function BlockForm() {
                 </div>
             </div>
             <div className="vector__bg vector__bg_3">
-                <img src="images/vector-bg_form-left2.svg" alt=""/>
+                <img src="images/vector-bg_form-left.svg" alt=""/>
             </div>
             <div className="vector__bg vector__bg_4">
-                <img src="images/vector-bg_catalog-right.svg" alt=""/>
+                <img src="images/vector-bg_form-left.svg" alt=""/>
             </div>
         </div>
     );

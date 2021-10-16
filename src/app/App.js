@@ -17,9 +17,10 @@ function App() {
             <BlockSuggestion/>
             <BlockCatalog/>
             <BlockForm/>
-            <Footer/>
+            <Footer/>h
         </>
     );
 }
 
 export default App;
+

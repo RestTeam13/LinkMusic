@@ -103,6 +103,11 @@ button {
   align-items: flex-start;
   margin: 0 auto;
   position: relative;
+  @media (max-width: 767px) {
+    align-items: center;
+
+
+  }
 }
 
 .content {
@@ -158,6 +163,11 @@ button {
   &:hover {
     opacity: 0.7;
   }
+  @media (max-width: 767px) {
+    max-width: unset;
+
+
+  }
 
 }
 
@@ -167,6 +177,11 @@ button {
   padding: 86px 0 30px;
   @media (max-width: 1023px) {
     padding: 60px 0;
+
+  }
+  @media (max-width: 767px) {
+    padding: 40px 0 170px;
+
 
   }
 
@@ -231,7 +246,9 @@ button {
   @media (max-width: 767px) {
     margin-top: 0;
     position: absolute;
-    bottom: 0;
+    bottom: -100px;
+    width: 100%;
+    max-width: unset;
 
   }
 
@@ -466,6 +483,11 @@ button {
     bottom: 0;
     right: 0;
   }
+  @media (max-width: 767px) {
+    display: none;
+
+
+  }
 }
 
 .suggestion-slider__btn {
@@ -503,6 +525,11 @@ button {
 //<!-- block-catalog --!>
 .block-catalog {
   padding: 0 0 150px 0;
+  @media (max-width: 767px) {
+    padding: 70px 0 140px;
+
+
+  }
 
 }
 
@@ -519,6 +546,9 @@ button {
 
 
   }
+  @media (max-width: 767px) {
+    margin-top: 0;
+  }
 }
 
 .catalog-title {
@@ -528,6 +558,10 @@ button {
   @media (max-width: 1023px) {
     width: 100%;
 
+
+  }
+  @media (max-width: 767px) {
+    font-size: 40px;
 
   }
 
@@ -560,6 +594,18 @@ button {
     &:last-child {
       margin-left: 55px;
     }
+
+  }
+  @media (max-width: 767px) {
+    font-size: 50px;
+    &:last-child {
+      margin-left: 0;
+    }
+    span {
+      font-size: 14px;
+
+    }
+
 
   }
 }
@@ -614,17 +660,33 @@ button {
     max-height: 253px;
 
   }
+  @media (max-width: 767px) {
+
+    width: 205px;
+    height: 205px;
+
+  }
 }
 
 .catalog-row__item-name {
   font-size: 18px;
   font-weight: 600;
   margin-top: 20px;
+  @media (max-width: 767px) {
+    font-size: 14px;
+    margin-top: 14px;
+
+  }
 
 }
 
 .catalog-row__item-subtext {
   margin-top: 5px;
+  @media (max-width: 767px) {
+    font-size: 14px;
+
+
+  }
 }
 
 .catalog-videos {
@@ -633,6 +695,14 @@ button {
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
+  @media (max-width: 767px) {
+    margin-top: 50px;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+
+
+  }
 }
 
 .catalog-videos__item {
@@ -642,6 +712,12 @@ button {
 
   &:last-child {
     margin-right: 0;
+  }
+
+  @media (max-width: 767px) {
+    width: 100%;
+    margin-top: 20px;
+
   }
 }
 
@@ -659,6 +735,10 @@ button {
   font-size: 18px;
   margin-top: 15px;
   font-weight: 600;
+  @media (max-width: 767px) {
+    font-size: 14px;
+
+  }
 }
 
 .catalog-videos__youtube {
@@ -693,6 +773,11 @@ button {
 
 
   }
+  @media (max-width: 767px) {
+    margin-top: -70px;
+
+
+  }
 
 }
 
@@ -711,6 +796,10 @@ button {
     max-width: unset;
 
   }
+  @media (max-width: 767px) {
+    padding: 20px;
+
+  }
 }
 
 .block-form__left-title {
@@ -722,6 +811,12 @@ button {
     font-size: 26px;
 
   }
+  @media (max-width: 767px) {
+    font-size: 18px;
+    line-height: 25px;
+
+
+  }
 
 }
 
@@ -731,6 +826,15 @@ button {
   line-height: 1.5;
   font-weight: 200;
   width: 60%;
+  @media (max-width: 767px) {
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 10px;
+    width: 100%;
+
+
+  }
+
 
 }
 
@@ -744,6 +848,13 @@ button {
     width: 100%;
   }
 
+  @media (max-width: 767px) {
+    width: 97px;
+    height: 83px;
+
+
+  }
+
 }
 
 .block-form__column {
@@ -753,6 +864,10 @@ button {
   flex-flow: column;
   padding: 50px;
   width: 100%;
+  @media (max-width: 767px) {
+    padding: 25px 20px;
+
+  }
 
 }
 
@@ -764,6 +879,10 @@ button {
 .block-form__title {
   font-family: "Bebas Neue";
   font-size: 35px;
+  @media (max-width: 767px) {
+    font-size: 30px;
+
+  }
 }
 
 .block-form__input-row {
@@ -773,6 +892,10 @@ button {
   flex-flow: column;
   position: relative;
   width: 100%;
+  @media (max-width: 767px) {
+    font-size: 12px;
+
+  }
 
 }
 
@@ -781,6 +904,11 @@ button {
   font-family: "Gilroy Regular", sans-serif;
   font-size: 14px;
   border-bottom: 1px solid #808080;
+  @media (max-width: 767px) {
+    font-size: 12px;
+
+
+  }
 }
 
 .block-form__input-arrow {
@@ -826,6 +954,11 @@ button {
   width: 48%;
   margin-right: 5px;
   padding: 15px 10px;
+  @media (max-width: 767px) {
+    padding: 10px 5px;
+
+
+  }
 
 
 }
@@ -847,6 +980,15 @@ button {
 
   img {
     width: 100%;
+  }
+  @media (max-width: 767px) {
+    width: 98px;
+    height: 40px;
+
+    img {
+      width: 98px;
+      height: 40px;
+    }
   }
 
 }
@@ -874,6 +1016,12 @@ button {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  @media (max-width: 767px) {
+    flex-flow: column-reverse;
+    padding: 0;
+    margin-top: 25px;
+
+  }
 
 }
 
@@ -881,6 +1029,15 @@ button {
   max-width: 214px;
   width: 100%;
   height: 46px;
+  @media (max-width: 767px) {
+    width: 100%;
+    max-width: unset;
+    margin-top: 40px;
+    font-size: 12px;
+    height: 40px;
+
+
+  }
 
 
 }
@@ -891,6 +1048,11 @@ button {
   max-width: 270px;
   width: 100%;
   line-height: 1.5;
+  @media (max-width: 767px) {
+    font-size: 12px;
+    line-height: 18px;
+
+  }
 
 }
 
