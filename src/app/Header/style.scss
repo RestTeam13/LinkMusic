@@ -1,0 +1,98 @@
+//<!-- header --!>
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 100px;
+  padding-top: 25px;
+}
+
+.header__bg-img {
+  position: absolute;
+  width: 923px;
+  height: 484px;
+  top: -20.4%;
+  left: calc((100% - 923px) / 2);
+
+
+  @media (max-width: 1023px) {
+   display: none;
+  }
+}
+
+.main-menu {
+  margin-top: 9px;
+  max-width: 1220px;
+  padding: 0 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+}
+
+.main-menu__logo {
+  display: block;
+  width: 158px;
+  height: 47px;
+  position: relative;
+  bottom: 10px;
+
+  &:hover { //ToDo Сделать анимацию "волн" при наведении
+    opacity: 0.8;
+  }
+}
+
+.main-menu__list {
+  display: flex;
+  width: 33%;
+  justify-content: space-between;
+}
+
+.main-menu__list-item {
+  font-family: 'Gilroy', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+
+  color: #0C0B0B;
+  text-decoration: none;
+
+  &:hover {
+    color: #0000FF;
+  }
+}
+
+.main-menu__personal-area {
+
+}
+
+.main-menu__personal-area-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 163px;
+    height: 163px;
+    background: url(images/avatar-area.svg) center no-repeat;
+    background-size: contain;
+    opacity: 0;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 0.5;
+    }
+  }
+}
+
+//<!-- /header --!>

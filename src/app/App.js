@@ -1,6 +1,6 @@
 import React from "react";
 import './styles.css'
-import Header from "./Header";
+import Header from "./Header/Header";
 import BlockCatalog from "./BlockCatalog";
 import BlockForm from "./BlockForm";
 import Footer from "./Footer";
@@ -10,7 +10,7 @@ import News from "./News/News";
 
 function App() {
     return (
-        <>
+        <div className='wrapper'>
             <Header/>
             <ReleaseSlider/>
             <News/>
@@ -18,7 +18,7 @@ function App() {
             <BlockCatalog/>
             <BlockForm/>
             <Footer/>
-        </>
+        </div>
     );
 }
 

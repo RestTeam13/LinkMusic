@@ -1,9 +1,10 @@
 .news {
   height: 855px;
   z-index: 0;
+  overflow-x: hidden;
 }
 
-.vinyl-record {
+.vinyl-record { // ToDo Сделать полукруг через border: 0 0 50% 50%
   width: 1180px;
   height: 1180px;
   border-radius: 50%;
@@ -20,6 +21,8 @@
     background: linear-gradient(180deg, #D5D4D4 -22.29%, #FFFFFF 36.46%);
   }
 }
+
+
 
 .news__article-list {
   display: flex;
@@ -57,6 +60,21 @@
   margin-top: 10px;
   font-size: 18px;
   text-decoration: none;
+}
+
+.vector__bg_7{
+  width: 646px;
+  height: 646px;
+  bottom: -280px;
+  left: -150px;
+  z-index: -1;
+}
+
+.vector__bg_8{
+  width: 526px;
+  height: 728px;
+  top: 0;
+  right: -160px;
 }
 
 @keyframes rotate-vinyl {

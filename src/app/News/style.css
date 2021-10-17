@@ -1,6 +1,7 @@
 .news {
   height: 855px;
   z-index: 0;
+  overflow-x: hidden;
 }
 
 .vinyl-record {
@@ -54,6 +55,21 @@
   margin-top: 10px;
   font-size: 18px;
   text-decoration: none;
+}
+
+.vector__bg_7 {
+  width: 646px;
+  height: 646px;
+  bottom: -280px;
+  left: -150px;
+  z-index: -1;
+}
+
+.vector__bg_8 {
+  width: 526px;
+  height: 728px;
+  top: 0;
+  right: -160px;
 }
 
 @keyframes rotate-vinyl {

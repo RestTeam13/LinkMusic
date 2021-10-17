@@ -2,62 +2,60 @@ import React from "react";
 import './style.css'
 import ReleaseSliderSlide from "./ReleaseSliderSlide";
 import ReleaseSliderMainSlide from "./ReleaseSliderMainSlide";
+import Slider from 'react-slick'
+
+function PrevArrow(props) {
+    const {onClick} = props
+    return (
+        <button className='release-slider__button release-slider__button_prev' onClick={onClick}/>
+    )
+}
+
+function NextArrow(props) {
+    const {onClick} = props
+    return (
+        <button className='release-slider__button release-slider__button_next' onClick={onClick}/>
+    )
+}
 
 const slides = [
     {bg: 'images/slide1-bg.png'},
     {bg: 'images/slide2-bg.png'}
 ]
 
+const settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    variableWidth: true,
+    prevArrow: <PrevArrow/>,
+    nextArrow: <NextArrow/>,
+    centerMode: true
+}
 
 class ReleaseSlider extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            currentSlide: 0,
-            allSlides: 2
-        }
-    }
-
-    changeSlide = (revert = false) => {
-        let {currentSlide, allSlides} = this.state
-        if (!revert) {
-            if (currentSlide <= allSlides - 2) {
-                this.setState(({currentSlide}) => ({
-                    currentSlide: currentSlide + 1
-                }))
-            }
-        } else {
-            if (currentSlide > 0) {
-                this.setState(({currentSlide}) => ({
-                    currentSlide: currentSlide - 1
-                }))
-            }
-        }
     }
 
 
     render() {
-        const {currentSlide} = this.state
         return (
             <div className='release-slider'>
-                <button className='release-slider__button release-slider__button_prev'
-                        onClick={() => {
-                            this.changeSlide(true)
-                        }}/>
-                <button className='release-slider__button release-slider__button_next'
-                        onClick={() => {
-                            this.changeSlide()
-                        }}/>
+                <Slider {...settings}>
+                    <ReleaseSliderMainSlide/>
+                    <ReleaseSliderSlide bg='images/slide1-bg.png'/>
+                    <ReleaseSliderSlide bg='images/slide2-bg.png'/>
+                </Slider>
+
                 <div className="release-slider__pagination">{/*ToDo Сделать через цикл*/}
                     <p className="release-slider__pagination-item active">01</p>
                     <p className="release-slider__pagination-item">02</p>
                     <p className="release-slider__pagination-item">03</p>
                     <p className="release-slider__pagination-item">04</p>
                 </div>
-
-                {currentSlide === 0 && <ReleaseSliderMainSlide/>}
-                {currentSlide === 1 && <ReleaseSliderSlide bg='images/slide2-bg.png'/>}
-                {currentSlide === 2 && <ReleaseSliderSlide bg='images/slide2-bg.png'/>}
 
                 <svg className='vinyl-record__center' viewBox="0 0 290 290">
                     <linearGradient id="grad">
