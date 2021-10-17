@@ -12,12 +12,12 @@ function Footer() {
                        <p>Правовая информация: <a href="#">Пользовательское соглашение</a>, <a href="#">Политика конфиденциальности</a></p>
                    </div>
                    <div className="footer-column__links">
-                       <a href="#" className="footer-column__link-item footer-column__link-item_1"></a>
-                       <a href="#" className="footer-column__link-item footer-column__link-item_2"></a>
-                       <a href="#" className="footer-column__link-item footer-column__link-item_3"></a>
-                       <a href="#" className="footer-column__link-item footer-column__link-item_4"></a>
-                       <a href="#" className="footer-column__link-item footer-column__link-item_5"></a>
-                       <a href="#" className="footer-column__link-item footer-column__link-item_6"></a>
+                       <a href="#" className="footer-column__link-item footer-column__link-item_1"/>
+                       <a href="#" className="footer-column__link-item footer-column__link-item_2"/>
+                       <a href="#" className="footer-column__link-item footer-column__link-item_3"/>
+                       <a href="#" className="footer-column__link-item footer-column__link-item_4"/>
+                       <a href="#" className="footer-column__link-item footer-column__link-item_5"/>
+                       <a href="#" className="footer-column__link-item footer-column__link-item_6"/>
                    </div>
                </div>
            </div>

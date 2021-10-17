@@ -8,9 +8,9 @@ class ReleaseSliderSlide extends React.Component {
     }
 
     render() {
-        let {style} = this.props
+        let {bg} = this.props
         return (
-            <div style={{...style}} className='block release-slider__slide'>
+            <div style={{backgroundImage: `url(${bg})`}} className='block release-slider__slide'>
                 <div className="release-slider__slide-content">
                     <p className="release-slider__slide-title">Расскажи <br/> всем о релизе</p>
                     <p className="release-slider__slide-subtitle">Создай уникальную страницу своего <br/> музыкального
