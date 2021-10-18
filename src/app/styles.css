@@ -72,6 +72,9 @@ button {
   max-width: 100vw;
   width: 100%;
   overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
 }
 
 .block {
@@ -888,6 +891,7 @@ button {
 .block-footer {
   background: #505050;
   padding: 45px 0;
+  margin-top: auto;
 }
 
 .footer-row {

@@ -1,25 +1,19 @@
 import React from "react";
 import './styles.css'
-import Header from "./Header/Header";
-import BlockCatalog from "./BlockCatalog";
-import BlockForm from "./BlockForm";
-import Footer from "./Footer";
-import BlockSuggestion from "./BlockSuggestion";
-import ReleaseSlider from "./ReleaseSlider/ReleaseSlider";
-import News from "./News/News";
+import {BrowserRouter as Router, Route} from "react-router-dom";
+import MainPage from "./MainPage/MainPage";
+import ReleasePage from "./ReleasePage/ReleasePage";
 
 function App() {
     return (
-        <div className='wrapper'>
-            <Header/>
-            <ReleaseSlider/>
-            <News/>
-            <BlockSuggestion/>
-            <BlockCatalog/>
-            <BlockForm/>
-            <Footer/>
-        </div>
+        <Router>
+            <div>
+                <Route exact path="/" component={MainPage}/>
+                <Route exact path="/release" component={ReleasePage}/>
+            </div>
+        </Router>
     );
 }
 
 export default App;
+
