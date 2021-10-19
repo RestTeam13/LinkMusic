@@ -965,8 +965,171 @@ button {
 
 .footer-column__link-item_6 {
   -webkit-mask: url("imageScss/footer-link-6.svg") no-repeat center;
-  width: 11px;
-  height: 18px;
+  width: 12px;
+  height: 24px;
+}
+
+.release-link-1 {
+  -webkit-mask: url("imageScss/release-link-1.svg") no-repeat center;
+  width: 22px;
+  height: 22px;
+}
+
+.release-link-2 {
+  -webkit-mask: url("imageScss/release-link-2.svg") no-repeat center;
+  width: 28px;
+  height: 16px;
+}
+
+.release-link-3 {
+  -webkit-mask: url("imageScss/release-link-3.svg") no-repeat center;
+  width: 22px;
+  height: 22px;
+}
+
+.release-link-4 {
+  -webkit-mask: url("imageScss/release-link-4.svg") no-repeat center;
+  width: 24px;
+  height: 24px;
+}
+
+.release-link-5 {
+  -webkit-mask: url("imageScss/release-link-5.svg") no-repeat center;
+  width: 15px;
+  height: 25px;
+}
+
+.block-release {
+  background: #8C8C8C;
+}
+
+.release__wrapper {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.release-column {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.release-column__img {
+  max-width: 580px;
+  max-height: 455px;
+  margin-top: 40px;
+}
+
+.release-column {
+  padding: 30px 30px 40px 30px;
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 0 0 10px 10px;
+  max-width: 580px;
+  width: 100%;
+}
+
+.release-column__title {
+  font-family: "Bebas Neue";
+  color: #0C0B0B;
+  font-size: 80px;
+  line-height: 1;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.release-column__title span {
+  margin-top: 10px;
+  font-size: 24px;
+  font-family: "Gilroy Regular";
+  text-align: center;
+  font-weight: 700;
+}
+
+.release-column__video {
+  width: 100%;
+  cursor: pointer;
+  transition: ease-in-out all 0.3s;
+}
+.release-column__video:hover {
+  opacity: 0.7;
+}
+.release-column__video .catalog-videos__img {
+  width: 100%;
+  max-width: unset;
+  margin-top: 50px;
+}
+
+.release-column__tracks-list {
+  margin-top: 50px;
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+}
+
+.release-column__track-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 0;
+  width: 100%;
+  align-items: center;
+  border-bottom: 1px dashed #8C8C8C;
+}
+
+.release-column__track-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 144px;
+}
+
+.release-column__track-img {
+  width: 36px;
+  max-height: 36px;
+  margin-right: 17px;
+}
+
+.release-column__track-img_apple {
+  max-height: 44px;
+}
+
+.release-column__track-item {
+  display: flex;
+  align-items: center;
+}
+
+.release-column__track-name {
+  font-size: 18px;
+  font-family: Gilroy-Semibold;
+}
+
+.footer-column__links_release {
+  max-width: 221px;
+  margin-top: 40px;
+}
+.footer-column__links_release .footer-column__link-item:hover {
+  background: #D4AA00;
+}
+
+.release-logo {
+  padding: 30px;
+  margin: 10px 0 50px;
+  max-width: 580px;
+  width: 100%;
+  background: #FFFFFF;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+}
+.release-logo img {
+  max-width: 255px;
+  width: 100%;
+  max-height: 75px;
+  height: 100%;
 }
 
 .vector__bg {
