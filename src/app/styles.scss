@@ -136,7 +136,7 @@ button {
   margin-top: 45px;
   font-size: 16px;
   line-height: 22px;
-  font-family: "Gilroy-Semibold",sans-serif;
+  font-family: "Gilroy-Semibold", sans-serif;
   @media (max-width: 1023px) {
     margin-top: 20px;
 
@@ -164,6 +164,7 @@ button {
 .suggestion-column__slider {
   display: flex;
   width: 55%;
+
   .slick-track {
     display: flex;
   }
@@ -182,7 +183,7 @@ button {
   }
 }
 
-.suggestion-column__slider-button{
+.suggestion-column__slider-button {
   position: absolute;
   left: calc((100% - 46px) / 2 + 50px);
   bottom: -75px;
@@ -194,35 +195,38 @@ button {
   border: 3px solid #D4AA00;
   border-radius: 50%;
   font-size: 0;
-  svg{
+
+  svg {
     position: relative;
     left: -1px;
   }
 
-  &:hover{
+  &:hover {
     transform: scale(1.1);
   }
-  
+
   @media (max-width: 1023px) {
     left: calc((100% - 46px) / 2 + 500px);
   }
 }
 
-.suggestion-column__slider-button_next{
+.suggestion-column__slider-button_next {
   left: calc((100% - 46px) / 2 + 120px);
   transform: rotate(180deg);
-  &:hover{
+
+  &:hover {
     transform: rotate(180deg) scale(1.1);
   }
+
   @media (max-width: 1023px) {
     left: calc((100% - 46px) / 2 + 570px);
   }
 }
 
 .suggestion-slider__item {
-  display: flex!important;
+  display: flex !important;
   flex-flow: column;
-  margin-right: 20px!important;
+  margin-right: 20px !important;
   padding: 30px;
   border-radius: 5px;
   max-width: 380px;
@@ -954,12 +958,14 @@ button {
   width: 18px;
   height: 18px;
   -webkit-mask: url("imageScss/footer-link-1.svg") no-repeat center;
+  -webkit-mask-size: contain;
 
 
 }
 
 .footer-column__link-item_2 {
   -webkit-mask: url("imageScss/footer-link-2.svg") no-repeat center;
+  -webkit-mask-size: contain;
   width: 9px;
   height: 18px;
 
@@ -967,6 +973,7 @@ button {
 
 .footer-column__link-item_3 {
   -webkit-mask: url("imageScss/footer-link-3.svg") no-repeat center;
+  -webkit-mask-size: contain;
   width: 20px;
   height: 11px;
 
@@ -974,6 +981,7 @@ button {
 
 .footer-column__link-item_4 {
   -webkit-mask: url("imageScss/footer-link-4.svg") no-repeat center;
+  -webkit-mask-size: contain;
   width: 21px;
   height: 15px;
 
@@ -981,6 +989,7 @@ button {
 
 .footer-column__link-item_5 {
   -webkit-mask: url("imageScss/footer-link-5.svg") no-repeat center;
+  -webkit-mask-size: contain;
   width: 16px;
   height: 18px;
 
@@ -988,38 +997,79 @@ button {
 
 .footer-column__link-item_6 {
   -webkit-mask: url("imageScss/footer-link-6.svg") no-repeat center;
+  -webkit-mask-size: contain;
   width: 12px;
   height: 24px;
 
 }
+
 .release-link-1 {
   -webkit-mask: url("imageScss/release-link-1.svg") no-repeat center;
+  -webkit-mask-size: contain;
   width: 22px;
   height: 22px;
+  @media (max-width: 767px) {
+    width: 9px;
+    height: 18px;
+
+
+  }
 
 }
+
 .release-link-2 {
   -webkit-mask: url("imageScss/release-link-2.svg") no-repeat center;
+  -webkit-mask-size: contain;
   width: 28px;
   height: 16px;
+  @media (max-width: 767px) {
+    width: 21px;
+    height: 12px;
+
+
+  }
 
 }
+
 .release-link-3 {
   -webkit-mask: url("imageScss/release-link-3.svg") no-repeat center;
+  -webkit-mask-size: contain;
   width: 22px;
   height: 22px;
+  @media (max-width: 767px) {
+    width: 16px;
+    height: 16px;
+
+
+  }
 
 }
+
 .release-link-4 {
   -webkit-mask: url("imageScss/release-link-4.svg") no-repeat center;
+  -webkit-mask-size: contain;
   width: 24px;
   height: 24px;
+  @media (max-width: 767px) {
+    width: 16px;
+    height: 18px;
+
+
+  }
 
 }
+
 .release-link-5 {
   -webkit-mask: url("imageScss/release-link-5.svg") no-repeat center;
+  -webkit-mask-size: contain;
   width: 15px;
   height: 25px;
+  @media (max-width: 767px) {
+    width: 11px;
+    height: 19px;
+
+
+  }
 
 }
 
@@ -1028,8 +1078,10 @@ button {
 
 //<!-- block-release --!>
 .block-release {
-  background: #8C8C8C;
+  align-items: center;
+
 }
+
 .release__wrapper {
   width: 100%;
   display: flex;
@@ -1037,17 +1089,20 @@ button {
   align-items: center;
 
 }
+
 .release-column {
   display: flex;
   flex-flow: column;
   align-items: center;
 }
+
 .release-column__img {
   max-width: 580px;
   max-height: 455px;
   margin-top: 40px;
 
 }
+
 .release-column {
   padding: 30px 30px 40px 30px;
   display: flex;
@@ -1057,8 +1112,13 @@ button {
   border-radius: 0 0 10px 10px;
   max-width: 580px;
   width: 100%;
+  @media (max-width: 767px) {
+    padding: 20px 20px 30px 20px;
+
+  }
 
 }
+
 .release-column__title {
   font-family: "Bebas Neue";
   color: #0C0B0B;
@@ -1067,6 +1127,7 @@ button {
   display: flex;
   flex-flow: column;
   align-items: center;
+
   span {
     margin-top: 10px;
     font-size: 24px;
@@ -1075,14 +1136,28 @@ button {
     font-weight: 700;
 
   }
+
+  @media (max-width: 767px) {
+    font-size: 40px;
+    letter-spacing: -1.0px;
+    span {
+      font-size: 14px;
+
+    }
+
+
+  }
 }
+
 .release-column__video {
   width: 100%;
   cursor: pointer;
   transition: ease-in-out all 0.3s;
+
   &:hover {
     opacity: 0.7;
   }
+
   .catalog-videos__img {
     width: 100%;
     max-width: unset;
@@ -1090,58 +1165,99 @@ button {
   }
 
 }
+
 .release-column__tracks-list {
   margin-top: 50px;
   display: flex;
   flex-flow: column;
   width: 100%;
+  @media (max-width: 767px) {
+    margin-top: 20px;
+
+  }
 
 }
+
 .release-column__track-row {
   display: flex;
   justify-content: space-between;
-  padding:25px 0;
+  padding: 25px 0;
   width: 100%;
   align-items: center;
-  border-bottom:1px dashed #8C8C8C;
+  border-bottom: 1px dashed #8C8C8C;
+  @media (max-width: 767px) {
+    padding: 15px 0;
+
+  }
 }
+
 .release-column__track-btn {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 144px;
+  @media (max-width: 767px) {
+    width: 100px;
+    font-size: 10px;
+    height: 34px;
 
+
+  }
 }
+
 .release-column__track-img {
   width: 36px;
   max-height: 36px;
   margin-right: 17px;
+  @media (max-width: 767px) {
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+  }
 
 }
+
 .release-column__track-img_apple {
 
   max-height: 44px;
 }
+
 .release-column__track-item {
   display: flex;
   align-items: center;
 
 }
+
 .release-column__track-name {
   font-size: 18px;
   font-family: Gilroy-Semibold;
+  @media (max-width: 767px) {
+    font-size: 12px;
+
+
+  }
 
 }
+
 .footer-column__links_release {
   max-width: 221px;
   margin-top: 40px;
-  .footer-column__link-item{
+
+  .footer-column__link-item {
     &:hover {
       background: #D4AA00;
 
     }
   }
+
+  @media (max-width: 767px) {
+    max-width: 160px;
+    margin-top: 30px;
+
+
+  }
 }
+
 .release-logo {
   padding: 30px;
   margin: 10px 0 50px;
@@ -1151,12 +1267,20 @@ button {
   border-radius: 10px;
   display: flex;
   justify-content: center;
+  box-shadow: 0px 0px 10px rgb(0 0 0 / 15%);
 
   img {
     max-width: 255px;
     width: 100%;
     max-height: 75px;
     height: 100%;
+  }
+  @media (max-width: 767px) {
+img {
+  height: 36px;
+  width: 123px;
+}
+
   }
 }
 

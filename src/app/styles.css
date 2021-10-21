@@ -937,70 +937,111 @@ button {
   width: 18px;
   height: 18px;
   -webkit-mask: url("imageScss/footer-link-1.svg") no-repeat center;
+  -webkit-mask-size: contain;
 }
 
 .footer-column__link-item_2 {
   -webkit-mask: url("imageScss/footer-link-2.svg") no-repeat center;
+  -webkit-mask-size: contain;
   width: 9px;
   height: 18px;
 }
 
 .footer-column__link-item_3 {
   -webkit-mask: url("imageScss/footer-link-3.svg") no-repeat center;
+  -webkit-mask-size: contain;
   width: 20px;
   height: 11px;
 }
 
 .footer-column__link-item_4 {
   -webkit-mask: url("imageScss/footer-link-4.svg") no-repeat center;
+  -webkit-mask-size: contain;
   width: 21px;
   height: 15px;
 }
 
 .footer-column__link-item_5 {
   -webkit-mask: url("imageScss/footer-link-5.svg") no-repeat center;
+  -webkit-mask-size: contain;
   width: 16px;
   height: 18px;
 }
 
 .footer-column__link-item_6 {
   -webkit-mask: url("imageScss/footer-link-6.svg") no-repeat center;
+  -webkit-mask-size: contain;
   width: 12px;
   height: 24px;
 }
 
 .release-link-1 {
   -webkit-mask: url("imageScss/release-link-1.svg") no-repeat center;
+  -webkit-mask-size: contain;
   width: 22px;
   height: 22px;
+}
+@media (max-width: 767px) {
+  .release-link-1 {
+    width: 9px;
+    height: 18px;
+  }
 }
 
 .release-link-2 {
   -webkit-mask: url("imageScss/release-link-2.svg") no-repeat center;
+  -webkit-mask-size: contain;
   width: 28px;
   height: 16px;
+}
+@media (max-width: 767px) {
+  .release-link-2 {
+    width: 21px;
+    height: 12px;
+  }
 }
 
 .release-link-3 {
   -webkit-mask: url("imageScss/release-link-3.svg") no-repeat center;
+  -webkit-mask-size: contain;
   width: 22px;
   height: 22px;
+}
+@media (max-width: 767px) {
+  .release-link-3 {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 .release-link-4 {
   -webkit-mask: url("imageScss/release-link-4.svg") no-repeat center;
+  -webkit-mask-size: contain;
   width: 24px;
   height: 24px;
+}
+@media (max-width: 767px) {
+  .release-link-4 {
+    width: 16px;
+    height: 18px;
+  }
 }
 
 .release-link-5 {
   -webkit-mask: url("imageScss/release-link-5.svg") no-repeat center;
+  -webkit-mask-size: contain;
   width: 15px;
   height: 25px;
 }
+@media (max-width: 767px) {
+  .release-link-5 {
+    width: 11px;
+    height: 19px;
+  }
+}
 
 .block-release {
-  background: #8C8C8C;
+  align-items: center;
 }
 
 .release__wrapper {
@@ -1032,6 +1073,11 @@ button {
   max-width: 580px;
   width: 100%;
 }
+@media (max-width: 767px) {
+  .release-column {
+    padding: 20px 20px 30px 20px;
+  }
+}
 
 .release-column__title {
   font-family: "Bebas Neue";
@@ -1048,6 +1094,15 @@ button {
   font-family: "Gilroy Regular";
   text-align: center;
   font-weight: 700;
+}
+@media (max-width: 767px) {
+  .release-column__title {
+    font-size: 40px;
+    letter-spacing: -1px;
+  }
+  .release-column__title span {
+    font-size: 14px;
+  }
 }
 
 .release-column__video {
@@ -1070,6 +1125,11 @@ button {
   flex-flow: column;
   width: 100%;
 }
+@media (max-width: 767px) {
+  .release-column__tracks-list {
+    margin-top: 20px;
+  }
+}
 
 .release-column__track-row {
   display: flex;
@@ -1079,6 +1139,11 @@ button {
   align-items: center;
   border-bottom: 1px dashed #8C8C8C;
 }
+@media (max-width: 767px) {
+  .release-column__track-row {
+    padding: 15px 0;
+  }
+}
 
 .release-column__track-btn {
   display: flex;
@@ -1086,11 +1151,25 @@ button {
   align-items: center;
   width: 144px;
 }
+@media (max-width: 767px) {
+  .release-column__track-btn {
+    width: 100px;
+    font-size: 10px;
+    height: 34px;
+  }
+}
 
 .release-column__track-img {
   width: 36px;
   max-height: 36px;
   margin-right: 17px;
+}
+@media (max-width: 767px) {
+  .release-column__track-img {
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+  }
 }
 
 .release-column__track-img_apple {
@@ -1106,6 +1185,11 @@ button {
   font-size: 18px;
   font-family: Gilroy-Semibold;
 }
+@media (max-width: 767px) {
+  .release-column__track-name {
+    font-size: 12px;
+  }
+}
 
 .footer-column__links_release {
   max-width: 221px;
@@ -1113,6 +1197,12 @@ button {
 }
 .footer-column__links_release .footer-column__link-item:hover {
   background: #D4AA00;
+}
+@media (max-width: 767px) {
+  .footer-column__links_release {
+    max-width: 160px;
+    margin-top: 30px;
+  }
 }
 
 .release-logo {
@@ -1124,12 +1214,19 @@ button {
   border-radius: 10px;
   display: flex;
   justify-content: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
 }
 .release-logo img {
   max-width: 255px;
   width: 100%;
   max-height: 75px;
   height: 100%;
+}
+@media (max-width: 767px) {
+  .release-logo img {
+    height: 36px;
+    width: 123px;
+  }
 }
 
 .vector__bg {
