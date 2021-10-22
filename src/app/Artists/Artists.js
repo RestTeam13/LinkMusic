@@ -3,7 +3,6 @@ import '../styles.css'
 import Header from "../Header/Header";
 import Footer from "../MainPage/Footer";
 import SearchRow from "../Releases/SearchRow";
-import List from "../Releases/List";
 import List2 from "../Releases/List2";
 
 

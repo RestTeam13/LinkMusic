@@ -32,7 +32,6 @@ button {
 }
 
 .block {
-  max-width: 100%;
   width: 100%;
   display: flex;
   flex-flow: column;
@@ -79,6 +78,7 @@ button {
 .content_full-screen {
   max-width: unset;
   padding: 0;
+
   @media (max-width: 767px) {
     width: 100%;
 
@@ -1274,6 +1274,129 @@ button {
 
 
 //<!-- /search-row--!>
+
+//<!-- block-artist-card --!>
+.block-artist-card {
+
+}
+.artist-card__wrapper {
+  display: flex;
+  max-width: 1205px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 5;
+}
+.artist-card__title-part {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.artist-card__title-text-part {
+  display: flex;
+  flex-flow: column;
+  margin-left: 55px;
+  color:#FFFFFF;
+  max-width: 400px;
+  width: 100%;
+
+
+
+}
+.artist-card__img-bg-wrapper {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #5A5A5A;
+
+
+}
+.artist-card__img-bg {
+  background: url("#") center no-repeat;
+  background-size: cover;
+  filter: blur(15px) brightness(40%);
+  width: 105%;
+  height: 105%;
+}
+.artist-card__title-img {
+  max-width: 476px;
+  width: 100%;
+  max-height: 476px;
+  height: 100%;
+  margin: 35px 0 -35px;
+
+}
+.artist-card__title {
+  font-family: "Bebas Neue";
+  font-size: 60px;
+  line-height: 1;
+  position: relative;
+
+
+}
+.artist-card__bg-svg {
+  position: absolute;
+  right: -2%;
+  bottom: -16%;
+  width: 218px;
+  height: 310px;
+  z-index: 5;
+  @media (max-width: 1023px) {
+    display: none;
+
+  }
+
+
+}
+
+.artist-card__title-name {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 13px;
+  font-weight: 100;
+  opacity: 0.9;
+
+}
+.artist-card__title-link {
+  margin-top: 20px;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: ease-in-out all 0.3s;
+  &:hover {
+    text-decoration:underline;
+
+  }
+}
+.footer-column__links_artist-card {
+  margin-top: 25px;
+  .footer-column__link-item {
+    background: #FFFFFF;
+    &:hover {
+      background: linear-gradient(90deg, #3434FF 0%, #FF6534 100%);
+
+    }
+  }
+
+
+}
+.artist-card__title-btn {
+  margin-top: 50px;
+  max-width: 264px;
+
+}
+
+
+
+
+//<!-- /block-artist-card --!>
 .vector__bg {
   position: absolute;
   z-index: 3;
