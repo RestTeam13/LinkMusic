@@ -16,7 +16,6 @@ function ListItem(props) {
                 {author}
             </p>
             <p className="catalog-row__item-years">{years}</p>
-
         </div>
     );
 }

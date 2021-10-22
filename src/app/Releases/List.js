@@ -20,7 +20,7 @@ const listData = [
         trackName: "Просто позвони",
         author: "Малиновский",
         years: "2021 Сингл"
-    },{
+    }, {
         img: "images/catalog-row2__item-4.png",
         trackName: "Забывай",
         author: "Николай Басков",
@@ -67,7 +67,7 @@ const listData = [
         trackName: "Просто позвони",
         author: "Малиновский",
         years: "2021 Сингл"
-    },{
+    }, {
         img: "images/catalog-row2__item-4.png",
         trackName: "Забывай",
         author: "Николай Басков",
@@ -75,14 +75,20 @@ const listData = [
     }
 ]
 
-function List() {
+
+function List(props) {
+    let {data} = props
     return (
         <div className="catalog-row">
-            {listData.map(currentItem => {
-                return (
-                    <ListItem img={currentItem.img} trackName={currentItem.trackName} author={currentItem.author} years={currentItem.years} />
-                )
-            })}
+            {
+                listData.map(currentItem => {
+                    return (
+                        <ListItem img={currentItem.img} trackName={currentItem.trackName} author={currentItem.author}
+                                  years={currentItem.years}/>
+                    )
+                })
+            }
+
         </div>
     );
 }

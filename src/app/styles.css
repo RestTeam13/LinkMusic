@@ -52,7 +52,7 @@
   padding: 0;
   border: none;
   box-sizing: border-box;
-  transition: 0.1s all ease-in-out;
+  transition: 0.3s all ease-in-out;
 }
 
 html, body {
@@ -95,8 +95,8 @@ button {
 .content {
   width: 100%;
   max-width: 1220px;
-  margin: 0 auto;
   padding: 0 20px;
+  margin: 0 auto;
   color: #3D3D3D;
   font-family: "Gilroy Regular", sans-serif;
   position: relative;
@@ -127,6 +127,11 @@ button {
 .content_full-screen {
   max-width: unset;
   padding: 0;
+}
+@media (max-width: 767px) {
+  .content_full-screen {
+    width: 100%;
+  }
 }
 @media (max-width: 767px) {
   .content_full-screen {
@@ -512,13 +517,25 @@ button {
 }
 
 .catalog-row {
+  margin: 0 auto 110px;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-bottom: 110px;
 }
+@media (max-width: 1023px) {
+  .catalog-row {
+    max-width: 750px;
+  }
+}
+@media (max-width: 767px) {
+  .catalog-row {
+    flex-flow: column;
+    justify-content: flex-start;
+  }
+}
+
 .catalog-row_main {
   width: 1480px;
 }
@@ -529,6 +546,18 @@ button {
   margin: 50px 5px 0 5px;
   width: 23%;
 }
+@media (max-width: 1023px) {
+  .catalog-row__item {
+    width: 47%;
+  }
+}
+@media (max-width: 767px) {
+  .catalog-row__item {
+    width: 100%;
+    margin: 25px 0 0 0;
+  }
+}
+
 .catalog-row__item-img {
   max-width: 280px;
   max-height: 280px;
@@ -540,8 +569,8 @@ button {
 }
 @media (max-width: 1023px) {
   .catalog-row__item-img {
-    max-width: 253px;
-    max-height: 253px;
+    max-width: 346px;
+    max-height: 346px;
   }
 }
 
@@ -550,15 +579,32 @@ button {
   font-weight: 600;
   margin-top: 20px;
 }
+@media (max-width: 767px) {
+  .catalog-row__item-name {
+    font-size: 16px;
+    margin-top: 15px;
+  }
+}
 
 .catalog-row__item-subtext {
   margin-top: 5px;
+}
+@media (max-width: 767px) {
+  .catalog-row__item-subtext {
+    font-size: 14px;
+    margin-top: 3px;
+  }
 }
 
 .catalog-row__item-years {
   font-size: 16px;
   opacity: 0.5;
   margin-top: 10px;
+}
+@media (max-width: 767px) {
+  .catalog-row__item-years {
+    font-size: 14px;
+  }
 }
 
 .catalog-videos {
@@ -1054,7 +1100,6 @@ button {
 
 .search-row__wrapper {
   padding: 50px 20px 40px;
-  background: linear-gradient(90deg, #3434FF 0%, #FF6534 100%);
   width: 100%;
   display: flex;
   flex-flow: column;
@@ -1116,7 +1161,7 @@ button {
   height: 44px;
   width: 59px;
   background: #D4D4D4;
-  border-radius: 0px 100px 100px 0px;
+  border-radius: 0 100px 100px 0;
   position: absolute;
   right: -1px;
   top: 0;
@@ -1124,6 +1169,12 @@ button {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+.search-row__right-bg:hover {
+  background: #5A5A5A;
+}
+.search-row__right-bg:hover .search-row__input-img {
+  background: linear-gradient(90deg, #ff3b3b -15.88%, #FFCD1C 133.05%);
 }
 @media (max-width: 767px) {
   .search-row__right-bg {
@@ -1133,6 +1184,9 @@ button {
 }
 
 .search-row__input-img {
+  -webkit-mask: url("Releases/images/search-row_lupa.svg") no-repeat center;
+  -webkit-mask-size: contain;
+  background: #FFFFFF;
   width: 18px;
   height: 18px;
 }

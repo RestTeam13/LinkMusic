@@ -1,19 +1,18 @@
 import React from "react";
 import '../styles.css'
-import List from "./List";
 
 
-function SearchRow() {
+function SearchRow(props) {
+    let {title, bg} = props
     return (
         <section className="block block-search-row">
             <div className="content content_full-screen">
-                <div className="search-row__wrapper">
-                    <div className="search-row__title">релизы</div>
+                <div className="search-row__wrapper" style={{background:bg}}>
+                    <div className="search-row__title">{title}</div>
                     <div className="search-row">
                         <input type="text" className="search-row__input" placeholder="Поиск"/>
                         <div className="search-row__right-bg">
                             <div className="search-row__input-img">
-                                <img src="images/search-row_lupa.svg" alt=""/>
                             </div>
                         </div>
                     </div>
