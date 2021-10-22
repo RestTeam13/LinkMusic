@@ -5,7 +5,7 @@ import '../styles.css'
 function SearchRow(props) {
     let {title, bg} = props
     return (
-        <section className="block block-search-row">
+        <section className="block block-search-row block_first-on-page">
             <div className="content content_full-screen">
                 <div className="search-row__wrapper" style={{background:bg}}>
                     <div className="search-row__title">{title}</div>

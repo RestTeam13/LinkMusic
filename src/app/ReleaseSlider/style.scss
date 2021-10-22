@@ -8,6 +8,19 @@
   }
 }
 
+
+.release-slider__main-slide-bg-img {
+  position: absolute;
+  width: 923px;
+  height: 484px;
+  top: -42%;
+  left: calc((100% - 923px) / 2);
+
+  @media (max-width: 1023px) {
+    display: none;
+  }
+}
+
 .release-slider__button {
   position: absolute;
   top: calc((100% - 60px) / 2);

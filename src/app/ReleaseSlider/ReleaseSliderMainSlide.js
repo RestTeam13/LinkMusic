@@ -8,6 +8,29 @@ class ReleaseSliderMainSlide extends React.Component {
     render() {
         return (
             <div className='block release-slider__slide release-slider__slide_main'>
+                <div className="release-slider__main-slide-bg-img">
+                    <svg width="926" height="487" viewBox="0 0 926 487" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M925 47C925 47 786.323 110.094 810.979 266.178C838.622 441.144 678.425 516.347 569.057 472.992C459.688 429.637 467.237 268.957 259.334 264.014C46.7649 258.967 2 56.8698 2 56.8698" stroke="url(#paint0_linear_1242:5)" stroke-width="3" stroke-miterlimit="10"/>
+                        <path d="M764 1C764 1 704.057 134.143 725.531 266.626C747.006 399.109 650.228 414.601 611.64 399.109C531.616 366.956 516.24 195.151 386.973 183.978C289.82 175.61 159.189 242.091 90 91.2517" stroke="url(#paint1_linear_1242:5)" stroke-width="3" stroke-miterlimit="10"/>
+                        <path d="M699.898 59.3233C699.898 59.3233 721.541 195.419 625.921 171.087C516.359 143.247 518.04 77.8531 379.346 139.604C330.087 161.642 131.224 168.089 171.297 47" stroke="url(#paint2_linear_1242:5)" stroke-width="2" stroke-miterlimit="10"/>
+                        <defs>
+                            <linearGradient id="paint0_linear_1242:5" x1="463.5" y1="47" x2="463.5" y2="485" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#204CEC"/>
+                                <stop offset="1" stop-color="#FD6436"/>
+                            </linearGradient>
+                            <linearGradient id="paint1_linear_1242:5" x1="427" y1="1" x2="427" y2="404" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#204CEC"/>
+                                <stop offset="1" stop-color="#FD6436"/>
+                            </linearGradient>
+                            <linearGradient id="paint2_linear_1242:5" x1="434" y1="47" x2="637.809" y2="377.248" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#204CEC"/>
+                                <stop offset="1" stop-color="#FD6436"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+
+
+                </div>
                 <div className="vector__bg vector__bg_7"> {/*ToDo дорисовать линии*/}
                     <svg width="646" height="646" viewBox="0 0 646 646" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2.00097 208.167C2.00097 208.167 97.0432 243.812 158.894 158.726C228.226 63.344 339.107 103.43 370.234 175.371C401.361 247.312 322.172 319.387 417.808 419.676C515.594 522.214 441.56 638.434 441.56 638.434" stroke="#204CEC" stroke-width="3" stroke-miterlimit="10"/>

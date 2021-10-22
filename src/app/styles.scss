@@ -28,7 +28,7 @@ button {
   min-height: 100vh;
   display: flex;
   flex-flow: column;
-
+  position: relative;
 }
 
 .block {
@@ -41,8 +41,11 @@ button {
   position: relative;
   @media (max-width: 767px) {
     align-items: center;
-
   }
+}
+
+.block_first-on-page{
+  margin-top: 100px;
 }
 
 .content {
@@ -497,8 +500,8 @@ button {
 }
 .catalog-row_main {
   width: 1480px;
-
-
+  flex-flow: row;
+  margin-bottom: 0;
 }
 
 .catalog-row__item {

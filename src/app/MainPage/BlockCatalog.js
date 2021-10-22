@@ -1,7 +1,6 @@
 import React from "react";
 import '../styles.css'
 
-
 function BlockCatalog() {
     return (
         <div className="block block-catalog">
@@ -21,7 +20,7 @@ function BlockCatalog() {
                 </div>
             </div>
             <div className="content_slider">
-                <div className="catalog-row">
+                <div className="catalog-row catalog-row_main">
                     <div className="catalog-row__item">
                         <div className="catalog-row__item-img">
                             <img src="images/catalog-row__item-1.png" alt=""/>
@@ -63,7 +62,7 @@ function BlockCatalog() {
                         </p>
                     </div>
                 </div>
-                <div className="catalog-row">
+                <div className="catalog-row catalog-row_main">
                     <div className="catalog-row__item">
                         <div className="catalog-row__item-img">
                             <img src="images/catalog-row2__item-1.png" alt=""/>

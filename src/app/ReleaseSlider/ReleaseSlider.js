@@ -43,7 +43,7 @@ class ReleaseSlider extends React.Component {
 
     render() {
         return (
-            <div className='release-slider'>
+            <div className='release-slider block_first-on-page'>
                 <Slider {...settings}>
                     <ReleaseSliderMainSlide/>
                     <ReleaseSliderSlide bg='images/slide1-bg.png'/>

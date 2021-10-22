@@ -6,7 +6,7 @@ import releaseBg from "./images/releases__main-bg.png"
 function ReleasePage() {
     return (
         <div className='wrapper'>
-            <section className="block block-release" >
+            <section className="block block-release">
                 <div className="block-release__bg-img" style={{backgroundImage:`url(${releaseBg})`}}/>
                 <div className="content">
                     <div className="release__wrapper">
