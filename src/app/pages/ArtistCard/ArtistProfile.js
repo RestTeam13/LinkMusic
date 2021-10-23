@@ -70,8 +70,6 @@ function ArtistProfile() {
                         <button className="artist-card__title-btn tl_btn">Заказать выступление</button>
                     </div>
                 </div>
-
-
             </div>
         </div>
     );

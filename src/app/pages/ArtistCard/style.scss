@@ -1,6 +1,7 @@
 //<!-- block-artist-card --!>
 .block-artist-card {
 }
+
 .artist-card__wrapper {
   display: flex;
   max-width: 1205px;
@@ -9,22 +10,42 @@
   padding: 0 20px;
   position: relative;
   z-index: 5;
+  @media (max-width: 767px) {
+    max-width: 320px;
+
+  }
 }
+
 .artist-card__title-part {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 767px) {
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+
+
+  }
 
 }
+
 .artist-card__title-text-part {
   display: flex;
   flex-flow: column;
   margin-left: 55px;
-  color:#FFFFFF;
+  color: #FFFFFF;
   max-width: 400px;
   width: 100%;
+  @media (max-width: 767px) {
+    margin-left: 0;
+    color: #0C0B0B;
+    font-size: 12px;
+  }
 
 }
+
 .artist-card__img-bg-wrapper {
   width: 100%;
   height: 100%;
@@ -36,30 +57,63 @@
   justify-content: center;
   align-items: center;
   background: #5A5A5A;
+  @media (max-width: 767px) {
+    clip-path: polygon(0 0, 100% 0%, 100% 37%, 0 37%);
+
+
+  }
 
 
 }
+
 .artist-card__img-bg {
   background: url("#") center no-repeat;
   background-size: cover;
   filter: blur(15px) brightness(40%);
   width: 105%;
   height: 105%;
+  @media (max-width: 767px) {
+    filter: blur(20px) brightness(40%);
+
+
+
+  }
 }
+
 .artist-card__title-img {
   max-width: 476px;
   width: 100%;
   max-height: 476px;
   height: 100%;
   margin: 35px 0 -35px;
+  @media (max-width: 767px) {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px 0 0 ;
+
+  }
 
 }
+
 .artist-card__title {
   font-family: "Bebas Neue", sans-serif;
   font-size: 60px;
   line-height: 1;
   position: relative;
+  align-self: flex-end;
+  @media (max-width: 767px) {
+    font-size: 30px;
+    color: #FFFFFF;
+    margin: 57px 20px 0 0;
+
+
+
+  }
 }
+
 .artist-card__bg-svg {
   position: absolute;
   right: -2%;
@@ -81,15 +135,30 @@
   margin-top: 13px;
   font-weight: 100;
   opacity: 0.9;
+  @media (max-width: 767px) {
+    font-size: 12px;
+    margin-top: 75px;
+
+
+  }
 
 }
+
 .artist-card__title-link {
   margin-top: 20px;
   color: #FFFFFF;
   text-decoration: none;
   transition: ease-in-out all 0.3s;
+
   &:hover {
-    text-decoration:underline;
+    text-decoration: underline;
+
+  }
+
+  @media (max-width: 767px) {
+    color: #0000FF;
+    margin-top: 10px;
+
 
   }
 }
@@ -97,17 +166,36 @@
 .artist-card__title-btn {
   margin-top: 50px;
   max-width: 264px;
+  @media (max-width: 767px) {
+    max-width: 280px;
+    margin: 40px 0 0 0;
+    font-size: 12px;
+    height: 40px;
+
+
+  }
 }
 
-.block-artist-card__releases{
+.block-artist-card__releases {
   margin-top: 130px;
+  @media (max-width: 767px) {
+    margin-top: 50px;
+
+
+  }
 }
 
-.title_artists-card{
+.title_artists-card {
   color: #3D3D3D;
+  @media (max-width: 767px) {
+    font-size: 41px;
+    align-self: flex-start;
+
+
+  }
 }
 
-.block-artist-card__releases-list{
+.block-artist-card__releases-list {
   @media (max-width: 1023px) {
     display: flex;
     width: 100%;
@@ -119,7 +207,7 @@
   }
 }
 
-.catalog-row_artist-card{
+.catalog-row_artist-card {
   @media (max-width: 1023px) {
     max-width: unset;
     flex-flow: row;
@@ -129,10 +217,9 @@
   }
 }
 
-.catalog-row__item_artist-card{
+.catalog-row__item_artist-card {
   min-width: 253px;
 }
-
 
 
 //<!-- /block-artist-card --!>

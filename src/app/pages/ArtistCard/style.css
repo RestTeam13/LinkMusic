@@ -7,11 +7,24 @@
   position: relative;
   z-index: 5;
 }
+@media (max-width: 767px) {
+  .artist-card__wrapper {
+    max-width: 320px;
+  }
+}
 
 .artist-card__title-part {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media (max-width: 767px) {
+  .artist-card__title-part {
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+  }
 }
 
 .artist-card__title-text-part {
@@ -21,6 +34,13 @@
   color: #FFFFFF;
   max-width: 400px;
   width: 100%;
+}
+@media (max-width: 767px) {
+  .artist-card__title-text-part {
+    margin-left: 0;
+    color: #0C0B0B;
+    font-size: 12px;
+  }
 }
 
 .artist-card__img-bg-wrapper {
@@ -35,6 +55,11 @@
   align-items: center;
   background: #5A5A5A;
 }
+@media (max-width: 767px) {
+  .artist-card__img-bg-wrapper {
+    clip-path: polygon(0 0, 100% 0%, 100% 37%, 0 37%);
+  }
+}
 
 .artist-card__img-bg {
   background: url("#") center no-repeat;
@@ -42,6 +67,11 @@
   filter: blur(15px) brightness(40%);
   width: 105%;
   height: 105%;
+}
+@media (max-width: 767px) {
+  .artist-card__img-bg {
+    filter: blur(20px) brightness(40%);
+  }
 }
 
 .artist-card__title-img {
@@ -51,12 +81,30 @@
   height: 100%;
   margin: 35px 0 -35px;
 }
+@media (max-width: 767px) {
+  .artist-card__title-img {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px 0 0;
+  }
+}
 
 .artist-card__title {
   font-family: "Bebas Neue", sans-serif;
   font-size: 60px;
   line-height: 1;
   position: relative;
+  align-self: flex-end;
+}
+@media (max-width: 767px) {
+  .artist-card__title {
+    font-size: 30px;
+    color: #FFFFFF;
+    margin: 57px 20px 0 0;
+  }
 }
 
 .artist-card__bg-svg {
@@ -80,6 +128,12 @@
   font-weight: 100;
   opacity: 0.9;
 }
+@media (max-width: 767px) {
+  .artist-card__title-name {
+    font-size: 12px;
+    margin-top: 75px;
+  }
+}
 
 .artist-card__title-link {
   margin-top: 20px;
@@ -90,18 +144,43 @@
 .artist-card__title-link:hover {
   text-decoration: underline;
 }
+@media (max-width: 767px) {
+  .artist-card__title-link {
+    color: #0000FF;
+    margin-top: 10px;
+  }
+}
 
 .artist-card__title-btn {
   margin-top: 50px;
   max-width: 264px;
 }
+@media (max-width: 767px) {
+  .artist-card__title-btn {
+    max-width: 280px;
+    margin: 40px 0 0 0;
+    font-size: 12px;
+    height: 40px;
+  }
+}
 
 .block-artist-card__releases {
   margin-top: 130px;
 }
+@media (max-width: 767px) {
+  .block-artist-card__releases {
+    margin-top: 50px;
+  }
+}
 
 .title_artists-card {
   color: #3D3D3D;
+}
+@media (max-width: 767px) {
+  .title_artists-card {
+    font-size: 41px;
+    align-self: flex-start;
+  }
 }
 
 @media (max-width: 1023px) {
