@@ -26,11 +26,19 @@
 
 .social-links_artist-card {
   margin-top: 25px;
+
   .social-links__link-item {
     background: #FFFFFF;
+
     &:hover {
       background: linear-gradient(90deg, #3434FF 0%, #FF6534 100%);
 
+    }
+  }
+
+  @media (max-width: 767px) {
+    .social-links__link-item {
+      background: #5A5A5A;
     }
   }
 }

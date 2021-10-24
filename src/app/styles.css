@@ -172,6 +172,10 @@ button {
   opacity: 0.7;
 }
 
+.tl_btn_blue {
+  background: #0000FF;
+}
+
 .vector__bg {
   position: absolute;
   z-index: 3;

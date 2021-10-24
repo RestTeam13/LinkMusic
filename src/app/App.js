@@ -6,6 +6,7 @@ import SoloRelease from "./pages/SoloRelease/SoloRelease";
 import Releases from "./pages/Releases/Releases";
 import Artists from "./pages/Artists/Artists";
 import ArtistCard from "./pages/ArtistCard/ArtistCard";
+import MyRelease from "./pages/MyRelease/MyRelease";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route exact path="/releases" component={Releases}/>
                 <Route exact path="/artists" component={Artists}/>
                 <Route exact path="/card" component={ArtistCard}/>
+                <Route exact path="/my-release" component={MyRelease}/>
             </div>
         </Router>
     );
