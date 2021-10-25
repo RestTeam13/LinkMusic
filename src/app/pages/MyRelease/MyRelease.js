@@ -3,7 +3,8 @@ import './style.css'
 import Header from "../../components/Header/Header";
 import ArtistProfile from "../ArtistCard/ArtistProfile";
 import Footer from "../../components/Footer/Footer";
-import List from "../../components/List/List";
+import Albums from "./Albums";
+
 
 const artistProfileData = [
     {
@@ -32,6 +33,7 @@ function MyRelease(props) {
                         <h2 className="title title_artists-card">Мои релизы</h2>
                     </div>
                 </div>
+                <Albums/>
             </section>
             <Footer/>
         </div>

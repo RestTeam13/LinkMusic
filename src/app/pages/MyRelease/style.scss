@@ -1,3 +1,7 @@
+//<!-- my-release -->
+.block-albums {
+
+}
 .albums-column {
   display: flex;
   width: 100%;
@@ -5,29 +9,38 @@
   align-items: center;
   margin: 35px 0 125px;
   counter-reset: section;
-}
-.albums-column .albums-row__name span:before {
-  counter-increment: section;
-  content: counter(section);
-}
+  .albums-row__name {
+    span:before {
+      counter-increment: section;
+      content: counter(section);
 
+    }
+  }
+}
 .albums-row {
   width: 100%;
   display: flex;
   flex-flow: column;
   padding: 0 0 15px 0;
-  margin: 20px 0 0;
+  margin: 20px 0 0 ;
   border-bottom: 1px dashed #8C8C8C;
   position: relative;
-}
-.albums-row.active .albums-row__content {
-  display: flex;
-}
-.albums-row.active .albums-row__arrow {
-  transform: rotate(180deg);
-  margin-top: 10px;
-}
+  &.active {
+    .albums-row__content {
 
+      display: flex;
+    }
+    .albums-row__arrow {
+      transform: rotate(180deg);
+      margin-top: 10px;
+
+    }
+
+  }
+
+
+
+}
 .albums-row__arrow {
   width: 16px;
   height: 8px;
@@ -36,34 +49,36 @@
   top: 5px;
   cursor: pointer;
   transition: ease-in-out all 0.3s;
-}
 
+
+}
 .albums-row__name {
   font-family: Gilroy-Semibold;
   width: 100%;
   font-size: 18px;
   line-height: 140%;
-  color: #0C0B0B;
-}
-.albums-row__name span {
-  font-size: 24px;
-}
+  color:#0C0B0B;
+  span {
+    font-size: 24px;
+  }
 
-.albums-row__content {
-  margin: 20px 0 0;
+}
+.albums-row__content{
+  margin: 20px 0 0 ;
   width: 100%;
   align-items: center;
   display: none;
-}
 
+}
 .albums-row__img {
   max-width: 280px;
   max-height: 280px;
   height: 100%;
   width: 100%;
-  margin: 0 35px 0 0;
-}
+  margin: 0 35px 0 0 ;
 
+
+}
 .albums-row__block-btns {
   max-width: 464px;
   width: 100%;
@@ -71,33 +86,35 @@
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
-}
 
+
+}
 .albums-row__btn {
   max-width: 226px;
   width: 48%;
+  &:nth-last-child(1) {
+    margin-top: 10px;
+  }
+  &:nth-last-child(2) {
+    margin-top: 10px;
+  }
 }
-.albums-row__btn:nth-last-child(1) {
-  margin-top: 10px;
-}
-.albums-row__btn:nth-last-child(2) {
-  margin-top: 10px;
-}
-
 .albums-row__btn_blue {
   background: #0984E3;
-}
 
+}
 .albums-row__btn_purple {
   background: #6C5CE7;
-}
 
+}
 .albums-row__btn_red {
   background: #BC012E;
-}
 
+}
 .albums-row__btn_orange {
   background: #FF6D30;
+
 }
 
-/*# sourceMappingURL=style.css.map */
+
+//<!-- /my-release -->
