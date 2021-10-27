@@ -18,7 +18,6 @@ function Albums() {
                     <AlbumItem/>
                     <AlbumItem/>
                     <AlbumItem/>
-
                 </div>
             </div>
 

@@ -40,10 +40,16 @@
   display: flex;
   flex-flow: column;
 }
+.catalog-title__numbers p {
+  font-family: Termina, sans-serif;
+}
+.catalog-title__numbers p::after {
+  content: "+";
+}
 .catalog-title__numbers span {
   font-size: 18px;
   font-weight: 900;
-  font-family: "Gilroy Regular Heavy", sans-serif;
+  font-family: "Gilroy", sans-serif;
   margin-top: 4px;
 }
 @media (max-width: 1023px) {
@@ -52,6 +58,15 @@
   }
   .catalog-title__numbers:last-child {
     margin-left: 55px;
+  }
+}
+
+.catalog-title__numbers_first {
+  margin-left: 10%;
+}
+@media (max-width: 1023px) {
+  .catalog-title__numbers_first {
+    margin-left: 0;
   }
 }
 
@@ -76,9 +91,27 @@
 }
 
 .catalog-row_main {
-  width: 1480px;
   flex-flow: row;
   margin-bottom: 0;
+}
+.catalog-row_main .slick-track {
+  display: flex;
+  max-width: max-content;
+}
+.catalog-row_main .catalog-row__item {
+  width: 280px;
+}
+@media (max-width: 1023px) {
+  .catalog-row_main {
+    max-width: unset;
+    width: max-content;
+  }
+}
+@media (max-width: 767px) {
+  .catalog-row_main {
+    flex-flow: row;
+    justify-content: flex-start;
+  }
 }
 
 .catalog-row__item {
@@ -104,6 +137,12 @@
   max-height: 280px;
   width: 100%;
   height: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.catalog-row__item-img:hover {
+  opacity: 0.8;
 }
 @media (max-width: 1023px) {
   .catalog-row__item-img {
@@ -116,6 +155,11 @@
   font-size: 18px;
   font-weight: 600;
   margin-top: 20px;
+  color: #052525;
+  text-decoration: none;
+}
+.catalog-row__item-name:hover {
+  text-decoration: underline;
 }
 @media (max-width: 767px) {
   .catalog-row__item-name {
@@ -126,6 +170,11 @@
 
 .catalog-row__item-subtext {
   margin-top: 5px;
+  color: #052525;
+  text-decoration: none;
+}
+.catalog-row__item-subtext:hover {
+  text-decoration: underline;
 }
 @media (max-width: 767px) {
   .catalog-row__item-subtext {

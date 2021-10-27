@@ -74,8 +74,10 @@ function ArtistCard() {
 
                         <h2 className="title title_artists-card">Релизы</h2>
                         <div className="block-artist-card__releases-list">
-                            <List data={listData} className='catalog-row catalog-row_artist-card'
-                                  itemClass='catalog-row__item catalog-row__item_artist-card'/>
+                            <div className='catalog-row catalog-row_artist-card'>
+                                <List data={listData} itemClass='catalog-row__item catalog-row__item_artist-card'/>
+                            </div>
+
                         </div>
                     </div>
                 </div>

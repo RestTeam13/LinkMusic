@@ -84,7 +84,9 @@ function Releases() {
             <SearchRow title="релизы" bg="linear-gradient(90deg, #3434FF 0%, #FF6534 100%)"/>
             <div className="block">
                 <div className="content">
-                    <List data={listData}/>
+                    <div className='catalog-row'>
+                        <List data={listData}/>
+                    </div>
                 </div>
             </div>
             <div className="vector__bg vector__bg_10">

@@ -6,8 +6,34 @@
   .slick-track{
     display: flex;
   }
-}
 
+  .slick-dots{
+    list-style: none;
+    display: flex!important;
+    position: absolute;
+    width: 220px;
+    justify-content: space-between;
+    left: calc((100% - 220px) / 2 - 19%); //ToDo Сделать адаптивную ширину
+    bottom: 22px;
+    z-index: 5;
+  }
+  .slick-active{
+    .release-slider__pagination-item{
+      &::before {
+        position: absolute;
+        content: '';
+        width: 4px;
+        height: 4px;
+        background: #ffffff;
+        border-radius: 50%;
+        bottom: -5px;
+        left: 50%;
+      }
+
+      opacity: 1;
+    }
+  }
+}
 
 .release-slider__main-slide-bg-img {
   position: absolute;
@@ -58,42 +84,16 @@
   transform: scale(-1, 1);
 }
 
-.release-slider__pagination {
-  display: flex;
-  position: absolute;
-  width: 220px;
-  justify-content: space-between;
-  left: calc((100% - 220px) / 2 - 19%); //ToDo Сделать адаптивную ширину
-  bottom: 22px;
-  z-index: 5;
-}
-
 .release-slider__pagination-item {
   font-family: 'Bebas Neue', sans-serif;
   font-style: normal;
-  font-weight: 200;
+  font-weight: 100;
   font-size: 40px;
   letter-spacing: -0.01em;
   color: #FFFFFF;
   opacity: 0.4;
   position: relative;
   cursor: pointer;
-
-  &.active {
-
-    &::before {
-      position: absolute;
-      content: '';
-      width: 4px;
-      height: 4px;
-      background: #ffffff;
-      border-radius: 50%;
-      bottom: -5px;
-      left: 50%;
-    }
-
-    opacity: 1;
-  }
 
   &:hover {
     opacity: 1;
@@ -188,7 +188,7 @@
   margin-top: 15px;
   font-family: 'Gilroy', sans-serif;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 140%;
   font-size: 20px;
   text-transform: uppercase;
@@ -207,7 +207,7 @@
 
   font-family: 'Gilroy', sans-serif;
   font-style: normal;
-  font-weight: 800;
+  font-weight: 600;
   font-size: 14px;
   line-height: 18px;
   letter-spacing: 0.05em;

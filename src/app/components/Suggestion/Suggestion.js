@@ -2,6 +2,41 @@ import React from "react";
 import './style.css'
 import Slider from 'react-slick'
 
+const listData = [
+    {
+        classes: 'suggestion-slider__item suggestion-slider__item_1',
+        img: "images/suggestion-slider__img-1.svg",
+        title: 'Создание страницы релиза',
+        text: 'Мы предлагаем сервис по созданию страницы релиза'
+    },
+    {
+        classes: 'suggestion-slider__item suggestion-slider__item_2',
+        img: "images/suggestion-slider__img-2.png",
+        title: 'Дистрибуция',
+        text: 'Размещаем, сихнхронизируем и монетезируем музыкальный контент на всех цифровых витринах ' +
+            '(Apple Music, iTunes, Spotify, Boom, YouTube Music, Яндекс.Музыка, и т.д.)'
+    },
+    {
+        classes: 'suggestion-slider__item suggestion-slider__item_3',
+        img: "images/suggestion-slider__img-3.png",
+        title: 'Продвижение',
+        text: 'Находим, аккумулируем и развиваем целевую аудиторию исполнителей'
+    },
+    {
+        classes: 'suggestion-slider__item suggestion-slider__item_4',
+        img: "images/suggestion-slider__img-4.svg",
+        title: 'Организация мероприятий',
+        text: 'Организуем концерты, частные и корпоративные события с участием популярынх ' +
+            'российских и зарубежных исполнителей'
+    },
+    {
+        classes: 'suggestion-slider__item suggestion-slider__item_5',
+        img: "images/suggestion-slider__img-5.svg",
+        title: 'Менеджмент',
+        text: 'Оказываем полный комплекс услуг по сопровождению деятельности исполнения, ' +
+            'а так же юридическую, бухгалтерскую, административно-организационную поддержку'
+    },
+]
 
 function PrevArrow(props) { // ToDo сделать 1 слайдер (?)
     const {onClick} = props
@@ -48,67 +83,22 @@ function Suggestion() {
                         <button className="suggestion-column__btn tl_btn">Связаться с нами</button>
                     </div>
                     <Slider className="suggestion-column__slider" {...settings}>
-                        <div className="suggestion-slider__item suggestion-slider__item_1">
-                            <div className="suggestion-slider__img">
-                                <img src="images/suggestion-slider__img-1.svg" alt=""/>
-                            </div>
+                        {
+                            listData.map(({classes,img,title,text})=>{
+                                return(
+                                    <div className={classes}>
+                                        <div className="suggestion-slider__img">
+                                            <img src={img} alt=""/>
+                                        </div>
 
-                            <div className="suggestion-slider__text-part">
-                                <div className="suggestion-slider__title">Создание страницы релиза</div>
-                                <div className="suggestion-slider__text">Мы предлагаем сервис по созданию страницы релиза</div>
-                            </div>
-                        </div>
-
-                        <div className="suggestion-slider__item suggestion-slider__item_2">
-                            <div className="suggestion-slider__img">
-                                <img src="images/suggestion-slider__img-2.png" alt=""/>
-                            </div>
-                            <div className="suggestion-slider__text-part">
-                                <div className="suggestion-slider__title">Дистрибуция</div>
-                                <div className="suggestion-slider__text">Размещаем, сихнхронизируем и монетезируем
-                                    музыкальный контент на всех цифровых витринах (Apple Music, iTunes, Spotify, Boom,
-                                    YouTube Music, Яндекс.Музыка, и т.д.)
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="suggestion-slider__item suggestion-slider__item_3">
-                            <div className="suggestion-slider__img">
-                                <img src="images/suggestion-slider__img-3.png" alt=""/>
-                            </div>
-                            <div className="suggestion-slider__text-part">
-                                <div className="suggestion-slider__title">Продвижение</div>
-                                <div className="suggestion-slider__text">Находим, аккумулируем и развиваем целевую
-                                    аудиторию исполнителей
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="suggestion-slider__item suggestion-slider__item_4">
-                            <div className="suggestion-slider__img">
-                                <img src="images/suggestion-slider__img-4.svg" alt=""/>
-                            </div>
-                            <div className="suggestion-slider__text-part">
-                                <div className="suggestion-slider__title">Организация мероприятий</div>
-                                <div className="suggestion-slider__text">Организуем концерты, частные и корпоративные
-                                    события с участием популярынх российских и зарубежных исполнителей
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="suggestion-slider__item suggestion-slider__item_5">
-                            <div className="suggestion-slider__img">
-                                <img src="images/suggestion-slider__img-5.svg" alt=""/>
-                            </div>
-                            <div className="suggestion-slider__text-part">
-                                <div className="suggestion-slider__title">Менеджмент</div>
-                                <div className="suggestion-slider__text">Оказываем полный комплекс услуг по
-                                    сопровождению
-                                    деятельности исполнения, а так же юридическую, бухгалтерскую,
-                                    административно-организационную поддержку
-                                </div>
-                            </div>
-                        </div>
+                                        <div className="suggestion-slider__text-part">
+                                            <p className="suggestion-slider__title">{title}</p>
+                                            <p className="suggestion-slider__text">{text}</p>
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
                     </Slider>
                 </div>
             </div>

@@ -2,10 +2,11 @@ import React from "react";
 import ListItem from "../ListItem/ListItem";
 
 function List(props) {
-    let {className='catalog-row', itemClass} = props
+    {/* ToDo Cделать более высокий уровень абстракции*/}
+    let {itemClass} = props
 
     return (
-        <div className={className}> {/* ToDo Не нужен этот див*/}
+        <>
             {
                 props.data.map(currentItem => {
                     return (
@@ -14,8 +15,7 @@ function List(props) {
                     )
                 })
             }
-
-        </div>
+        </>
     );
 }
 

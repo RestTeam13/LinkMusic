@@ -53,7 +53,7 @@ button {
   padding: 0 20px;
   margin: 0 auto;
   color: #3D3D3D;
-  font-family: "Gilroy Regular", sans-serif;
+  font-family: "Gilroy", sans-serif;
   position: relative;
   z-index: 5;
   @media (max-width: 767px) {
@@ -64,17 +64,16 @@ button {
 
 .content_slider {
   width: 100%;
-  max-width: 1480px;
   padding: 0 20px;
   color: #3D3D3D;
-  font-family: "Gilroy Regular", sans-serif;
-  overflow-x: scroll;
-  margin: 0 auto;
+  font-family: "Gilroy", sans-serif;
   position: relative;
+  left: calc((100% - 1220px) / 2);
   z-index: 5;
 
-  &::-webkit-scrollbar {
-    display: none;
+  @media (max-width: 1220px) {
+    left: 0;
+    max-width: 1480px;
   }
 }
 
@@ -84,7 +83,6 @@ button {
 
   @media (max-width: 767px) {
     width: 100%;
-
   }
 
   @media (max-width: 767px) {
@@ -98,14 +96,14 @@ button {
   font-weight: bold;
   font-size: 65px;
   line-height: 140%;
-  
+
 }
 
 .tl_btn {
   padding: 0 10px;
-  font-family: "Gilroy Regular", sans-serif;
+  font-family: "Gilroy", sans-serif;
   font-size: 14px;
-  font-weight: 900;
+  font-weight: 700;
   text-transform: uppercase;
   color: #FFFFFF;
   background: #D4AA00;
@@ -123,6 +121,7 @@ button {
   }
 
 }
+
 .tl_btn_blue {
   background: #0000FF;
 }
@@ -182,7 +181,7 @@ button {
 .vector__bg_bottom {
   width: 592px;
   height: 597px;
-  left: -30px;
+  left: -100px;
   bottom: -270px;
 }
 

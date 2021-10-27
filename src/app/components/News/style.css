@@ -36,7 +36,7 @@
 .news__article a, .news__article p {
   font-family: "Gilroy", sans-serif;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   color: #050505;
 }
 
@@ -64,8 +64,8 @@
 }
 
 .vector__bg_7 {
-  width: 646px;
-  height: 646px;
+  width: 685px;
+  height: 708px;
   bottom: -280px;
   left: -150px;
   z-index: -1;
@@ -74,8 +74,9 @@
 .vector__bg_8 {
   width: 526px;
   height: 728px;
-  top: 0;
+  top: 30%;
   right: -160px;
+  z-index: -1;
 }
 
 @keyframes rotate-vinyl {

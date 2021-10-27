@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Bebas Neue";
   src: url("../fonts/Bebas Neue/BebasNeueBook.otf");
-  font-weight: 900;
+  font-weight: 400;
 }
 @font-face {
   font-family: "Bebas Neue";
@@ -9,43 +9,56 @@
   font-weight: 900;
 }
 @font-face {
-  font-family: "Gilroy Regular";
+  font-family: "Gilroy";
   src: url("../fonts/Gilroy/Gilroy-Regular.ttf");
+  font-weight: 500;
 }
 @font-face {
-  font-family: "Gilroy Regular";
+  font-family: "Gilroy";
   src: url("../fonts/Gilroy/Gilroy-RegularItalic.ttf");
   font-style: italic;
 }
 @font-face {
-  font-family: "Gilroy Regular";
+  font-family: "Gilroy";
   src: url("../fonts/Gilroy/Gilroy-Light.ttf");
   font-weight: 200;
 }
 @font-face {
-  font-family: "Gilroy Regular";
+  font-family: "Gilroy";
   src: url("../fonts/Gilroy/Gilroy-LightItalic.ttf");
   font-weight: 200;
   font-style: italic;
 }
 @font-face {
-  font-family: "Gilroy Regular";
+  font-family: "Gilroy";
   src: url("../fonts/Gilroy/Gilroy-Bold.ttf");
-  font-weight: 900;
+  font-weight: 700;
 }
 @font-face {
-  font-family: "Gilroy Regular";
+  font-family: "Gilroy";
   src: url("../fonts/Gilroy/Gilroy-BoldItalic.ttf");
-  font-weight: 900;
+  font-weight: 700;
   font-style: italic;
 }
 @font-face {
-  font-family: "Gilroy-Semibold";
+  font-family: "Gilroy";
   src: url("../fonts/Gilroy/Gilroy-Semibold.ttf");
+  font-weight: 600;
 }
 @font-face {
-  font-family: "Gilroy Regular Heavy";
+  font-family: "Gilroy";
   src: url("../fonts/Gilroy/Gilroy-Heavy.ttf");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Termina";
+  src: url("../fonts/Termina/Termina-Medium.otf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Termina";
+  src: url("../fonts/Termina/Termina-Demi.otf");
+  font-weight: 600;
 }
 *, *::before, *::after {
   margin: 0;
@@ -102,7 +115,7 @@ button {
   padding: 0 20px;
   margin: 0 auto;
   color: #3D3D3D;
-  font-family: "Gilroy Regular", sans-serif;
+  font-family: "Gilroy", sans-serif;
   position: relative;
   z-index: 5;
 }
@@ -115,17 +128,18 @@ button {
 
 .content_slider {
   width: 100%;
-  max-width: 1480px;
   padding: 0 20px;
   color: #3D3D3D;
-  font-family: "Gilroy Regular", sans-serif;
-  overflow-x: scroll;
-  margin: 0 auto;
+  font-family: "Gilroy", sans-serif;
   position: relative;
+  left: calc((100% - 1220px) / 2);
   z-index: 5;
 }
-.content_slider::-webkit-scrollbar {
-  display: none;
+@media (max-width: 1220px) {
+  .content_slider {
+    left: 0;
+    max-width: 1480px;
+  }
 }
 
 .content_full-screen {
@@ -153,9 +167,9 @@ button {
 
 .tl_btn {
   padding: 0 10px;
-  font-family: "Gilroy Regular", sans-serif;
+  font-family: "Gilroy", sans-serif;
   font-size: 14px;
-  font-weight: 900;
+  font-weight: 700;
   text-transform: uppercase;
   color: #FFFFFF;
   background: #D4AA00;
@@ -232,7 +246,7 @@ button {
 .vector__bg_bottom {
   width: 592px;
   height: 597px;
-  left: -30px;
+  left: -100px;
   bottom: -270px;
 }
 

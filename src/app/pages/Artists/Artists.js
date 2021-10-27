@@ -61,7 +61,9 @@ function Artists() {
             <SearchRow title="Артисты" bg="linear-gradient(90deg, #FF3B3B -15.88%, #FFCD1C 133.05%)"/>
             <div className="block">
                 <div className="content">
+                    <div className='catalog-row'>
                     <List data={listData}/>
+                    </div>
                 </div>
             </div>
             <div className="vector__bg vector__bg_10">

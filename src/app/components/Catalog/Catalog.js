@@ -1,11 +1,29 @@
 import React from "react";
 import './style.css'
 import List from "../List/List";
+import Counter from "../Counter/Counter";
+import Slider from 'react-slick'
+import ListItem from "../ListItem/ListItem";
 
 const listData = [
         {
             img: "./images/artist-list-1.png",
             trackName: "Малиновский"
+        },
+        {
+            img: "./images/artist-list-2.png",
+            trackName: "Николай Басков "
+        }, {
+            img: "./images/artist-list-3.png",
+            trackName: "BARINOV"
+        },
+        {
+            img: "./images/artist-list-4.png",
+            trackName: "Kevin McCoy"
+        },
+        {
+            img: "./images/artist-list-5.png",
+            trackName: "Элджей"
         },
         {
             img: "./images/artist-list-2.png",
@@ -50,8 +68,36 @@ const listData = [
             trackName: "Kevin McCoy - ",
             author: "Kevin McCoy ",
         },
+        {
+            img: "images/catalog-row2__item-2.png",
+            trackName: "Просто позвони",
+            author: "Малиновский",
+        },
+        {
+            img: "images/catalog-row2__item-3.png",
+            trackName: "Ты красивая",
+            author: "Николай Басков",
+        },
+        {
+            img: "images/catalog-row2__item-4.png",
+            trackName: "Забывай",
+            author: "Николай Басков",
+        },
+        {
+            img: "images/catalog-row2__item-5.png",
+            trackName: "Kevin McCoy - ",
+            author: "Kevin McCoy ",
+        },
 
     ]
+const settings = {
+    dots: false,
+    infinite: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    variableWidth: true,
+    arrows: false,
+}
 
 function Catalog() {
     return (
@@ -61,19 +107,37 @@ function Catalog() {
                     <h2 className="catalog-title">
                         В нашем каталоге
                     </h2>
-                    <div className="catalog-title__numbers">
-                        <p>5000+</p>
+                    <div className="catalog-title__numbers catalog-title__numbers_first">
+                        <Counter number='5000'/>
                         <span>Релизов</span>
                     </div>
                     <div className="catalog-title__numbers">
-                        <p>300+</p>
+                        <Counter number='300'/>
                         <span>Артистов</span>
                     </div>
                 </div>
             </div>
             <div className="content_slider">
-                <List data={listData} className='catalog-row catalog-row_main'/>
-                <List data={listData2} className='catalog-row catalog-row_main'/>
+                <Slider {...settings} className='catalog-row catalog-row_main'>
+                    {
+                        listData.map(currentItem => {
+                            return (
+                                <ListItem img={currentItem.img} trackName={currentItem.trackName} author={currentItem.author}/>
+                            )
+                        })
+                    }
+                </Slider>
+            </div>
+            <div className="content_slider">
+                <Slider {...settings} className='catalog-row catalog-row_main'>
+                    {
+                        listData2.map(currentItem => {
+                            return (
+                                <ListItem img={currentItem.img} trackName={currentItem.trackName} author={currentItem.author}/>
+                            )
+                        })
+                    }
+                </Slider>
             </div>
             <div className="content">
                 <div className="catalog-videos">

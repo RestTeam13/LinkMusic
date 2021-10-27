@@ -7,12 +7,12 @@ function ListItem(props) {
             <div className="catalog-row__item-img">
                 <img src={img} alt=""/>
             </div>
-            <p className="catalog-row__item-name">
+            <a href='#' className="catalog-row__item-name">
                 {trackName}
-            </p>
-            <p className="catalog-row__item-subtext">
+            </a>
+            <a href='#' className="catalog-row__item-subtext">
                 {author}
-            </p>
+            </a>
             <p className="catalog-row__item-years">{years}</p>
         </div>
     );

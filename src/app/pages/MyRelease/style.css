@@ -40,7 +40,7 @@
 }
 
 .albums-row__name {
-  font-family: Gilroy-Semibold;
+  font-family: "Gilroy", sans-serif;
   width: 100%;
   font-size: 18px;
   line-height: 140%;

@@ -4,6 +4,14 @@ import ReleaseSliderSlide from "./ReleaseSliderSlide";
 import ReleaseSliderMainSlide from "./ReleaseSliderMainSlide";
 import Slider from 'react-slick'
 
+const slidesData = [
+    <ReleaseSliderMainSlide/>,
+    <ReleaseSliderSlide bg='images/slide1-bg.png'/>,
+    <ReleaseSliderSlide bg='images/slide2-bg.png'/>,
+    <ReleaseSliderSlide bg='images/slide1-bg.png'/>,
+]
+
+
 function PrevArrow(props) {
     const {onClick} = props
     return (
@@ -19,15 +27,18 @@ function NextArrow(props) {
 }
 
 const settings = {
-    dots: false,
+    dots: true,
     infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     variableWidth: true,
-    prevArrow: <PrevArrow/>,
+    prevArrow: <PrevArrow/>, //ToDo сделать неактивными кнопки, если двигаться некуда
     nextArrow: <NextArrow/>,
-    centerMode: true
+    centerMode: true,
+    customPaging: i => (
+            <p className="release-slider__pagination-item">0{i + 1}</p>
+    )
 }
 
 class ReleaseSlider extends React.Component {
@@ -40,17 +51,13 @@ class ReleaseSlider extends React.Component {
         return (
             <div className='release-slider block_first-on-page'>
                 <Slider {...settings}>
-                    <ReleaseSliderMainSlide/>
-                    <ReleaseSliderSlide bg='images/slide1-bg.png'/>
-                    <ReleaseSliderSlide bg='images/slide2-bg.png'/>
-                </Slider>
+                    {
+                        slidesData.map(slide=>{
+                            return slide
+                        })
+                    }
 
-                <div className="release-slider__pagination">{/*ToDo Сделать через цикл*/}
-                    <p className="release-slider__pagination-item active">01</p>
-                    <p className="release-slider__pagination-item">02</p>
-                    <p className="release-slider__pagination-item">03</p>
-                    <p className="release-slider__pagination-item">04</p>
-                </div>
+                </Slider>
 
                 <svg className='vinyl-record__center' viewBox="0 0 290 290">
                     <linearGradient id="grad">
