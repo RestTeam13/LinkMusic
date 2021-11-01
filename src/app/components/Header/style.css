@@ -66,6 +66,7 @@
 }
 .main-menu__list-item:hover {
   color: #0000FF;
+  text-decoration: none;
 }
 
 .main-menu__burger {

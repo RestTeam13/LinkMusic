@@ -91,12 +91,13 @@
 }
 
 .catalog-row_main {
-  flex-flow: row;
+  display: block;
   margin-bottom: 0;
 }
 .catalog-row_main .slick-track {
   display: flex;
   max-width: max-content;
+  overflow: hidden;
 }
 .catalog-row_main .catalog-row__item {
   width: 280px;
@@ -107,13 +108,6 @@
     width: max-content;
   }
 }
-@media (max-width: 767px) {
-  .catalog-row_main {
-    flex-flow: row;
-    justify-content: flex-start;
-  }
-}
-
 .catalog-row__item {
   display: flex;
   flex-flow: column;

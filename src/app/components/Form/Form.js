@@ -5,6 +5,7 @@ import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
+import Captcha from "../Captcha/Captcha";
 
 
 function Form() {
@@ -68,16 +69,7 @@ function Form() {
                                            className="block-form__input block-form__input_file"/>
                                 </label>
                             </div>
-                            <div className="block-form__input-row block-form__input-row_captcha">
-                                <label htmlFor="" className="block-form__label">Введите указанное слово</label>
-                                <div className="block-form__input-row-check">
-                                    <input type="text" className="block-form__input block-form__input_check"/>
-                                    <div className="block-form__input-check-img">
-                                        <img src="images/block-form_img-check.png" alt=""/>
-                                    </div>
-                                    <div className="block-form__refresh"/>
-                                </div>
-                            </div>
+                            <Captcha/>
                             <div className="block-form__btn-row">
                                 <Button className="block-form__btn tl_btn">Отправить</Button>
                                 <p className="block-form__politic">

@@ -82,18 +82,12 @@ class ReleaseSliderMainSlide extends React.Component {
                         релизе</p>
                     <div className="release-slider__slide-character">
                         <img src="images/main-character.png" alt=""/>
-                        <img src="images/release-slider-music-services1.png" alt=""
-                             className="release-slider__music-services release-slider__music-services_1"/>
-                        <img src="images/release-slider-music-services2.png" alt=""
-                             className="release-slider__music-services release-slider__music-services_2"/>
-                        <img src="images/release-slider-music-services3.png" alt=""
-                             className="release-slider__music-services release-slider__music-services_3"/>
-                        <img src="images/release-slider-music-services4.svg" alt=""
-                             className="release-slider__music-services release-slider__music-services_4"/>
-                        <img src="images/release-slider-music-services5.svg" alt=""
-                             className="release-slider__music-services release-slider__music-services_5"/>
-                        <img src="images/release-slider-music-services6.png" alt=""
-                             className="release-slider__music-services release-slider__music-services_6"/>
+                        <img src="images/music-services1.png" alt="" className="music-services music-services_1"/>
+                        <img src="images/music-services2.png" alt="" className="music-services music-services_2"/>
+                        <img src="images/music-services3.png" alt="" className="music-services music-services_3"/>
+                        <img src="images/music-services4.svg" alt="" className="music-services music-services_4"/>
+                        <img src="images/music-services5.svg" alt="" className="music-services music-services_5"/>
+                        <img src="images/music-services6.png" alt="" className="music-services music-services_6"/>
                     </div>
                 </div>
             </div>
