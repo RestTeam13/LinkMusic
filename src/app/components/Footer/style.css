@@ -34,6 +34,10 @@
   opacity: 0.5;
   line-height: 1.5;
 }
+.footer-column__text a {
+  font-weight: 300;
+  text-decoration: underline;
+}
 .footer-column__text a:hover {
   opacity: 1;
 }

@@ -21,6 +21,10 @@ button {
   background: transparent;
 }
 
+p,h1,h2,h3,h4,h5,h6{
+  margin: 0;
+}
+
 .wrapper {
   max-width: 100vw;
   width: 100%;
@@ -96,6 +100,11 @@ button {
   font-weight: bold;
   font-size: 65px;
   line-height: 140%;
+
+  @media (max-width: 1023px) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 .tl_btn {

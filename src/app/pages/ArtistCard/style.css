@@ -94,6 +94,7 @@
 
 .artist-card__title {
   font-family: "Bebas Neue", sans-serif;
+  font-weight: 600;
   font-size: 60px;
   line-height: 1;
   position: relative;
@@ -170,6 +171,36 @@
 @media (max-width: 767px) {
   .block-artist-card__releases {
     margin-top: 50px;
+  }
+}
+
+.block-artist-card__my-releases {
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 130px;
+}
+@media (max-width: 767px) {
+  .block-artist-card__my-releases {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .tl_btn_my-releases {
+    font-size: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .tl_btn_my-releases::after {
+    content: "+";
+    color: #ffffff;
+    font-size: 25px;
   }
 }
 

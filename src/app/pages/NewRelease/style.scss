@@ -1,0 +1,16 @@
+.create-form__block_short {
+  width: 280px;
+  position: relative;
+
+  svg {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    cursor: pointer;
+    &:hover{
+      path{
+        fill: #D4AA00;
+      }
+    }
+  }
+}

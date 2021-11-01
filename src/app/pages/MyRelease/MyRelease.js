@@ -18,7 +18,7 @@ const artistProfileData = [
     }
 ]
 
-function MyRelease(props) {
+function MyRelease() {
     return (
         <div className='wrapper'>
             <Header/>
@@ -29,8 +29,9 @@ function MyRelease(props) {
                                classNameBtn={artistProfileData[0].classNameBtn}
                 />
                 <div className="content">
-                    <div className="block block-artist-card__releases">
+                    <div className="block block-artist-card__my-releases">
                         <h2 className="title title_artists-card">Мои релизы</h2>
+                        <button className="tl_btn tl_btn_my-releases">Создать новый</button>
                     </div>
                 </div>
                 <Albums/>

@@ -167,9 +167,6 @@
   right: 0;
   top: 4px;
 }
-.block-form__input-arrow img {
-  width: 100%;
-}
 
 .block-form__input-group {
   display: flex;

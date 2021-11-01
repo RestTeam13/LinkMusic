@@ -10,6 +10,8 @@ import MyRelease from "./pages/MyRelease/MyRelease";
 import Registration from "./pages/Registration/Registration";
 import Login from "./pages/Login/Login";
 import Statistics from "./pages/Statistics/Statistics";
+import CreateProfile from "./pages/СreateProfile/СreateProfile";
+import NewRelease from "./pages/NewRelease/NewRelease";
 
 function App() {
     return (
@@ -22,8 +24,11 @@ function App() {
                 <Route exact path="/card" component={ArtistCard}/>
                 <Route exact path="/my-release" component={MyRelease}/>
                 <Route exact path="/statistics" component={Statistics}/>
+                <Route exact path="/create-profile" component={CreateProfile}/>
+                <Route exact path="/new-release" component={NewRelease}/>
                 <Route exact path="/registration" component={Registration}/>
                 <Route exact path="/login" component={Login}/>
+
             </div>
         </Router>
     );

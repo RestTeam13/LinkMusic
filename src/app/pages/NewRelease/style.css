@@ -1,0 +1,15 @@
+.create-form__block_short {
+  width: 280px;
+  position: relative;
+}
+.create-form__block_short svg {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  cursor: pointer;
+}
+.create-form__block_short svg:hover path {
+  fill: #D4AA00;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -2,8 +2,7 @@ import React from "react";
 import './style.css'
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-
-
+import CountUp from "react-countup";
 
 
 function Statistics() {
@@ -95,7 +94,6 @@ function Statistics() {
                                 <div className="statistics-tablet__sorting">
                                     <div className="statistics-tablet__sorting-item">Страны</div>
                                     <div className="statistics-tablet__sorting-item">Города</div>
-
                                 </div>
                             </div>
                             <div className="statistics-tablet__main-content">
@@ -123,7 +121,6 @@ function Statistics() {
                                     <div className="statistics-tablet__name">Россия</div>
                                     <div className="statistics-tablet__number">3 123 333</div>
                                 </div>
-
                             </div>
                         </div>
 
@@ -133,11 +130,11 @@ function Statistics() {
                             </div>
                             <div className="statistics-tablet__content">
                                 <div className="statistics-tablet__column statistics-tablet__column_blue">
-                                    <span>3 1313</span>
+                                    <CountUp end={31313} duration={1}/>
                                     <p>Мужчины</p>
                                 </div>
                                 <div className="statistics-tablet__column statistics-tablet__column_orange">
-                                    <span>3 1313</span>
+                                    <CountUp end={31313} duration={1}/>
                                     <p>Женщины</p>
                                 </div>
 

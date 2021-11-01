@@ -53,7 +53,7 @@ function SoloRelease() {
                                 <div className="release-column__track-row">
                                     <div className="release-column__track-item">
                                         <div className="release-column__track-img">
-                                            <img src="images/release-slider-music-services6.png" alt=""/>
+                                            <img src="images/music-services6.png" alt=""/>
                                         </div>
                                         <div className="release-column__track-name">iTunes</div>
                                     </div>
@@ -63,7 +63,7 @@ function SoloRelease() {
 
                                     <div className="release-column__track-item">
                                         <div className="release-column__track-img release-column__track-img_apple">
-                                            <img src="images/release-slider-music-services7.svg" alt=""/>
+                                            <img src="images/music-services7.svg" alt=""/>
                                         </div>
                                         <div className="release-column__track-name">Apple Music</div>
                                     </div>
@@ -74,7 +74,7 @@ function SoloRelease() {
 
                                     <div className="release-column__track-item">
                                         <div className="release-column__track-img">
-                                            <img src="images/release-slider-music-services5.svg" alt=""/>
+                                            <img src="images/music-services5.svg" alt=""/>
                                         </div>
                                         <div className="release-column__track-name">Spotify</div>
                                     </div>
@@ -85,7 +85,7 @@ function SoloRelease() {
 
                                     <div className="release-column__track-item">
                                         <div className="release-column__track-img">
-                                            <img src="images/release-slider-music-services3.png" alt=""/>
+                                            <img src="images/music-services3.png" alt=""/>
                                         </div>
                                         <div className="release-column__track-name">Яндекс Музыка</div>
                                     </div>
@@ -96,7 +96,7 @@ function SoloRelease() {
 
                                     <div className="release-column__track-item">
                                         <div className="release-column__track-img">
-                                            <img src="images/release-slider-music-services2.png" alt=""/>
+                                            <img src="images/music-services2.png" alt=""/>
                                         </div>
                                         <div className="release-column__track-name">Сбер.Звук</div>
                                     </div>
@@ -106,7 +106,7 @@ function SoloRelease() {
                                 <div className="release-column__track-row">
                                     <div className="release-column__track-item">
                                         <div className="release-column__track-img">
-                                            <img src="images/release-slider-music-services4.svg" alt=""/>
+                                            <img src="images/music-services4.svg" alt=""/>
                                         </div>
                                         <div className="release-column__track-name">YouTube Music</div>
                                     </div>
