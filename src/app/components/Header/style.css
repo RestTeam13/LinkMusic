@@ -11,8 +11,9 @@
 }
 @media (max-width: 767px) {
   .header {
-    padding: 15px calc((100% - 320px) / 2);
+    padding: 15px calc((100% - 280px) / 2);
     height: 60px;
+    background: #ffffff;
   }
 }
 
@@ -38,7 +39,7 @@
 }
 @media (max-width: 767px) {
   .main-menu {
-    padding: 0 20px;
+    padding: 0;
   }
 }
 
@@ -104,6 +105,10 @@
   opacity: 0.5;
 }
 @media (max-width: 767px) {
+  .main-menu__personal-area-button {
+    width: 26px;
+    height: 26px;
+  }
   .main-menu__personal-area-button::before {
     content: none;
   }

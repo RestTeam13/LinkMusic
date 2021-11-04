@@ -1,6 +1,16 @@
 .block-catalog {
   padding: 0 0 150px 0;
 }
+@media (max-width: 1023px) {
+  .block-catalog {
+    padding-bottom: 200px;
+  }
+}
+@media (max-width: 767px) {
+  .block-catalog {
+    padding-bottom: 70px;
+  }
+}
 
 .catalog-title__part {
   margin-top: 154px;
@@ -15,6 +25,11 @@
     justify-content: flex-start;
   }
 }
+@media (max-width: 767px) {
+  .catalog-title__part {
+    margin-top: 70px;
+  }
+}
 
 .catalog-title {
   font-family: "Bebas Neue", sans-serif;
@@ -24,6 +39,12 @@
 @media (max-width: 1023px) {
   .catalog-title {
     width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .catalog-title {
+    font-size: 40px;
+    line-height: 1;
   }
 }
 
@@ -58,6 +79,17 @@
   }
   .catalog-title__numbers:last-child {
     margin-left: 55px;
+  }
+}
+@media (max-width: 767px) {
+  .catalog-title__numbers p {
+    font-size: 50px;
+  }
+  .catalog-title__numbers span {
+    font-size: 14px;
+  }
+  .catalog-title__numbers:last-child {
+    margin-left: 0;
   }
 }
 
@@ -108,6 +140,12 @@
     width: max-content;
   }
 }
+@media (max-width: 767px) {
+  .catalog-row_main .catalog-row__item {
+    width: 210px;
+  }
+}
+
 .catalog-row__item {
   display: flex;
   flex-flow: column;
@@ -142,6 +180,12 @@
   .catalog-row__item-img {
     max-width: 346px;
     max-height: 346px;
+  }
+}
+@media (max-width: 767px) {
+  .catalog-row__item-img {
+    max-width: 205px;
+    max-height: 205px;
   }
 }
 
@@ -195,6 +239,11 @@
   align-items: flex-start;
   width: 100%;
 }
+@media (max-width: 767px) {
+  .catalog-videos {
+    flex-flow: column;
+  }
+}
 
 .catalog-videos__item {
   max-width: 380px;
@@ -208,20 +257,34 @@
 .catalog-videos__item:last-child {
   margin-right: 0;
 }
+@media (max-width: 767px) {
+  .catalog-videos__item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
 
 .catalog-videos__img {
   max-width: 380px;
   width: 100%;
   position: relative;
 }
-.catalog-videos__img img {
-  width: 100%;
+@media (max-width: 767px) {
+  .catalog-videos__img {
+    max-width: 280px;
+  }
 }
 
 .catalog-videos__name {
   font-size: 18px;
   margin-top: 15px;
   font-weight: 600;
+}
+@media (max-width: 767px) {
+  .catalog-videos__name {
+    font-size: 14px;
+    line-height: 1;
+  }
 }
 
 .catalog-videos__youtube {

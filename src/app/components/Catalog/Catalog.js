@@ -1,6 +1,5 @@
 import React from "react";
 import './style.css'
-import List from "../List/List";
 import Counter from "../Counter/Counter";
 import Slider from 'react-slick'
 import ListItem from "../ListItem/ListItem";

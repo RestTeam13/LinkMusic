@@ -29,7 +29,7 @@ class News extends React.Component {
             <div className='block news'>
                 <div className="content">
                     <div className="vinyl-record"/>
-                    <div className="news__article-list">
+                    <div className="news__article-list"> {/*Todo Сделать через wrap*/}
                         {newsArticles.map(({img, imgAlt, date, title}) => {
                             return (<NewsArticle img={img} imgAlt={imgAlt} date={date} title={title}/>)
                         })}

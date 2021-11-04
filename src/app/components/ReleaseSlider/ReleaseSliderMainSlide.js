@@ -68,20 +68,8 @@ class ReleaseSliderMainSlide extends React.Component {
                             </defs>
                         </svg>
                     </div>
-                    <div className="release-slider__slide-half-circle">
-                        <p className="release-slider__slide-title">Расскажи <br/> всем о релизе</p>
-                        <p className="release-slider__slide-subtitle">Создай уникальную страницу
-                            своего <br/> музыкального
-                            релиза</p>
-                        <button className="release-slider__slide-button">Создать релиз</button>
-                        <div className="release-slider__img-wrapper-notes">
-                            <img src="images/notes.svg" alt=""/>
-                        </div>
-                    </div>
-                    <p className="release-slider__slide-title release-slider__slide-title_main">Расскажи <br/> всем о
-                        релизе</p>
                     <div className="release-slider__slide-character">
-                        <img src="images/main-character.png" alt=""/>
+                        <img src="images/main-character.png" alt="" className='release-slider__slide-character-img'/>
                         <img src="images/music-services1.png" alt="" className="music-services music-services_1"/>
                         <img src="images/music-services2.png" alt="" className="music-services music-services_2"/>
                         <img src="images/music-services3.png" alt="" className="music-services music-services_3"/>
@@ -89,6 +77,19 @@ class ReleaseSliderMainSlide extends React.Component {
                         <img src="images/music-services5.svg" alt="" className="music-services music-services_5"/>
                         <img src="images/music-services6.png" alt="" className="music-services music-services_6"/>
                     </div>
+                    <div className="release-slider__slide-half-circle">
+                        <img src="images/main-character.png" alt="" className='release-slider__slide-character-img'/>
+                        <p className="release-slider__slide-title">Расскажи <br/> всем о релизе</p>
+                        <div className="release-slider__img-wrapper-notes">
+                            <img src="images/notes.svg" alt=""/>
+                        </div>
+                    </div>
+                    <p className="release-slider__slide-title release-slider__slide-title_main">Расскажи <br/> всем о
+                        релизе</p>
+                    <p className="release-slider__slide-subtitle release-slider__slide-subtitle_main">Создай уникальную страницу
+                        своего <br/> музыкального
+                        релиза</p>
+                    <button className="release-slider__slide-button release-slider__slide-button_main">Создать релиз</button>
                 </div>
             </div>
         );
