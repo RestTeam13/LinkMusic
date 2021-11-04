@@ -18,7 +18,7 @@
   animation: equalizer 0.5s 0.3s cubic-bezier(0.1, -0.6, 0.2, 0) backwards;
 }
 .logo:hover .logo__lines path:nth-child(4) {
-  animation: equalizer 0.5s 0.4s cubic-bezier(0.1, -0.6, 0.2, 0) backwards;
+  animation: equalizerMin 0.5s 0.4s cubic-bezier(0.1, -0.6, 0.2, 0) backwards;
 }
 @media (max-width: 1023px) {
   .logo {
@@ -67,6 +67,15 @@
   100% {
     fill: #0000FF;
     transform: translateY(-30px) scale(1, 1.5);
+  }
+}
+@keyframes equalizerMin {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    fill: #0000FF;
+    transform: translateY(-20px) scale(1, 1.5);
   }
 }
 

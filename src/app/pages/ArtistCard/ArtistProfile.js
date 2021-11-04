@@ -34,7 +34,7 @@ function ArtistProfile(props) {
     let {artistName, presentName, label, artistLink, btn, classNameBtn} = props
     return (
             <div className="content content_full-screen">
-                <svg className="artist-card__bg-svg" width="149" height="313" viewBox="0 0 149 313" fill="none"
+                <svg className="vector__bg_right-small" width="149" height="313" viewBox="0 0 149 313" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M178.877 25.3372C178.877 25.3372 119.293 26.0007 105.278 85.6469C91.5691 143.983 46.7518 132.345 28.0592 160.622C9.36651 188.898 21.0609 238.524 71.9876 241.084C117.418 243.368 116.981 270.909 126.976 286.209C136.971 301.509 159.729 310.928 159.729 310.928"
@@ -65,7 +65,6 @@ function ArtistProfile(props) {
                 </svg>
                 <div className="artist-card__img-bg-wrapper">
                     <div className="artist-card__img-bg" style={{backgroundImage: `url(${artistBg})`}}/>
-
                 </div>
                 <div className="artist-card__wrapper">
                     <div className="artist-card__title-part">

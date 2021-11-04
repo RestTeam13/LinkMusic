@@ -2,8 +2,6 @@
 .block-release {
   align-items: center;
   position: relative;
-
-
 }
 .block-release__bg-img {
   width: 100%;
@@ -11,7 +9,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: url("#") center no-repeat;
+  background: url("#") center no-repeat fixed;
   background-size: cover;
   filter: blur(8px) brightness(50%);
 }
@@ -150,6 +148,12 @@
 
 .release-column__track-img_apple {
   max-height: 44px;
+  position: relative;
+  bottom: 5px;
+  
+  @media (max-width: 767px) {
+    bottom: 8px;
+  }
 }
 
 .release-column__track-item {

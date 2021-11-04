@@ -27,7 +27,7 @@ class AlbumItem extends React.Component{
         return (
             <div className={allClasses} onClick={this.openItem}>
                 <div className="albums-row__name">
-                    <p><span></span> Название альбома  (single / album)</p>
+                    <p><span/> Название альбома  (single / album)</p>
                 </div>
                 <div className="albums-row__content">
                     <div className="albums-row__img">
@@ -42,7 +42,7 @@ class AlbumItem extends React.Component{
                 </div>
                 <div className="albums-row__arrow">
                     <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2 2L10 10L18 2" stroke="#0000FF" stroke-width="3"/>
+                        <path d="M2 2L10 10L18 2" stroke="#0000FF" strokeWidth="3"/>
                     </svg>
                 </div>
 

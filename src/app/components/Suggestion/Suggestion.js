@@ -1,9 +1,8 @@
 import React from "react";
 import './style.css'
 import Slider from 'react-slick'
-import {Accordion} from '@material-ui/core';
-import AccordionSummary from "@material-ui/core/AccordionSummary";
-import AccordionDetails from "@material-ui/core/AccordionDetails";
+import {Accordion, AccordionSummary, AccordionDetails} from '@material-ui/core';
+
 
 const listData = [
     {
@@ -135,9 +134,9 @@ function Suggestion() {
                     </div>
                     <Slider className="suggestion-column__slider" {...settings}>
                         {
-                            !isMobile && listData.map(({classes, img, title, text}) => {
+                            !isMobile && listData.map(({classes, img, title, text}, i) => {
                                 return (
-                                    <div className={classes}>
+                                    <div className={classes} onClick={()=>{console.log(i)}}>
                                         <div className="suggestion-slider__img">
                                             <img src={img} alt=""/>
                                         </div>

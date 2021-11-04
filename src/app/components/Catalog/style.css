@@ -144,6 +144,10 @@
   .catalog-row_main .catalog-row__item {
     width: 210px;
   }
+  .catalog-row_main .catalog-row__item-img {
+    max-width: 205px;
+    max-height: 205px;
+  }
 }
 
 .catalog-row__item {
@@ -174,18 +178,12 @@
   cursor: pointer;
 }
 .catalog-row__item-img:hover {
-  opacity: 0.8;
+  transform: translateY(-20px);
 }
 @media (max-width: 1023px) {
   .catalog-row__item-img {
     max-width: 346px;
     max-height: 346px;
-  }
-}
-@media (max-width: 767px) {
-  .catalog-row__item-img {
-    max-width: 205px;
-    max-height: 205px;
   }
 }
 

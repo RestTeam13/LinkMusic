@@ -172,6 +172,14 @@
   position: relative;
   overflow: hidden;
 
+  cursor: pointer;
+  
+  @media (min-width: 768px) {
+    &:hover {
+      animation: slideAnimation 1s ease-in-out;
+    }
+  }
+
   &:last-child {
     margin-right: 0;
   }
@@ -181,14 +189,14 @@
   }
   @media (max-width: 767px) {
     width: 280px;
-    padding: 20px!important;
+    padding: 20px !important;
     margin-right: 0;
-    margin-top: 10px!important;
+    margin-top: 10px !important;
     height: auto;
     flex-flow: column-reverse;
-    border-radius: 5px!important;
-    box-shadow: none!important;
-    color: #ffffff!important;
+    border-radius: 5px !important;
+    box-shadow: none !important;
+    color: #ffffff !important;
   }
 }
 
@@ -287,10 +295,12 @@
 
 .suggestion-slider__item_5 {
   background: linear-gradient(77.81deg, #DA1AA4 -19.28%, #FF6534 100%);
+
   .suggestion-slider__img {
     left: 50%;
     transform: translate(-50%);
   }
+
   @media (max-width: 1023px) {
     .suggestion-slider__img {
       width: 147px;
@@ -306,20 +316,20 @@
   }
 }
 
-.suggestion-slider__summary{
+.suggestion-slider__summary {
   display: flex;
   margin-top: auto;
-  width: 100% ;
+  width: 100%;
   @media (max-width: 767px) {
     order: 1;
     margin-top: 0;
     align-items: center;
     justify-content: space-between;
-    padding: 0!important;
-    .MuiAccordionSummary-content{
+    padding: 0 !important;
+    .MuiAccordionSummary-content {
       margin: 0;
     }
-    .MuiAccordionSummary-content.Mui-expanded{
+    .MuiAccordionSummary-content.Mui-expanded {
       margin: 0;
       min-height: unset;
     }
@@ -340,10 +350,10 @@
   }
 }
 
-.suggestion-slider__details{
+.suggestion-slider__details {
   display: flex;
   flex-flow: column;
-  padding: 0!important;
+  padding: 0 !important;
 }
 
 .suggestion-slider__text {
@@ -365,17 +375,17 @@
 .suggestion-slider__img {
   position: absolute;
   @media (max-width: 767px) {
-    position: static!important;
-    width: 100%!important;
-    height: auto!important;
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
     order: 3;
-    margin: 15px 0 0!important;
-    transform: unset!important;
+    margin: 15px 0 0 !important;
+    transform: unset !important;
   }
 }
 
 
-.suggestion-slider__button-more{
+.suggestion-slider__button-more {
   display: none;
   @media (max-width: 767px) {
     display: flex;
@@ -384,6 +394,24 @@
     margin-top: 35px;
     max-width: 100%;
     order: 4;
+  }
+}
+
+@keyframes slideAnimation {
+  0% {
+    transform: scale(1) rotate(0);
+  }
+  25% {
+    transform: scale(0.8) rotate(15deg);
+  }
+  50% {
+    transform: scale(0.8) rotate(-15deg);
+  }
+  75% {
+    transform: scale(0.8) rotate(15deg);
+  }
+  100% {
+    transform: scale(1) rotate(0);
   }
 }
 
