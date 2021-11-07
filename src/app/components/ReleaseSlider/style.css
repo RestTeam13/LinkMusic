@@ -119,6 +119,7 @@
     width: 30px;
     height: 30px;
     bottom: 95px;
+    left: 20px;
   }
   .release-slider__button::before {
     width: 20px;

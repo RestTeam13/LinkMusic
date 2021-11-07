@@ -115,20 +115,18 @@
   display: block;
   margin-bottom: 0;
 
+  .slick-list{
+    overflow: hidden;
+  }
+
   .slick-track {
     display: flex;
-    max-width: max-content;
-    overflow: hidden;
   }
 
   .catalog-row__item {
     width: 280px;
   }
 
-  @media (max-width: 1023px) {
-    max-width: unset;
-    width: max-content;
-  }
   @media (max-width: 767px) {
     .catalog-row__item {
       width: 210px;

@@ -130,6 +130,7 @@
   border: 3px solid #D4AA00;
   border-radius: 50%;
   font-size: 0;
+  outline: none;
 
   svg {
     position: relative;
@@ -159,6 +160,17 @@
   }
 }
 
+.suggestion-slider__effect {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0.1;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(transparent 1%, #ffffff 100%);
+}
+
 .suggestion-slider__item {
   display: flex !important;
   flex-flow: column;
@@ -173,10 +185,14 @@
   overflow: hidden;
 
   cursor: pointer;
-  
+
   @media (min-width: 768px) {
     &:hover {
-      animation: slideAnimation 1s ease-in-out;
+      .suggestion-slider__effect {
+        width: 10px;
+        height: 10px;
+        transform: scale(100);
+      }
     }
   }
 

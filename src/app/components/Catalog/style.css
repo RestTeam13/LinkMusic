@@ -126,19 +126,14 @@
   display: block;
   margin-bottom: 0;
 }
+.catalog-row_main .slick-list {
+  overflow: hidden;
+}
 .catalog-row_main .slick-track {
   display: flex;
-  max-width: max-content;
-  overflow: hidden;
 }
 .catalog-row_main .catalog-row__item {
   width: 280px;
-}
-@media (max-width: 1023px) {
-  .catalog-row_main {
-    max-width: unset;
-    width: max-content;
-  }
 }
 @media (max-width: 767px) {
   .catalog-row_main .catalog-row__item {

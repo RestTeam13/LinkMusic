@@ -145,6 +145,7 @@ function Suggestion() {
                                         </div>
                                         <p className="suggestion-slider__text">{text}</p>
                                         <button className="suggestion-slider__button-more tl_btn">Подробнее</button>
+                                        <span className="suggestion-slider__effect"/>
                                     </div>
                                 )
                             })

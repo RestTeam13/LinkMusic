@@ -121,7 +121,7 @@ function Catalog() {
                     {
                         listData.map(currentItem => {
                             return (
-                                <ListItem img={currentItem.img} trackName={currentItem.trackName} author={currentItem.author}/>
+                                <ListItem img={currentItem.img} trackName={currentItem.trackName}/>
                             )
                         })
                     }
