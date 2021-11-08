@@ -82,6 +82,7 @@
 
 .suggestion-column__btn {
   margin-top: 50px;
+  z-index: 5;
   @media (max-width: 1023px) {
     margin-top: 545px;
   }

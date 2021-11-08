@@ -30,6 +30,7 @@
   font-family: "Bebas Neue", sans-serif;
   font-size: 60px;
   font-weight: 900;
+  line-height: 1;
   @media (max-width: 1023px) {
     width: 100%;
   }
@@ -95,6 +96,33 @@
   }
 }
 
+.catalog-slider__arrow {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 3px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  cursor: pointer;
+  top: calc((100% - 46px) / 2);
+  left: 0;
+  z-index: 5;
+  &:hover{
+    border-color: #0000FF;
+    path{
+      stroke: #0000FF;
+    }
+  }
+}
+
+.catalog-slider__arrow_next{
+  transform: scale(-1,1);
+  left: 75%;
+}
+
 .catalog-row {
   margin: 0 auto 110px;
   display: flex;
@@ -115,7 +143,7 @@
   display: block;
   margin-bottom: 0;
 
-  .slick-list{
+  .slick-list {
     overflow: hidden;
   }
 
@@ -132,9 +160,9 @@
       width: 210px;
     }
 
-    .catalog-row__item-img{
-        max-width: 205px;
-        max-height: 205px;
+    .catalog-row__item-img {
+      max-width: 205px;
+      max-height: 205px;
     }
   }
 }

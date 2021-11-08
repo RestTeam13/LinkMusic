@@ -278,4 +278,14 @@
   opacity: 1;
 }
 
+.help-btn_position-left {
+  position: absolute;
+  top: 56%;
+  left: 35%;
+}
+
+.block-form__input-row_with-help:focus + .help-btn {
+  display: none;
+}
+
 /*# sourceMappingURL=style.css.map */

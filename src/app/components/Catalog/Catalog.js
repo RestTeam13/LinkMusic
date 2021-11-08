@@ -4,6 +4,7 @@ import Counter from "../Counter/Counter";
 import Slider from 'react-slick'
 import ListItem from "../ListItem/ListItem";
 
+
 const listData = [
         {
             img: "./images/artist-list-1.png",
@@ -95,7 +96,7 @@ const settings = {
     slidesToShow: 1,
     slidesToScroll: 1,
     variableWidth: true,
-    arrows: false,
+    arrows: false
 }
 
 function Catalog() {
@@ -172,29 +173,6 @@ function Catalog() {
             </div>
             <div className="vector__bg vector__bg_1">
                 <img src="images/vector-bg_catalog-left.svg" alt=""/>
-            </div>
-            <div className="vector__bg vector__bg_bottom">
-                <svg width="593" height="598" viewBox="0 0 593 598" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M53.9867 161.856C53.9867 161.856 149.49 102.873 231.9 183.685C312.502 262.72 372.107 199.037 430.351 225.207C488.595 251.376 519.988 342.146 441.511 397.536C371.505 446.949 399.953 490.344 399.46 524.767C398.968 559.19 372.238 597.115 372.238 597.115"
-                        stroke="url(#paint0_linear_1222:3)" strokeWidth="3" strokeMiterlimit="10"/>
-                    <path
-                        d="M317.076 508.093C317.076 508.093 349.629 406.43 409.356 364.628C469.083 322.825 438.438 279.245 417.782 270.075C374.934 251.067 302.207 310.137 248.866 263.994C208.789 229.304 185.17 153.223 100.213 183.383"
-                        stroke="url(#paint1_linear_1222:3)" strokeWidth="3" strokeMiterlimit="10"/>
-                    <defs>
-                        <linearGradient id="paint0_linear_1222:3" x1="110.208" y1="107.18" x2="482.446" y2="489.935"
-                                        gradientUnits="userSpaceOnUse">
-                            <stop stopColor="#3434FF"/>
-                            <stop offset="1" stopColor="#FF6534"/>
-                        </linearGradient>
-                        <linearGradient id="paint1_linear_1222:3" x1="135.684" y1="148.886" x2="403.387" y2="424.153"
-                                        gradientUnits="userSpaceOnUse">
-                            <stop stopColor="#3434FF"/>
-                            <stop offset="1" stopColor="#FF6534"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
-
             </div>
             <div className="vector__bg vector__bg_2">
                 <svg width="531" height="732" viewBox="0 0 531 732" fill="none" xmlns="http://www.w3.org/2000/svg">

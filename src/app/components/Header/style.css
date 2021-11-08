@@ -118,7 +118,7 @@
   margin-left: auto;
   margin-right: 20px;
   width: 18px;
-  height: 11px;
+  height: 18px;
   outline: none;
 }
 .main-menu__burger:hover rect {
@@ -136,6 +136,8 @@
 @media (max-width: 767px) {
   .main-menu__burger {
     display: block;
+    position: relative;
+    top: 3px;
   }
 }
 
