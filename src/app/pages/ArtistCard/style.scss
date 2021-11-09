@@ -177,6 +177,9 @@
 }
 
 .tl_btn_my-releases {
+  svg{
+    display: none;
+  }
   @media (max-width: 767px) {
     font-size: 0;
     width: 34px;
@@ -186,11 +189,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    &::after {
-      content: '+';
-      color: #ffffff;
-      font-size: 25px;
+    svg{
+      display: block;
     }
   }
 }
@@ -204,10 +204,8 @@
 }
 
 .block-artist-card__releases-list {
-  @media (max-width: 1023px) {
-    display: flex;
-    width: 100%;
-    overflow: scroll;
+  @media (max-width: 1023px) and (min-width: 768px) {
+    display: block;
   }
   @media (max-width: 767px) {
     display: flex;
@@ -216,9 +214,15 @@
 }
 
 .catalog-row_artist-card {
-  @media (max-width: 1023px) {
-    max-width: unset;
-    flex-flow: row;
+  @media (max-width: 1023px) and (min-width: 768px) {
+    max-width: 1000px;
+    .slick-list {
+      overflow: hidden;
+    }
+
+    .slick-track{
+      display: flex;
+    }
   }
   @media (max-width: 767px) {
     flex-flow: column;

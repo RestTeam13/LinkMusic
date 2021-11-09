@@ -172,6 +172,9 @@
   }
 }
 
+.tl_btn_my-releases svg {
+  display: none;
+}
 @media (max-width: 767px) {
   .tl_btn_my-releases {
     font-size: 0;
@@ -183,10 +186,8 @@
     justify-content: center;
     align-items: center;
   }
-  .tl_btn_my-releases::after {
-    content: "+";
-    color: #ffffff;
-    font-size: 25px;
+  .tl_btn_my-releases svg {
+    display: block;
   }
 }
 
@@ -200,11 +201,9 @@
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1023px) and (min-width: 768px) {
   .block-artist-card__releases-list {
-    display: flex;
-    width: 100%;
-    overflow: scroll;
+    display: block;
   }
 }
 @media (max-width: 767px) {
@@ -214,10 +213,15 @@
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1023px) and (min-width: 768px) {
   .catalog-row_artist-card {
-    max-width: unset;
-    flex-flow: row;
+    max-width: 1000px;
+  }
+  .catalog-row_artist-card .slick-list {
+    overflow: hidden;
+  }
+  .catalog-row_artist-card .slick-track {
+    display: flex;
   }
 }
 @media (max-width: 767px) {

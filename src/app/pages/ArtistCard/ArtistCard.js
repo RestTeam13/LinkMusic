@@ -4,6 +4,8 @@ import Header from "../../components/Header/Header";
 import ArtistProfile from "./ArtistProfile";
 import List from "../../components/List/List";
 import Footer from "../../components/Footer/Footer";
+import Slider from 'react-slick'
+import ListItem from "../../components/ListItem/ListItem";
 
 const listData = [
     {
@@ -45,8 +47,6 @@ const listData = [
         author: 'Сингл'
     },
 ]
-
-
 const artistProfileData = [
     {
         artistName: "Juicy WRLD",
@@ -58,6 +58,18 @@ const artistProfileData = [
 
     }
 ]
+
+const settings = {
+    dots: false,
+    infinite: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    variableWidth: true,
+    arrows: false,
+}
+
+const tablet = window.matchMedia('(max-width: 1023px) and (min-width: 768px)').matches
+
 
 function ArtistCard() {
     return (
@@ -74,10 +86,23 @@ function ArtistCard() {
 
                         <h2 className="title title_artists-card">Релизы</h2>
                         <div className="block-artist-card__releases-list">
-                            <div className='catalog-row catalog-row_artist-card'>
-                                <List data={listData} itemClass='catalog-row__item catalog-row__item_artist-card'/>
-                            </div>
-
+                            {
+                                !tablet && <div {...settings} className='catalog-row catalog-row_artist-card'>
+                                    <List data={listData} itemClass='catalog-row__item catalog-row__item_artist-card'/>
+                                </div>
+                            }
+                            {
+                                tablet && <Slider {...settings} className='catalog-row catalog-row_artist-card'>
+                                    {
+                                        listData.map(currentItem => {
+                                            return (
+                                                <ListItem img={currentItem.img} trackName={currentItem.trackName} author={currentItem.author}
+                                                          className='catalog-row__item catalog-row__item_artist-card'/>
+                                            )
+                                        })
+                                    }
+                                </Slider>
+                            }
                         </div>
                     </div>
                 </div>

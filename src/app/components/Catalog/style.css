@@ -50,20 +50,18 @@
 }
 
 .catalog-title__numbers {
-  font-size: 70px;
-  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  background: #3434ff;
   background: linear-gradient(90deg, #3434ff 0%, #ff6534 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1;
-  display: flex;
-  flex-flow: column;
+  display: block;
 }
 .catalog-title__numbers p {
   font-family: Termina, sans-serif;
+  font-size: 70px;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 .catalog-title__numbers p::after {
   content: "+";
@@ -112,11 +110,13 @@
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  border: 3px solid #ffffff;
+  border: 3px solid #D4AA00;
+  background: #ffffff;
   cursor: pointer;
   top: calc((100% - 46px) / 2);
   left: 0;
   z-index: 5;
+  opacity: 0;
 }
 .catalog-slider__arrow:hover {
   border-color: #0000FF;
@@ -127,7 +127,12 @@
 
 .catalog-slider__arrow_next {
   transform: scale(-1, 1);
-  left: 75%;
+  left: 77%;
+}
+@media (max-width: 1220px) {
+  .catalog-slider__arrow_next {
+    left: 95%;
+  }
 }
 
 .catalog-row {
@@ -137,11 +142,6 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-}
-@media (max-width: 1023px) {
-  .catalog-row {
-    max-width: 750px;
-  }
 }
 @media (max-width: 767px) {
   .catalog-row {
@@ -162,6 +162,9 @@
 }
 .catalog-row_main .catalog-row__item {
   width: 280px;
+}
+.catalog-row_main:hover .catalog-slider__arrow {
+  opacity: 1;
 }
 @media (max-width: 767px) {
   .catalog-row_main .catalog-row__item {

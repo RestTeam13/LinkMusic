@@ -4,6 +4,27 @@ import Counter from "../Counter/Counter";
 import Slider from 'react-slick'
 import ListItem from "../ListItem/ListItem";
 
+function PrevArrow(props) {
+    const {onClick} = props
+    return (
+        <button className='catalog-slider__arrow catalog-slider__arrow_prev' onClick={onClick}>
+            <svg width="14" height="21" viewBox="0 0 14 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.9766 19.0671L3.47656 10.5671L11.9766 2.06714" stroke="#D4AA00" strokeWidth="4"/>
+            </svg>
+        </button>
+    )
+}
+
+function NextArrow(props) {
+    const {onClick} = props
+    return (
+        <button className='catalog-slider__arrow catalog-slider__arrow_next' onClick={onClick}>
+            <svg width="14" height="21" viewBox="0 0 14 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.9766 19.0671L3.47656 10.5671L11.9766 2.06714" stroke="#D4AA00" strokeWidth="4"/>
+            </svg>
+        </button>
+    )
+}
 
 const listData = [
         {
@@ -96,7 +117,9 @@ const settings = {
     slidesToShow: 1,
     slidesToScroll: 1,
     variableWidth: true,
-    arrows: false
+    prevArrow: <PrevArrow/>,
+    nextArrow: <NextArrow/>,
+
 }
 
 function Catalog() {

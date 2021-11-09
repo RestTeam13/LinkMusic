@@ -101,26 +101,25 @@ function Suggestion() {
                             фронтендерами, когда нужно быстро заполнить макеты или прототипы содержимым.</p>
                         <button className="suggestion-column__btn tl_btn">Связаться с нами</button>
                         <div className="vector__bg vector__bg_5">
-                            <svg width="594" height="638" viewBox="0 0 594 638" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M365.086 551.221C383.049 523.726 382.263 474.232 463.905 470.127C555.424 465.528 576.44 376.346 542.848 325.531C509.255 274.716 428.715 295.63 404.079 190.795C378.893 83.606 271.816 82.4137 271.816 82.4137C220.009 82.4137 241.009 102.381 202.009 114.881C163.009 127.381 145.513 128.381 136.509 120.881C127.506 113.381 90.0082 56.8808 93.0082 92.3808C96.0082 127.881 94.0112 112.881 96.0082 145.381C98.0052 177.881 55.0124 228.381 52.0088 289.381C49.0052 350.381 56.8119 379.881 66.5094 396.381C76.207 412.881 97.5191 424.635 136.509 447.381C175.499 470.127 181.009 509.881 162.509 539.381C144.009 568.881 116.019 586.881 144.009 610.381C171.999 633.881 245.499 604.881 257.009 604.881C268.519 604.881 285.453 601.905 306.226 595.643C326.999 589.381 347.124 578.715 365.086 551.221Z" stroke="url(#paint0_linear_1347:6)" strokeWidth="3" strokeMiterlimit="10"/>
-                                <path d="M307.191 495.741C316.293 471.601 385.307 430.41 454.779 427.194C524.252 423.978 521.79 373.214 509.82 355.281C484.983 318.096 396.22 328.596 376.773 264.185C362.172 215.773 366.683 125.327 298.09 123.354C229.497 121.381 258.496 127.881 225.497 151.381C192.499 174.881 171.497 169.881 158.997 161.881C146.496 153.881 143.997 146.881 129.997 157.381C115.997 167.881 119.497 182.381 115.997 202.881C112.497 223.381 93.9965 299.48 97.9969 327.381C101.997 355.281 113.995 374.881 138.497 395.381C162.998 415.881 211.996 410.381 229.497 443.381C246.998 476.381 195.496 519.881 215.997 539.381C236.498 558.881 267.996 561.381 290.497 547.881C312.998 534.381 298.09 519.881 307.191 495.741Z" stroke="url(#paint1_linear_1347:6)" strokeWidth="3" strokeMiterlimit="10"/>
-                                <path d="M312.471 442.679C330.445 441.478 418.73 432.361 396.208 386.502C370.422 333.952 337.428 341.772 353.989 264.913C359.925 237.605 342.026 136.151 284.865 169.361C284.865 169.361 272.498 187.881 252.499 198.881C232.499 209.881 214.999 221.381 194.5 221.381C174.001 221.381 165.498 186.381 147.498 198.881C129.498 211.381 123.453 273.381 129.498 291.881C135.544 310.381 126.498 353.381 160.499 375.881C194.5 398.381 221.499 417.381 236.999 417.881C252.499 418.381 250.133 413.381 267.499 390.381C284.865 367.381 294.498 443.881 312.471 442.679Z" stroke="url(#paint2_linear_1347:6)" strokeWidth="3" strokeMiterlimit="10"/>
+                            <svg width="392" height="561" viewBox="0 0 392 561" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M70.3064 45.5329C70.3064 45.5329 177.383 46.7252 202.57 153.914C227.206 258.749 307.746 237.835 341.338 288.65C374.93 339.465 353.915 428.647 262.396 433.246C180.754 437.351 181.539 486.845 163.577 514.34C145.615 541.834 104.717 558.762 104.717 558.762" stroke="url(#paint0_linear_599:66)" stroke-width="3" stroke-miterlimit="10"/>
+                                <path d="M105.683 458.86C105.683 458.86 183.798 393.529 253.271 390.313C322.743 387.097 320.282 336.333 308.312 318.401C283.475 281.215 194.712 291.715 175.264 227.304C160.663 178.892 180.449 105.516 96.5811 86.4733" stroke="url(#paint1_linear_599:66)" stroke-width="3" stroke-miterlimit="10"/>
+                                <path d="M110.961 405.799C110.961 405.799 217.219 395.48 194.697 349.621C168.912 297.071 135.917 304.892 152.478 228.033C158.414 200.725 140.515 99.2704 83.3549 132.48" stroke="url(#paint2_linear_599:66)" stroke-width="3" stroke-miterlimit="10"/>
                                 <defs>
-                                    <linearGradient id="paint0_linear_1347:6" x1="240.403" y1="50.5043" x2="353.095" y2="586.925" gradientUnits="userSpaceOnUse">
-                                        <stop stopColor="#3434FF"/>
-                                        <stop offset="1" stopColor="#FF6534"/>
+                                    <linearGradient id="paint0_linear_599:66" x1="143.523" y1="30.1515" x2="248.24" y2="528.611" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#3434FF"/>
+                                        <stop offset="1" stop-color="#FF6534"/>
                                     </linearGradient>
-                                    <linearGradient id="paint1_linear_1347:6" x1="259.379" y1="123.835" x2="346.672" y2="539.355" gradientUnits="userSpaceOnUse">
-                                        <stop stopColor="#3434FF"/>
-                                        <stop offset="1" stopColor="#FF6534"/>
+                                    <linearGradient id="paint1_linear_599:66" x1="142.775" y1="76.7687" x2="218.085" y2="435.247" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#3434FF"/>
+                                        <stop offset="1" stop-color="#FF6534"/>
                                     </linearGradient>
-                                    <linearGradient id="paint2_linear_1347:6" x1="227.944" y1="178.516" x2="285.147" y2="450.806" gradientUnits="userSpaceOnUse">
-                                        <stop stopColor="#3434FF"/>
-                                        <stop offset="1" stopColor="#FF6534"/>
+                                    <linearGradient id="paint2_linear_599:66" x1="100.498" y1="126.077" x2="157.471" y2="397.272" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#3434FF"/>
+                                        <stop offset="1" stop-color="#FF6534"/>
                                     </linearGradient>
                                 </defs>
                             </svg>
-
                         </div>
                     </div>
                     <Slider className="suggestion-column__slider" {...settings}>
@@ -163,6 +162,27 @@ function Suggestion() {
                         }
                     </Slider>
                 </div>
+            </div>
+            <div className="vector__bg vector__bg_5 vector__bg_5_2">
+                <svg width="392" height="561" viewBox="0 0 392 561" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M70.3064 45.5329C70.3064 45.5329 177.383 46.7252 202.57 153.914C227.206 258.749 307.746 237.835 341.338 288.65C374.93 339.465 353.915 428.647 262.396 433.246C180.754 437.351 181.539 486.845 163.577 514.34C145.615 541.834 104.717 558.762 104.717 558.762" stroke="url(#paint4_linear_599:66)" stroke-width="3" stroke-miterlimit="10"/>
+                    <path d="M105.683 458.86C105.683 458.86 183.798 393.529 253.271 390.313C322.743 387.097 320.282 336.333 308.312 318.401C283.475 281.215 194.712 291.715 175.264 227.304C160.663 178.892 180.449 105.516 96.5811 86.4733" stroke="url(#paint5_linear_599:66)" stroke-width="3" stroke-miterlimit="10"/>
+                    <path d="M110.961 405.799C110.961 405.799 217.219 395.48 194.697 349.621C168.912 297.071 135.917 304.892 152.478 228.033C158.414 200.725 140.515 99.2704 83.3549 132.48" stroke="url(#paint6_linear_599:66)" stroke-width="3" stroke-miterlimit="10"/>
+                    <defs>
+                        <linearGradient id="paint4_linear_599:66" x1="143.523" y1="30.1515" x2="248.24" y2="528.611" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#3434FF"/>
+                            <stop offset="1" stop-color="#FF6534"/>
+                        </linearGradient>
+                        <linearGradient id="paint5_linear_599:66" x1="142.775" y1="76.7687" x2="218.085" y2="435.247" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#3434FF"/>
+                            <stop offset="1" stop-color="#FF6534"/>
+                        </linearGradient>
+                        <linearGradient id="paint6_linear_599:66" x1="100.498" y1="126.077" x2="157.471" y2="397.272" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#3434FF"/>
+                            <stop offset="1" stop-color="#FF6534"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
             </div>
         </div>
     );

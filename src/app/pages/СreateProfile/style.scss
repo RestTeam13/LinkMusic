@@ -282,6 +282,11 @@
   position: absolute;
   top: 56%;
   left: 35%;
+  
+  @media (max-width: 767px) {
+    top: 53%;
+    left: 90%;
+  }
 }
 
 .block-form__input-row_with-help{

@@ -283,6 +283,12 @@
   top: 56%;
   left: 35%;
 }
+@media (max-width: 767px) {
+  .help-btn_position-left {
+    top: 53%;
+    left: 90%;
+  }
+}
 
 .block-form__input-row_with-help:focus + .help-btn {
   display: none;
