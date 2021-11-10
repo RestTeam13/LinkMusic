@@ -4,12 +4,15 @@
 }
 
 .block-release__bg-img {
-  width: 100%;
-  height: 100%;
-  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
   top: 0;
   left: 0;
-  background: url("#") center no-repeat fixed;
+  background: url("#") center center no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
 }
 .block-release__bg-img::before {

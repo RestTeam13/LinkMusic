@@ -121,11 +121,8 @@
 
 .catalog-slider__arrow_next{
   transform: scale(-1,1);
-  left: 77%;
-  
-  @media (max-width: 1220px) {
-    left: 95%;
-  }
+  left: unset;
+  right: 4.5%;
 }
 
 .catalog-row {
@@ -144,6 +141,7 @@
 .catalog-row_main {
   display: block;
   margin-bottom: 0;
+  position: relative;
 
   .slick-list {
     overflow: hidden;

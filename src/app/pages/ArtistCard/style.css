@@ -230,8 +230,10 @@
   }
 }
 
-.catalog-row__item_artist-card {
-  min-width: 253px;
+@media (max-width: 1023px) {
+  .catalog-row__item_artist-card {
+    min-width: 253px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -97,7 +97,8 @@
 
 .suggestion-column__slider {
   display: block;
-  width: 55%;
+  width: calc(100% - 367px);
+  position: relative;
 
   .slick-track {
     display: flex;

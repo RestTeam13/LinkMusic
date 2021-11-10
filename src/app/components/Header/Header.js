@@ -33,13 +33,13 @@ class Header extends React.Component {
     }
 
     componentDidMount = () => { //ToDo оптимизировать
-        window.addEventListener('scroll', (event) => {
+        window.addEventListener('scroll', () => {
             this.addBg()
         });
     };
 
     componentWillUnmount = () => {
-        window.removeEventListener('scroll', (event) => {
+        window.removeEventListener('scroll', () => {
             this.addBg()
         });
     };
@@ -65,7 +65,7 @@ class Header extends React.Component {
                             <svg width="380" height="380" viewBox="0 0 380 380" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="190" cy="190" r="125" stroke="#0000FF" strokeWidth="130"/>
-                                <mask id="mask0_925:543" style={{"mask-type": "alpha"}} maskUnits="userSpaceOnUse" x="0"
+                                <mask id="mask0_925:543" style={{"maskType": "alpha"}} maskUnits="userSpaceOnUse" x="0"
                                       y="0" width="380" height="380">
                                     <circle cx="190" cy="190" r="125" stroke="white" strokeWidth="130"/>
                                 </mask>

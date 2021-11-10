@@ -119,7 +119,14 @@ const settings = {
     variableWidth: true,
     prevArrow: <PrevArrow/>,
     nextArrow: <NextArrow/>,
-
+    responsive: [
+        {
+            breakpoint: 768,
+            settings:{
+                arrows: false
+            }
+        },
+    ]
 }
 
 function Catalog() {
