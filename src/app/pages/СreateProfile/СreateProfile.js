@@ -82,7 +82,7 @@ function CreateProfile() {
                                 </div>
 
                                 <div className="create-form__block">
-                                    <div className="create-form__title create-form__title_mt30">Ссылки на соц. сети</div>
+                                    <div className="create-form__title create-form__title_mt30">Ссылки на соцсети</div>
                                     <input type="text" className="block-form__input-row" placeholder='Вставьте ссылку'/>
                                     <input type="text" className="block-form__input-row" placeholder='Вставьте ссылку'/>
                                     <input type="text" className="block-form__input-row" placeholder='Вставьте ссылку'/>
@@ -90,7 +90,7 @@ function CreateProfile() {
                                 </div>
                                 <div className="create-form__block">
 
-                                    <div className="create-form__title create-form__title_mt30">Кнопка "Заказать выступление"</div>
+                                    <div className="create-form__title create-form__title_mt30">Кнопка «Заказать выступление»</div>
 
                                     <div className="create-form__radio-row">
                                         <div className="create-form__radio-item">
