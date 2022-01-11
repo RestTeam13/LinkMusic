@@ -28,7 +28,6 @@ function App() {
                 <Route exact path="/new-release" component={NewRelease}/>
                 <Route exact path="/registration" component={Registration}/>
                 <Route exact path="/login" component={Login}/>
-
             </div>
         </Router>
     );

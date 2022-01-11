@@ -113,9 +113,9 @@ class Header extends React.Component {
                     </button>
 
                     <div className="main-menu__personal-area">
-                        <button className='main-menu__personal-area-button'>
+                        <a href='/login' className='main-menu__personal-area-button'>
                             <img src={avatar} alt=""/>
-                        </button>
+                        </a>
                     </div>
                 </nav>
             </header>
