@@ -9,7 +9,10 @@
     "dev": "cross-env NODE_ENV=development PORT=3001 DISABLE_LOGGING=true keystone dev",
     "build": "cross-env NODE_ENV=production keystone build",
     "start": "cross-env NODE_ENV=production keystone start",
-    "create-tables": "cross-env keystone create-tables"
+    "create-tables": "cross-env keystone create-tables",
+
+    "client": "npm run start --prefix client",
+    "start:dev": "concurrently \"npm run dev\" \"npm run client\""
   },
   "dependencies": {
     "@keystonejs/adapter-knex": "^13.3.2",
@@ -21,5 +24,8 @@
     "@keystonejs/keystone": "^19.3.3",
     "cross-env": "^7.0.3",
     "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0"
   }
 }
