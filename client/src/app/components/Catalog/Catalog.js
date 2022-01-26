@@ -28,36 +28,45 @@ function NextArrow(props) {
 
 const listData = [
         {
+            id: 0,
             img: "./images/artist-list-1.png",
             trackName: "Малиновский"
         },
         {
+            id: 1,
             img: "./images/artist-list-2.png",
             trackName: "Николай Басков "
         }, {
+            id: 2,
             img: "./images/artist-list-3.png",
             trackName: "BARINOV"
         },
         {
+            id: 3,
             img: "./images/artist-list-4.png",
             trackName: "Kevin McCoy"
         },
         {
+            id: 4,
             img: "./images/artist-list-5.png",
             trackName: "Элджей"
         },
         {
+            id: 5,
             img: "./images/artist-list-2.png",
             trackName: "Николай Басков "
         }, {
+            id: 6,
             img: "./images/artist-list-3.png",
             trackName: "BARINOV"
         },
         {
+            id: 7,
             img: "./images/artist-list-4.png",
             trackName: "Kevin McCoy"
         },
         {
+            id: 8,
             img: "./images/artist-list-5.png",
             trackName: "Элджей"
         },
@@ -65,46 +74,55 @@ const listData = [
     ],
     listData2 = [
         {
+            id:9,
             img: "images/catalog-row2__item-1.png",
             trackName: "Забери меня",
             author: "Малиновский",
         },
         {
+            id:8,
             img: "images/catalog-row2__item-2.png",
             trackName: "Просто позвони",
             author: "Малиновский",
         },
         {
+            id:7,
             img: "images/catalog-row2__item-3.png",
             trackName: "Ты красивая",
             author: "Николай Басков",
         },
         {
+            id:6,
             img: "images/catalog-row2__item-4.png",
             trackName: "Забывай",
             author: "Николай Басков",
         },
         {
+            id:5,
             img: "images/catalog-row2__item-5.png",
             trackName: "Kevin McCoy - ",
             author: "Kevin McCoy ",
         },
         {
+            id:4,
             img: "images/catalog-row2__item-2.png",
             trackName: "Просто позвони",
             author: "Малиновский",
         },
         {
+            id:3,
             img: "images/catalog-row2__item-3.png",
             trackName: "Ты красивая",
             author: "Николай Басков",
         },
         {
+            id:2,
             img: "images/catalog-row2__item-4.png",
             trackName: "Забывай",
             author: "Николай Басков",
         },
         {
+            id:1,
             img: "images/catalog-row2__item-5.png",
             trackName: "Kevin McCoy - ",
             author: "Kevin McCoy ",
@@ -152,7 +170,7 @@ function Catalog() {
                     {
                         listData.map(currentItem => {
                             return (
-                                <ListItem img={currentItem.img} trackName={currentItem.trackName}/>
+                                <ListItem key={currentItem.id} img={currentItem.img} trackName={currentItem.trackName}/>
                             )
                         })
                     }
@@ -163,7 +181,7 @@ function Catalog() {
                     {
                         listData2.map(currentItem => {
                             return (
-                                <ListItem img={currentItem.img} trackName={currentItem.trackName} author={currentItem.author}/>
+                                <ListItem key={currentItem.id} img={currentItem.img} trackName={currentItem.trackName} author={currentItem.author}/>
                             )
                         })
                     }

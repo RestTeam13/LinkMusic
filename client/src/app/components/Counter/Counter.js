@@ -22,6 +22,7 @@ function CounterText(props) {
     const {endNumber} = props
     const countUpRef = React.useRef(null);
     let redrawCount = false
+    // eslint-disable-next-line no-unused-vars
     const countUp = useCountUp({
         ref: countUpRef,
         start: 0,
@@ -34,5 +35,6 @@ function CounterText(props) {
         <p ref={countUpRef}/>
     );
 
-};
+}
+
 export default Counter

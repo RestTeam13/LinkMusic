@@ -29,7 +29,7 @@ keystone.createList('NewsArticle', NewsArticleSchema)
 
 const authStrategy = keystone.createAuthStrategy({
   type: PasswordAuthStrategy,
-  list: 'User'
+  list: 'User',
 })
 
 module.exports = {
@@ -38,13 +38,12 @@ module.exports = {
     new GraphQLApp(),
     new AdminUIApp({
       name: 'Link Music',
-      enableDefaultRoute: true,
       authStrategy
     }),
     new StaticApp({
-      path: './',
+      path: '/',
       src: 'public',
-      fallback: 'index.html',
+      fallback: 'nf.html',
     }),
   ],
 };

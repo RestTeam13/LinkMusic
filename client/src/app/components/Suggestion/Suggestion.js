@@ -6,12 +6,14 @@ import {Accordion, AccordionSummary, AccordionDetails} from '@material-ui/core';
 
 const listData = [
     {
+        id:0,
         classes: 'suggestion-slider__item suggestion-slider__item_1',
         img: "images/suggestion-slider__img-1.svg",
         title: 'Создание страницы релиза',
         text: 'Мы предлагаем сервис по созданию страницы релиза'
     },
     {
+        id:1,
         classes: 'suggestion-slider__item suggestion-slider__item_2',
         img: "images/suggestion-slider__img-2.png",
         title: 'Дистрибуция',
@@ -19,12 +21,14 @@ const listData = [
             '(Apple Music, iTunes, Spotify, Boom, YouTube Music, Яндекс.Музыка, и т.д.)'
     },
     {
+        id:12,
         classes: 'suggestion-slider__item suggestion-slider__item_3',
         img: "images/suggestion-slider__img-3.png",
         title: 'Продвижение',
         text: 'Находим, аккумулируем и развиваем целевую аудиторию исполнителей'
     },
     {
+        id:123,
         classes: 'suggestion-slider__item suggestion-slider__item_4',
         img: "images/suggestion-slider__img-4.svg",
         title: 'Организация мероприятий',
@@ -32,6 +36,7 @@ const listData = [
             'российских и зарубежных исполнителей'
     },
     {
+        id:124,
         classes: 'suggestion-slider__item suggestion-slider__item_5',
         img: "images/suggestion-slider__img-5.svg",
         title: 'Менеджмент',
@@ -124,9 +129,9 @@ function Suggestion() {
                     </div>
                     <Slider className="suggestion-column__slider" {...settings}>
                         {
-                            !isMobile && listData.map(({classes, img, title, text}, i) => {
+                            !isMobile && listData.map(({classes, img, title, text, id}, i) => {
                                 return (
-                                    <div className={classes} onClick={()=>{console.log(i)}}>
+                                    <div key={id} className={classes} onClick={()=>{console.log(i)}}>
                                         <div className="suggestion-slider__img">
                                             <img src={img} alt=""/>
                                         </div>
@@ -141,9 +146,9 @@ function Suggestion() {
                             })
                         }
                         {
-                            isMobile && listData.map(({classes, img, title, text}) => {
+                            isMobile && listData.map(({classes, img, title, text, id}) => {
                                 return (
-                                    <Accordion className={classes}>
+                                    <Accordion key={id} className={classes}>
                                         <AccordionSummary className="suggestion-slider__summary"
                                                           expandIcon={<ExpandSlideIcon/>}>
                                             <p className="suggestion-slider__title">{title}</p>

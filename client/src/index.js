@@ -2,14 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app/App';
 import {ApolloClient, InMemoryCache, ApolloProvider} from "@apollo/client";
+import {BrowserRouter} from "react-router-dom";
 
 const client = new ApolloClient({
-    uri: process.env.URI,
+    uri: '/admin/api',
     cache: new InMemoryCache()
 });
 
 ReactDOM.render(
     <ApolloProvider client={client}>
-        <App />
+        <BrowserRouter>
+            <App/>
+        </BrowserRouter>
     </ApolloProvider>,
     document.getElementById('root'));

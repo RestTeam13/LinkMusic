@@ -5,10 +5,10 @@ import ReleaseSliderMainSlide from "./ReleaseSliderMainSlide";
 import Slider from 'react-slick'
 
 const slidesData = [
-    <ReleaseSliderMainSlide/>,
-    <ReleaseSliderSlide bg='images/slide1-bg.png'/>,
-    <ReleaseSliderSlide bg='images/slide2-bg.png'/>,
-    <ReleaseSliderSlide bg='images/slide1-bg.png'/>,
+    <ReleaseSliderMainSlide key='0'/>,
+    <ReleaseSliderSlide key='1' bg='images/slide1-bg.png'/>,
+    <ReleaseSliderSlide key='2' bg='images/slide2-bg.png'/>,
+    <ReleaseSliderSlide key='3' bg='images/slide1-bg.png'/>,
 ]
 
 

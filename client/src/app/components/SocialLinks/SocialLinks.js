@@ -9,7 +9,7 @@ function SocialLinks(props) {
                 props.data.map(({link, extraClassName})=>{
                     const className = 'social-links__link-item ' + extraClassName
                     return(
-                        <a href={link} className={className}/>
+                        <a key={link + Math.floor(Math.random()*25)} href={link} className={className}/>
                     )
                 })
             }

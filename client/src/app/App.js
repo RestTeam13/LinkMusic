@@ -1,6 +1,6 @@
 import React from "react";
 import './styles.css'
-import {BrowserRouter as Router, Route} from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
 import Main from "./pages/Main/Main";
 import SoloRelease from "./pages/SoloRelease/SoloRelease";
 import Releases from "./pages/Releases/Releases";
@@ -14,23 +14,26 @@ import CreateProfile from "./pages/СreateProfile/СreateProfile";
 import NewRelease from "./pages/NewRelease/NewRelease";
 
 function App() {
+    const isAuthenticated = false
+
     return (
-        <Router>
-            <div>
-                <Route exact path="/" component={Main}/>
-                <Route exact path="/release" component={SoloRelease}/>
-                <Route exact path="/releases" component={Releases}/>
-                <Route exact path="/artists" component={Artists}/>
-                <Route exact path="/card" component={ArtistCard}/>
-                <Route exact path="/my-release" component={MyRelease}/>
-                <Route exact path="/statistics" component={Statistics}/>
-                <Route exact path="/create-profile" component={CreateProfile}/>
-                <Route exact path="/new-release" component={NewRelease}/>
-                <Route exact path="/registration" component={Registration}/>
-                <Route exact path="/login" component={Login}/>
-            </div>
-        </Router>
-    );
+        <div>
+            <Routes>
+                <Route path="/" element={<Main/>}/>
+                <Route path="/release" element={<SoloRelease/>}/>
+                <Route path="/releases" element={<Releases/>}/>
+                <Route path="/artists" element={<Artists/>}/>
+                <Route path="/card" element={<ArtistCard/>}/>
+                <Route path="/my-release" element={<MyRelease/>}/>
+                <Route path="/statistics" element={<Statistics/>}/>
+                <Route path="/create-profile" element={<CreateProfile/>}/>
+                <Route path="/new-release" element={<NewRelease/>}/>
+                <Route path="/registration" element={<Registration/>}/>
+                <Route path="/login" element={<Login/>}/>
+                <Route path="/*" element={<Main/>}/> {/*Todo 404 page*/}
+            </Routes>
+        </div>
+    )
 }
 
 export default App;
