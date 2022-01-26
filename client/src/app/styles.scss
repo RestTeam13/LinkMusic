@@ -51,6 +51,11 @@ p, h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.block__anchor{
+  position: absolute;
+  top: -100px;
+}
+
 .block_first-on-page {
   margin-top: 100px;
 

@@ -2,6 +2,9 @@
   background: #E7E8E9;
   z-index: 5;
 }
+.block-form .block__anchor {
+  top: -150px;
+}
 @media (max-width: 1023px) {
   .block-form .content::before {
     content: "";

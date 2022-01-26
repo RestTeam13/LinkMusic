@@ -10,7 +10,8 @@ import Captcha from "../Captcha/Captcha";
 
 function Form() {
     return (
-        <div id='contacts' className="block block-form">
+        <div className="block block-form">
+            <span id='contacts' className="block__anchor"/>
             <div className="content">
                 <div className="block-form__row">
                     <div className="block-form__left-column">

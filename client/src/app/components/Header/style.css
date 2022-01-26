@@ -51,7 +51,7 @@
 }
 @media (max-width: 767px) {
   .main-menu__list {
-    display: none;
+    transform: translate(-100%, 0);
     flex-flow: column;
     padding: 80px calc((100% - 280px) / 2) 0;
     justify-content: flex-start;
@@ -66,7 +66,7 @@
     overflow: hidden;
   }
   .main-menu__list.active {
-    display: flex;
+    transform: translate(0);
   }
 }
 
@@ -94,6 +94,8 @@
     align-items: center;
     border-left: 3px solid transparent;
     border-bottom: 1px dashed #000000;
+    position: relative;
+    z-index: 1;
   }
   .main-menu__list-item:hover {
     background: #F4F4F4;

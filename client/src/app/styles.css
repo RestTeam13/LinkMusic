@@ -113,6 +113,11 @@ p, h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.block__anchor {
+  position: absolute;
+  top: -100px;
+}
+
 .block_first-on-page {
   margin-top: 100px;
 }
@@ -140,7 +145,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .content_slider {
-  width: calc(100% - ((100% - 1220px) / 2));
+  width: calc(100% - (100% - 1220px) / 2);
   padding-left: 20px;
   color: #3D3D3D;
   font-family: "Gilroy", sans-serif;

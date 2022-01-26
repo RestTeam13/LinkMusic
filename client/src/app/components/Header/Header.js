@@ -56,10 +56,10 @@ class Header extends React.Component {
                     <Logo className='logo'/>
 
                     <div className={menuClasses}>
-                        <a href="/#services" className="main-menu__list-item">Услуги</a>
-                        <a href="/artists" className="main-menu__list-item">Артисты</a>
-                        <a href="/releases" className="main-menu__list-item">Релизы</a>
-                        <a href="/#contacts" className="main-menu__list-item">Контакты</a>
+                        <a href="/#services" onClick={this.toggleMenu} className="main-menu__list-item">Услуги</a>
+                        <a href="/artists" onClick={this.toggleMenu} className="main-menu__list-item">Артисты</a>
+                        <a href="/releases" onClick={this.toggleMenu} className="main-menu__list-item">Релизы</a>
+                        <a href="/#contacts" onClick={this.toggleMenu} className="main-menu__list-item">Контакты</a>
 
                         <div className="main-menu__list-circle">
                             <svg width="380" height="380" viewBox="0 0 380 380" fill="none"

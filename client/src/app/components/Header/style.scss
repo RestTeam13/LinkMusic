@@ -46,8 +46,7 @@
   min-width: 360px;
   justify-content: space-between;
   @media (max-width: 767px) {
-    display: none;
-
+    transform: translate(-100%,0);
     flex-flow: column;
     padding: 80px calc((100% - 280px) / 2) 0;
     justify-content: flex-start;
@@ -61,7 +60,7 @@
     background: #ffffff;
     overflow: hidden;
     &.active {
-      display: flex;
+      transform: translate(0);
     }
   }
 }
@@ -91,6 +90,8 @@
     align-items: center;
     border-left: 3px solid transparent;
     border-bottom: 1px dashed #000000;
+    position: relative;
+    z-index: 1;
 
     &:hover {
       background: #F4F4F4;

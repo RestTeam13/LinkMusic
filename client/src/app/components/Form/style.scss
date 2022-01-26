@@ -3,6 +3,10 @@
   background: #E7E8E9;
   z-index: 5;
 
+  .block__anchor{
+    top: -150px;
+  }
+
   @media (max-width: 1023px) {
     .content{
       &::before{

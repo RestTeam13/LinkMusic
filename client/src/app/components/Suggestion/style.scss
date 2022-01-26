@@ -415,6 +415,139 @@
   }
 }
 
+.modal {
+  justify-content: center;
+  align-items: center;
+
+  & > div:first-of-type {
+    background: linear-gradient(90deg, #3479FF 0%, #343CFF 100%);
+  }
+}
+
+.modal__content {
+  position: relative;
+  max-width: 980px;
+  width: 100%;
+  padding: 50px;
+  background: white;
+  border-radius: 10px;
+  font-family: Gilroy, sans-serif;
+  font-style: normal;
+  margin: 20px;
+
+  @media (max-width: 1023px) {
+    max-width: 566px;
+    padding: 30px;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 280px;
+    padding: 20px;
+    display: flex;
+    flex-flow: column;
+  }
+}
+
+.modal__title {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 140%;
+  margin: 46px 0;
+
+  color: #052525;
+
+  @media (max-width: 1023px) {
+    font-size: 28px;
+  }
+
+  @media (max-width: 767px) {
+    margin: 20px 0 15px;
+    font-size: 18px;
+    order: 2;
+  }
+}
+
+.modal__description {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 140%;
+
+  p {
+    margin-bottom: 20px;
+  }
+
+  color: #050505;
+  margin-bottom: 30px;
+
+  @media (max-width: 1023px) {
+    font-size: 14px;
+    p {
+      margin-bottom: 15px;
+    }
+  }
+  @media (max-width: 767px) {
+    font-size: 12px;
+    order: 3;
+    p {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.modal__contacts-btn {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  @media (max-width: 767px) {
+    margin-top: 70px;
+    order: 4
+  }
+}
+
+.modal__close {
+  position: absolute;
+  top: -21px;
+  right: -21px;
+
+  &:hover {
+    svg rect {
+      fill: #D4AA00;
+    }
+  }
+
+  @media (max-width: 767px) {
+    top: -18px;
+    right: -18px;
+  }
+}
+
+.modal__content-img {
+  width: 174px;
+  height: 137px;
+  position: absolute;
+  top: 30px;
+  right: 50px;
+
+  @media (max-width: 1023px) {
+    width: 152px;
+    height: 120px;
+    right: 40px;
+  }
+
+  @media (max-width: 767px) {
+    position: static;
+    order: 1;
+  }
+}
+
 @keyframes slideAnimation {
   0% {
     transform: scale(1) rotate(0);
