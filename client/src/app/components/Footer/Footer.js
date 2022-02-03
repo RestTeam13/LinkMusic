@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import './style.css'
 import SocialLinks from "../SocialLinks/SocialLinks";
 
@@ -31,6 +31,7 @@ const socialLinksData=[
 
 function Footer(props) {
     const {className="block block-footer"} = props
+    const [year] = useState(new Date().getFullYear())
     return (
         <div className={className}>
             <div className="vector__bg vector__footer">
@@ -58,7 +59,7 @@ function Footer(props) {
             <div className="content">
                 <div className="footer-row">
                     <div className="footer-column__text">
-                        <p>Copyright © 2021 ООО «Линк Мьюзик»</p>
+                        <p>Copyright © {year} ООО «Линк Мьюзик»</p>
                         <p>Правовая информация: <a href="#">Пользовательское соглашение</a>, <a href="#">Политика
                             конфиденциальности</a></p>
                     </div>

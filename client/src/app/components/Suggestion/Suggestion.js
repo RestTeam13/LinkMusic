@@ -1,46 +1,71 @@
-import React, {useState} from "react";
+import React, {useRef, useState} from "react";
 import './style.css'
 import Slider from 'react-slick'
 import {Accordion, AccordionSummary, AccordionDetails, Modal, Box} from '@material-ui/core';
+import {logMissingFieldErrors} from "@apollo/client/core/ObservableQuery";
 
 const listData = [
     {
-        id: 0,
+        id: 1,
         classes: 'suggestion-slider__item suggestion-slider__item_1',
+        bgColor: 'linear-gradient(90deg, #3479FF 0%, #343CFF 100%)',
         img: "images/suggestion-slider__img-1.svg",
         title: 'Создание страницы релиза',
-        text: 'Мы предлагаем сервис по созданию страницы релиза'
+        text: 'Мы предлагаем сервис по созданию страницы релиза',
+        fullText: 'Рыбатекст используется дизайнерами, проектировщиками и фронтендерами, когда нужно быстро заполнить макеты или прототипы содержимым. Это тестовый контент, который не должен нести никакого смысла, лишь показать наличие самого текста или продемонстрировать типографику в деле.\n' +
+            'C помощью этого онлайн-генератора рыботекста можно пачками плодить как отдельные предложения и заголовки, так и целые абзацы отменнейшего рыбы-текста. А для любителей автоматизации даже реализован API фиштекста.\n' +
+            'C помощью этого онлайн-генератора рыботекста можно пачками плодить как отдельные предложения и заголовки, так и целые абзацы отменнейшего рыбы-текста. А для любителей автоматизации даже реализован API фиштекста.'
     },
     {
-        id: 1,
+        id: 3,
         classes: 'suggestion-slider__item suggestion-slider__item_2',
+        bgColor: 'linear-gradient(77.81deg, #DA1AA4 -19.28%, #FF6534 100%)',
         img: "images/suggestion-slider__img-2.png",
         title: 'Дистрибуция',
         text: 'Размещаем, сихнхронизируем и монетезируем музыкальный контент на всех цифровых витринах ' +
-            '(Apple Music, iTunes, Spotify, Boom, YouTube Music, Яндекс.Музыка, и т.д.)'
+            '(Apple Music, iTunes, Spotify, Boom, YouTube Music, Яндекс.Музыка, и т.д.)',
+        fullText: 'Рыбатекст используется дизайнерами, проектировщиками и фронтендерами, когда нужно быстро заполнить макеты или прототипы содержимым. Это тестовый контент, который не должен нести никакого смысла, лишь показать наличие самого текста или продемонстрировать типографику в деле.\n' +
+            'C помощью этого онлайн-генератора рыботекста можно пачками плодить как отдельные предложения и заголовки, так и целые абзацы отменнейшего рыбы-текста. А для любителей автоматизации даже реализован API фиштекста.\n' +
+            'C помощью этого онлайн-генератора рыботекста можно пачками плодить как отдельные предложения и заголовки, так и целые абзацы отменнейшего рыбы-текста. А для любителей автоматизации даже реализован API фиштекста.'
+
     },
     {
         id: 12,
         classes: 'suggestion-slider__item suggestion-slider__item_3',
+        bgColor: 'linear-gradient(90deg, #3479FF 0%, #343CFF 100%)',
         img: "images/suggestion-slider__img-3.png",
         title: 'Продвижение',
-        text: 'Находим, аккумулируем и развиваем целевую аудиторию исполнителей'
+        text: 'Находим, аккумулируем и развиваем целевую аудиторию исполнителей',
+        fullText: 'Рыбатекст используется дизайнерами, проектировщиками и фронтендерами, когда нужно быстро заполнить макеты или прототипы содержимым. Это тестовый контент, который не должен нести никакого смысла, лишь показать наличие самого текста или продемонстрировать типографику в деле.\n' +
+            'C помощью этого онлайн-генератора рыботекста можно пачками плодить как отдельные предложения и заголовки, так и целые абзацы отменнейшего рыбы-текста. А для любителей автоматизации даже реализован API фиштекста.\n' +
+            'C помощью этого онлайн-генератора рыботекста можно пачками плодить как отдельные предложения и заголовки, так и целые абзацы отменнейшего рыбы-текста. А для любителей автоматизации даже реализован API фиштекста.'
+
     },
     {
         id: 123,
         classes: 'suggestion-slider__item suggestion-slider__item_4',
+        bgColor: 'linear-gradient(77.81deg, #EE38BB -19.28%, #F7BA44 100%)',
         img: "images/suggestion-slider__img-4.svg",
         title: 'Организация мероприятий',
         text: 'Организуем концерты, частные и корпоративные события с участием популярынх ' +
-            'российских и зарубежных исполнителей'
+            'российских и зарубежных исполнителей',
+        fullText: 'Рыбатекст используется дизайнерами, проектировщиками и фронтендерами, когда нужно быстро заполнить макеты или прототипы содержимым. Это тестовый контент, который не должен нести никакого смысла, лишь показать наличие самого текста или продемонстрировать типографику в деле.\n' +
+            'C помощью этого онлайн-генератора рыботекста можно пачками плодить как отдельные предложения и заголовки, так и целые абзацы отменнейшего рыбы-текста. А для любителей автоматизации даже реализован API фиштекста.\n' +
+            'C помощью этого онлайн-генератора рыботекста можно пачками плодить как отдельные предложения и заголовки, так и целые абзацы отменнейшего рыбы-текста. А для любителей автоматизации даже реализован API фиштекста.'
+
     },
     {
         id: 124,
         classes: 'suggestion-slider__item suggestion-slider__item_5',
+        bgColor: 'linear-gradient(77.81deg, #DA1AA4 -19.28%, #FF6534 100%)',
         img: "images/suggestion-slider__img-5.svg",
         title: 'Менеджмент',
         text: 'Оказываем полный комплекс услуг по сопровождению деятельности исполнения, ' +
-            'а так же юридическую, бухгалтерскую, административно-организационную поддержку'
+            'а так же юридическую, бухгалтерскую, административно-организационную поддержку',
+        fullText: 'Рыбатекст используется дизайнерами, проектировщиками и фронтендерами, когда нужно быстро заполнить макеты или прототипы содержимым. Это тестовый контент, который не должен нести никакого смысла, лишь показать наличие самого текста или продемонстрировать типографику в деле.\n' +
+            'C помощью этого онлайн-генератора рыботекста можно пачками плодить как отдельные предложения и заголовки, так и целые абзацы отменнейшего рыбы-текста. А для любителей автоматизации даже реализован API фиштекста.\n' +
+            'C помощью этого онлайн-генератора рыботекста можно пачками плодить как отдельные предложения и заголовки, так и целые абзацы отменнейшего рыбы-текста. А для любителей автоматизации даже реализован API фиштекста.'
+
     },
 ]
 
@@ -92,10 +117,28 @@ const settings = {
     ]
 }
 
+const settingsModal = {
+    dots: false,
+    arrows: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    variableWidth: true,
+    centerMode: true,
+    focusOnSelect: true,
+    draggable: false,
+    swipe: false,
+}
+
 let isMobile = window.matchMedia('(max-width: 767px)').matches
 
 function Suggestion() {
     const [openModal, toggleModal] = useState(false)
+    const [openTabIndex, changeTab] = useState(0)
+    const [modalState, changeModalState] = useState({})
+    const sliderRef = useRef()
+
     return (
         <div className="block block-suggestion">
             <span id='services' className="block__anchor"/>
@@ -105,7 +148,7 @@ function Suggestion() {
                         <h2 className="suggestion-column__title">Мы предлагаем</h2>
                         <p className="suggestion-column__text">Рыбатекст используется дизайнерами, проектировщиками и
                             фронтендерами, когда нужно быстро заполнить макеты или прототипы содержимым.</p>
-                        <button className="suggestion-column__btn tl_btn">Связаться с нами</button>
+                        <a href='#contacts' className="suggestion-column__btn tl_btn">Связаться с нами</a>
                         <div className="vector__bg vector__bg_5">
                             <svg width="392" height="561" viewBox="0 0 392 561" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -140,29 +183,36 @@ function Suggestion() {
                     </div>
                     <Slider className="suggestion-column__slider" {...settings}>
                         {
-                            !isMobile && listData.map(({classes, img, title, text, id}, i) => {
+                            !isMobile && listData.map(({classes, img, title, text, id, fullText, bgColor}, slideIndex) => {
                                 return (
-                                    <div key={id} className={classes}
-                                         onClick={() => {
-                                             toggleModal(openModal => !openModal)
-                                         }}>
-                                        <div className="suggestion-slider__img">
-                                            <img src={img} alt=""/>
+                                    <div>
+                                        <div key={id} className={classes} style={{background: bgColor}}
+                                             onClick={() => {
+                                                 changeModalState({title, img, fullText, id, bgColor, slideIndex})
+                                                 toggleModal(openModal => !openModal)
+                                             }}>
+                                            <div className="suggestion-slider__img">
+                                                <img src={img} alt=""/>
+                                            </div>
+                                            <div className="suggestion-slider__summary">
+                                                <p className="suggestion-slider__title">{title}</p>
+                                            </div>
+                                            <p className="suggestion-slider__text">{text}</p>
+                                            <button className="suggestion-slider__button-more tl_btn">Подробнее</button>
+                                            <span className="suggestion-slider__effect"/>
                                         </div>
-                                        <div className="suggestion-slider__summary">
-                                            <p className="suggestion-slider__title">{title}</p>
-                                        </div>
-                                        <p className="suggestion-slider__text">{text}</p>
-                                        <button className="suggestion-slider__button-more tl_btn">Подробнее</button>
-                                        <span className="suggestion-slider__effect"/>
                                     </div>
                                 )
                             })
                         }
                         {
-                            isMobile && listData.map(({classes, img, title, text, id}) => {
+                            isMobile && listData.map(({classes, img, title, text, id, fullText, bgColor}, slideIndex) => {
                                 return (
-                                    <Accordion key={id} className={classes}>
+                                    <Accordion key={id} expanded={id === openTabIndex} className={classes}
+                                               style={{background: bgColor}}
+                                               onChange={() => {
+                                                   changeTab(id)
+                                               }}>
                                         <AccordionSummary className="suggestion-slider__summary"
                                                           expandIcon={<ExpandSlideIcon/>}>
                                             <p className="suggestion-slider__title">{title}</p>
@@ -174,6 +224,14 @@ function Suggestion() {
                                             <p className="suggestion-slider__text">{text}</p>
                                             <button className="suggestion-slider__button-more tl_btn"
                                                     onClick={() => {
+                                                        changeModalState({
+                                                            title,
+                                                            img,
+                                                            fullText,
+                                                            id,
+                                                            bgColor,
+                                                            slideIndex
+                                                        })
                                                         toggleModal(openModal => !openModal)
                                                     }}>
                                                 Подробнее
@@ -217,35 +275,50 @@ function Suggestion() {
                     </defs>
                 </svg>
             </div>
-            <Modal open={openModal} className='block modal'>
-                <div className="modal__content">
-                    <h3 className="modal__title">Продвижение</h3>
-                    <div className="modal__description">
-                        <p>Рыбатекст используется дизайнерами, проектировщиками и
-                            фронтендерами, когда нужно быстро заполнить макеты или прототипы содержимым. Это тестовый
-                            контент, который не должен нести никакого смысла, лишь показать наличие самого текста или
-                            продемонстрировать типографику в деле.</p>
-                        <p>C помощью этого онлайн-генератора рыботекста можно пачками плодить как отдельные предложения
-                            и заголовки, так и целые абзацы отменнейшего рыбы-текста. А для любителей автоматизации даже
-                            реализован API фиштекста.</p>
-                        <p>C помощью этого онлайн-генератора рыботекста можно пачками плодить как отдельные предложения
-                            и заголовки, так и целые абзацы отменнейшего рыбы-текста. А для любителей автоматизации даже
-                            реализован API фиштекста.
-                        </p>
-                    </div>
-                    <a href='/#contacts' className="modal__contacts-btn tl_btn"  onClick={() => {
-                        toggleModal(openModal => !openModal)
-                    }}>Связаться с нами</a>
-                    <button className="modal__close"  onClick={() => {
-                        toggleModal(openModal => !openModal)
-                    }}>
-                        <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="1.78125" y="3.05176e-05" width="20.1133" height="2.51416" transform="rotate(45 1.78125 3.05176e-05)" fill="white"/>
-                            <rect x="16" y="1.77777" width="20.1133" height="2.51416" transform="rotate(135 16 1.77777)" fill="white"/>
-                        </svg>
-                    </button>
-                    <div className="modal__content-img">
-                        <img src='images/suggestion-slider__img-3.png' alt=""/>
+            <Modal open={openModal} className='block modal' style={{background: modalState.bgColor}}>
+                <div>
+                    <Slider className="modal__slider" {...settingsModal} initialSlide={modalState.slideIndex}>
+                        {
+                            listData.map(({img, title, id, fullText, bgColor}) => {
+                                return (
+                                    <div style={{width: '45vw'}}  onClick={() => {
+                                        changeModalState({title, img, fullText, id, bgColor})
+                                    }}>
+                                        <div key={id} className='modal__slide' style={{background: bgColor}}>
+                                            <div className="modal__slide-img"><img src={img} alt=""/></div>
+                                            <p className="modal__slide-title">{title}</p>
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
+                    </Slider>
+                    <div className="modal__content">
+                        <div className="modal__header">
+                            <h3 className="modal__title">{openModal && modalState.title}</h3>
+                            <div className="modal__content-img"><img src={openModal && modalState.img} alt=""/></div>
+                        </div>
+
+                        <div className="modal__description">
+                            {openModal && modalState.fullText.split('\n').map(textPart => {
+                                return (<p>{textPart}</p>)
+                            })}
+                        </div>
+                        <a href='/#contacts' className="modal__contacts-btn tl_btn" onClick={() => {
+                            toggleModal(openModal => !openModal)
+                        }}>Связаться с нами</a>
+                        <button className="modal__close" onClick={() => {
+                            toggleModal(openModal => !openModal)
+                        }}>
+                            <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <rect x="1.78125" y="3.05176e-05" width="20.1133" height="2.51416"
+                                      transform="rotate(45 1.78125 3.05176e-05)" fill="white"/>
+                                <rect x="16" y="1.77777" width="20.1133" height="2.51416"
+                                      transform="rotate(135 16 1.77777)"
+                                      fill="white"/>
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </Modal>
