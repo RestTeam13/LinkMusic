@@ -1,26 +1,24 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import './style.css'
 import Captcha from "../../components/Captcha/Captcha";
 import {useMutation} from "@apollo/client";
 import {AUTH} from '../../query/auth'
+import {AuthContext} from "../../context/AuthContext";
 
 
 function Login() {
-    const [newToken] = useMutation(AUTH)
+    const [newToken] = useMutation(AUTH) // Todo Вынести как отдельный сервис
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const auth = useContext(AuthContext)
 
     const getToken = (e) => {
         e.preventDefault()
         console.log(`User: ${email}, pass: ${password}`)
         newToken({
-            variables: {
-                email,
-                password
-            }
+            variables: {email, password}
         }).then(({data, loading, error}) => {
-            localStorage.setItem('lm-token', data.authenticateUserWithPassword.token)
-            document.location.href = '/'
+            auth.login(data.authenticateUserWithPassword.token, email)
         }).catch(e => {
             console.log(e);
         })
@@ -131,7 +129,7 @@ function Login() {
             <img src="images/music-services1.png" alt="" className="music-services music-services_reg2"/>
             <img src="images/music-services5.svg" alt="" className="music-services music-services_reg3"/>
             <img src="images/music-services6.png" alt="" className="music-services music-services_reg4"/>
-            <form action="#" method='POST' className="registration-form">
+            <form method='POST' className="registration-form">
                 <h1 className="registration-form__title title">Войти</h1>
                 <input type="text" className="registration-form__input tl-input"
                        name="email" placeholder='E-mail' onChange={e => setEmail(e.target.value)}/>
@@ -140,7 +138,7 @@ function Login() {
                 <button className="forget-password">Забыли пароль?</button>
                 <Captcha/>
                 <p className="registration-form__text">Нет аккаунта?
-                    <a href="/registration" className="registration-form__enter-link">Зарегистрироваться</a>
+                    <a href="/registration" className="registration-form__enter-link"> Зарегистрироваться</a>
                 </p>
                 <button type='submit' className="registration-form__submit tl_btn" onClick={(e) => getToken(e)}>Войти
                 </button>
@@ -152,7 +150,7 @@ function Login() {
                               transform="rotate(135 19.5164 7.37494)" fill="#D9D9D9" stroke="#D9D9D9"
                               strokeWidth="0.2"/>
                     </svg>
-                </a>
+                </a> {/*Todo <Link to=''>*/}
             </form>
         </div>
     )
