@@ -5,6 +5,7 @@ const {PasswordAuthStrategy} = require('@keystonejs/auth-password');
 const {AdminUIApp} = require('@keystonejs/app-admin-ui');
 const {GraphQLApp} = require('@keystonejs/app-graphql');
 const {StaticApp} = require('@keystonejs/app-static')
+const {createImg} = require('./apps/createCaptcha')
 const UserSchema = require('./lists/User')
 const NewsArticleSchema = require('./lists/NewsArtice')
 
@@ -26,6 +27,15 @@ const keystone = new Keystone({
 
 keystone.createList('User', UserSchema)
 keystone.createList('NewsArticle', NewsArticleSchema)
+
+keystone.extendGraphQLSchema({
+  queries: [
+    {
+      schema: 'getCaptcha: String!',
+      resolver: (_, {}) => createImg(),
+    },
+  ]
+})
 
 const authStrategy = keystone.createAuthStrategy({
   type: PasswordAuthStrategy,
