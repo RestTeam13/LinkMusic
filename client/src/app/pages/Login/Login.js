@@ -6,15 +6,13 @@ import {AUTH} from '../../query/auth'
 import {AuthContext} from "../../context/AuthContext";
 
 
-function Login() {
-    const [newToken] = useMutation(AUTH) // Todo Вынести как отдельный сервис
+function Login() { // Todo Объединить со страницей регистрацией
+    const [newToken] = useMutation(AUTH) // Todo Вынести как отдельный сервис?
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const auth = useContext(AuthContext)
 
-    const getToken = (e) => {
-        e.preventDefault()
-        console.log(`User: ${email}, pass: ${password}`)
+    const getToken = () => {
         newToken({
             variables: {email, password}
         }).then(({data, loading, error}) => {
@@ -22,6 +20,11 @@ function Login() {
         }).catch(e => {
             console.log(e);
         })
+    }
+
+    const authUser = (e) => {
+        e.preventDefault()
+        getToken(e)
     }
 
     return (
@@ -129,19 +132,18 @@ function Login() {
             <img src="images/music-services1.png" alt="" className="music-services music-services_reg2"/>
             <img src="images/music-services5.svg" alt="" className="music-services music-services_reg3"/>
             <img src="images/music-services6.png" alt="" className="music-services music-services_reg4"/>
-            <form method='POST' className="registration-form">
+            <form method='POST' className="registration-form" onSubmit={authUser}>
                 <h1 className="registration-form__title title">Войти</h1>
-                <input type="text" className="registration-form__input tl-input"
-                       name="email" placeholder='E-mail' onChange={e => setEmail(e.target.value)}/>
+                <input type="email" className="registration-form__input tl-input"
+                       name="email" placeholder='E-mail' onChange={e => setEmail(e.target.value)} required/>
                 <input type="password" className="registration-form__input tl-input"
-                       name="password" placeholder='Пароль' onChange={e => setPassword(e.target.value)}/>
-                <button className="forget-password">Забыли пароль?</button>
+                       name="password" placeholder='Пароль' onChange={e => setPassword(e.target.value)} required/>
+                <button type='button' className="forget-password">Забыли пароль?</button>
                 <Captcha/>
                 <p className="registration-form__text">Нет аккаунта?
                     <a href="/registration" className="registration-form__enter-link"> Зарегистрироваться</a>
                 </p>
-                <button type='submit' className="registration-form__submit tl_btn" onClick={(e) => getToken(e)}>Войти
-                </button>
+                <button type='submit' className="registration-form__submit tl_btn">Войти</button>
                 <a href='/' className="close-btn">
                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect className='close-btn__line' x="6.875" y="6.09717" width="17.8777" height="1.80706"
