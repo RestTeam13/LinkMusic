@@ -4,6 +4,7 @@ const {KnexAdapter} = require('@keystonejs/adapter-knex')
 const {PasswordAuthStrategy} = require('@keystonejs/auth-password');
 const {AdminUIApp} = require('@keystonejs/app-admin-ui');
 const {GraphQLApp} = require('@keystonejs/app-graphql');
+const { StaticApp } = require('@keystonejs/app-static');
 const {createImg} = require('./apps/createCaptcha')
 const UserSchema = require('./lists/User')
 const NewsArticleSchema = require('./lists/NewsArtice')
@@ -21,8 +22,15 @@ const keystone = new Keystone({
             }
         }
     }),
+    cookie: {
+        secure: false,//process.env.NODE_ENV === 'production', // Defaults to true in production
+        maxAge: 1000 * 60 * 60 * 24 * 30, // 30 days
+        sameSite: false,
+    },
     cookieSecret: process.env.COOKIE_SECRET
 })
+
+keystone.connect()
 
 keystone.createList('User', UserSchema)
 keystone.createList('NewsArticle', NewsArticleSchema)
@@ -42,23 +50,17 @@ const authStrategy = keystone.createAuthStrategy({
 })
 
 module.exports = {
-    configureExpress: app => {
-        const express = require('express')
-        const path = require('path')
-        if (process.env.NODE_ENV === 'production') {
-            app.use('/', express.static(path.join(__dirname, 'client', 'build')));
-
-            app.get('*', (req, res) => {
-                res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-            })
-        }
-    },
     keystone,
     apps: [
         new GraphQLApp(),
         new AdminUIApp({
             name: 'Link Music',
-            authStrategy
+            authStrategy,
         }),
-    ],
+        new StaticApp({
+            path: '/',
+            src: 'client/build',
+            fallback: 'index.html',
+        }),
+    ]
 };
