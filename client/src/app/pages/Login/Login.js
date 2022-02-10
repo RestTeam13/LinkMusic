@@ -17,6 +17,7 @@ function Login() { // Todo Объединить со страницей реги
             variables: {email, password}
         }).then(({data, loading, error}) => {
             auth.login(data.authenticateUserWithPassword.token, email)
+            document.location.href = '/'
         }).catch(e => {
             console.log(e);
         })

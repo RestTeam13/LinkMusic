@@ -1,10 +1,11 @@
 import React from "react";
 import './style.css'
-import avatar from './images/login.svg'
+import login from './images/login.svg'
+import avatar from './images/avatar.png'
 import Logo from "../Logo/Logo";
+import {AuthContext} from "../../context/AuthContext";
 
 class Header extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {
@@ -49,6 +50,9 @@ class Header extends React.Component {
         const headerClasses = bg ? 'header header_bg' : 'header'
         const burgerClasses = openMenu ? 'main-menu__burger active' : 'main-menu__burger'
         const menuClasses = openMenu ? 'main-menu__list active' : 'main-menu__list'
+
+        const isAuthenticated = this.context.isAuthenticated
+
         return (
             <header className={headerClasses} onClick={this.addBg}>
                 <nav className="main-menu">
@@ -113,14 +117,23 @@ class Header extends React.Component {
                     </button>
 
                     <div className="main-menu__personal-area">
-                        <a href='/login' className='main-menu__personal-area-button'>
-                            <img src={avatar} alt=""/>
-                        </a>
+                        {
+                            isAuthenticated?
+                                <a href='/my-release' className='main-menu__personal-area-button'>
+                                    <img src={avatar} alt=""/>
+                                </a> :
+                                <a href='/login' className='main-menu__personal-area-button'>
+                                    <img src={login} alt=""/>
+                                </a>
+
+                        }
                     </div>
                 </nav>
             </header>
         );
     }
 }
+
+Header.contextType = AuthContext
 
 export default Header;
