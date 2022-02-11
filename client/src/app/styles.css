@@ -224,6 +224,9 @@ p, h1, h2, h3, h4, h5, h6 {
   font-family: "Gilroy", sans-serif;
   font-size: 14px;
 }
+.tl-input:hover {
+  border-bottom-color: #D4AA00;
+}
 
 .music-services {
   position: absolute;

@@ -1,13 +1,27 @@
 require('dotenv').config()
 const {Keystone} = require('@keystonejs/keystone')
 const {KnexAdapter} = require('@keystonejs/adapter-knex')
+const session = require('express-session');
+const KnexSessionStore = require('connect-session-knex')(session);
+const Knex = require('knex');
 const {PasswordAuthStrategy} = require('@keystonejs/auth-password');
 const {AdminUIApp} = require('@keystonejs/app-admin-ui');
 const {GraphQLApp} = require('@keystonejs/app-graphql');
-const { StaticApp } = require('@keystonejs/app-static');
+const {StaticApp} = require('@keystonejs/app-static');
 const {createImg} = require('./apps/createCaptcha')
 const UserSchema = require('./lists/User')
-const NewsArticleSchema = require('./lists/NewsArtice')
+const NewsArticleSchema = require('./lists/NewsArtice') //Todo Разбить на файлы
+
+const knex = Knex({
+    client: process.env.CLIENT,
+    connection: {
+        host: process.env.HOSTDB,
+        port: process.env.PORTDB,
+        user: process.env.USER,
+        password: process.env.PASSWORD,
+        database: process.env.DATABASE
+    }
+});
 
 const keystone = new Keystone({
     adapter: new KnexAdapter({
@@ -23,14 +37,18 @@ const keystone = new Keystone({
         }
     }),
     cookie: {
-        secure: false,//process.env.NODE_ENV === 'production', // Defaults to true in production
+        secure: process.env.NODE_ENV === 'production',
         maxAge: 1000 * 60 * 60 * 24 * 30, // 30 days
         sameSite: false,
     },
-    cookieSecret: process.env.COOKIE_SECRET
+    cookieSecret: process.env.COOKIE_SECRET,
+    sessionStore: new KnexSessionStore({
+        knex,
+        tablename: process.env.SESSIONTABLENAME
+    })
 })
 
-keystone.connect()
+const sessionPool = require('pg').Pool
 
 keystone.createList('User', UserSchema)
 keystone.createList('NewsArticle', NewsArticleSchema)
@@ -47,6 +65,14 @@ keystone.extendGraphQLSchema({
 const authStrategy = keystone.createAuthStrategy({
     type: PasswordAuthStrategy,
     list: 'User',
+    hooks: {
+        validateAuthInput: async ({originalInput,addValidationError,context}) => {
+            console.log(originalInput)
+            console.log('Sessions:', context.req.sessionID)
+            !!!originalInput.email.match(/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/)? addValidationError('Введен некорректный email'): null
+            originalInput.password.length < 8? addValidationError('Пароль должен содержать не менее 8 символов'): null
+        }
+    }
 })
 
 module.exports = {

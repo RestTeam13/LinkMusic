@@ -20,7 +20,7 @@ function Captcha() {
         <div className="captcha">
             <label htmlFor="" className="captcha__label">Введите указанное слово</label>
             <div className="captcha__row">
-                <input type="text" className="captcha__input"/>
+                <input type="text" pattern='^[а-яА-ЯёЁ0-9]+$' className="captcha__input" required/>
                 <div className="captcha__img" onClick={reloadCaptcha}>
                     <img src={img} alt=""/>
                 </div>

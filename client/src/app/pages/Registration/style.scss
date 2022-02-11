@@ -126,6 +126,11 @@
   line-height: 150%;
 
   color: #0000FF;
+
+  &:hover {
+    text-decoration: none;
+    color: #D4AA00;
+  }
 }
 
 .registration-form__submit {

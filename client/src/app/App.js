@@ -21,7 +21,7 @@ function App() {
 
     if (isAuthenticated) {
         return (
-            <div>
+            <>
                 <AuthContext.Provider value={{token, userId, login, logout, isAuthenticated}}>
                     <Routes>
                         <Route path="/" element={<Main/>}/>
@@ -38,12 +38,12 @@ function App() {
                         <Route path="*" element={<Main/>}/>
                     </Routes>
                 </AuthContext.Provider>
-            </div>
+            </>
         )
     }
 
     return (
-        <div>
+        <>
             <AuthContext.Provider value={{token, userId, login, logout, isAuthenticated}}>
                 <Routes>
                     <Route path="/" element={<Main/>}/>
@@ -56,7 +56,7 @@ function App() {
                     <Route path="*" element={<Login/>}/>
                 </Routes>
             </AuthContext.Provider>
-        </div>
+        </>
     )
 
 }

@@ -121,6 +121,10 @@
   line-height: 150%;
   color: #0000FF;
 }
+.registration-form__enter-link:hover {
+  text-decoration: none;
+  color: #D4AA00;
+}
 
 .registration-form__submit {
   margin-top: 15px;
@@ -166,8 +170,8 @@
   position: absolute;
   width: 269px;
   height: 186px;
-  top: calc((100% - 186px) /2 );
-  left: calc((100% - 269px) /2 - 335px);
+  top: calc((100% - 186px) / 2);
+  left: calc((100% - 269px) / 2 - 335px);
 }
 
 /*# sourceMappingURL=style.css.map */
