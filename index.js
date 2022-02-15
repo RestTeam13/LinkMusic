@@ -8,6 +8,7 @@ const {PasswordAuthStrategy} = require('@keystonejs/auth-password');
 const {AdminUIApp} = require('@keystonejs/app-admin-ui');
 const {GraphQLApp} = require('@keystonejs/app-graphql');
 const {StaticApp} = require('@keystonejs/app-static');
+const bcrypt = require('bcryptjs');
 const {createImg} = require('./apps/createCaptcha')
 const UserSchema = require('./lists/User')
 const NewsArticleSchema = require('./lists/NewsArtice') //Todo Разбить на файлы
@@ -38,17 +39,15 @@ const keystone = new Keystone({
     }),
     cookie: {
         secure: process.env.NODE_ENV === 'production',
-        maxAge: 1000 * 60 * 60 * 24 * 30, // 30 days
+        maxAge: 1000 * 60 * 60 * 24, // 1 day
         sameSite: false,
     },
     cookieSecret: process.env.COOKIE_SECRET,
     sessionStore: new KnexSessionStore({
         knex,
-        tablename: process.env.SESSIONTABLENAME
+        tablename: process.env.SESSIONTABLENAME,
     })
 })
-
-const sessionPool = require('pg').Pool
 
 keystone.createList('User', UserSchema)
 keystone.createList('NewsArticle', NewsArticleSchema)
@@ -57,7 +56,12 @@ keystone.extendGraphQLSchema({
     queries: [
         {
             schema: 'getCaptcha: String!',
-            resolver: (_, {}) => createImg(),
+            resolver: async (_, {}, context) => {
+                const {img, text} = await createImg()
+                const hashCaptcha = bcrypt.hashSync(text,3)
+                context.req.session.captcha = hashCaptcha
+                return img
+            },
         },
     ]
 })
@@ -66,11 +70,13 @@ const authStrategy = keystone.createAuthStrategy({
     type: PasswordAuthStrategy,
     list: 'User',
     hooks: {
-        validateAuthInput: async ({originalInput,addValidationError,context}) => {
+        validateAuthInput: async ({originalInput, addValidationError, context}) => {
             console.log(originalInput)
-            console.log('Sessions:', context.req.sessionID)
-            !!!originalInput.email.match(/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/)? addValidationError('Введен некорректный email'): null
-            originalInput.password.length < 8? addValidationError('Пароль должен содержать не менее 8 символов'): null
+            console.log(`SessionID: ${context.req.sessionID}, Captcha: ${context.req.session.captcha}`, )
+            !!!originalInput.email.match(/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/) ?
+                addValidationError('Введен некорректный email') : null
+            originalInput.password.length < 8 ?
+                addValidationError('Пароль должен содержать не менее 8 символов') : null
         }
     }
 })
@@ -78,7 +84,9 @@ const authStrategy = keystone.createAuthStrategy({
 module.exports = {
     keystone,
     apps: [
-        new GraphQLApp(),
+        new GraphQLApp({
+            apollo: {}
+        }),
         new AdminUIApp({
             name: 'Link Music',
             authStrategy,

@@ -73,7 +73,7 @@ const allTexts = [
     height = 46
 
 
-module.exports={
+module.exports = {
     async createImg() {
         let base64img = 'data:image/png;base64,'
 
@@ -100,6 +100,6 @@ module.exports={
             .then(data => data.toString('base64'))
             .catch(e => console.log(e))
 
-        return base64img + imgData
+        return {img: base64img + imgData, text}
     }
 }
