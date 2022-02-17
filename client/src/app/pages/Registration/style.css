@@ -126,6 +126,15 @@
   color: #D4AA00;
 }
 
+.registration-form__errors {
+  width: 100%;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  color: #BC012E;
+  text-align: center;
+}
+
 .registration-form__submit {
   margin-top: 15px;
   max-width: 100%;

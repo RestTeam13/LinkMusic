@@ -83,7 +83,7 @@ class ReleaseSliderMainSlide extends React.Component {
                         <div className="release-slider__img-wrapper-notes">
                             <img src="images/notes.svg" alt=""/>
                         </div>
-                    </div>
+                    </div> {/*Todo сделать через svg*/}
                     <p className="release-slider__slide-title release-slider__slide-title_main">Расскажи <br/> всем о
                         релизе</p>
                     <p className="release-slider__slide-subtitle release-slider__slide-subtitle_main">Создай уникальную страницу

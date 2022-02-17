@@ -3,9 +3,10 @@ import './style.css'
 import {useQuery} from "@apollo/client";
 import {GET_CAPTCHA} from "../../query/getCaptcha";
 
-function Captcha() {
+function Captcha(props) {
     const {data, loading, error, refetch} = useQuery(GET_CAPTCHA)
     const [img, setImg] = useState('')
+    const {setCaptcha} = props
 
     const reloadCaptcha = (e) => {
         e.preventDefault()
@@ -20,7 +21,9 @@ function Captcha() {
         <div className="captcha">
             <label htmlFor="" className="captcha__label">Введите указанное слово</label>
             <div className="captcha__row">
-                <input type="text" pattern='^[а-яА-ЯёЁ0-9]+$' className="captcha__input" required/>
+                <input type="text" pattern='^[а-яА-ЯёЁ0-9]+$'
+                       onChange={e => setCaptcha(e.target.value)}
+                       className="captcha__input" required/>
                 <div className="captcha__img" onClick={reloadCaptcha}>
                     <img src={img} alt=""/>
                 </div>

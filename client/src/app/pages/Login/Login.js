@@ -1,32 +1,41 @@
 import React, {useContext, useState} from "react";
 import './style.css'
 import Captcha from "../../components/Captcha/Captcha";
-import {useMutation} from "@apollo/client";
+import {useMutation, useLazyQuery} from "@apollo/client";
 import {AUTH} from '../../query/auth'
+import {CHECK_CAPTCHA} from "../../query/checkCaptcha";
 import {AuthContext} from "../../context/AuthContext";
+import {onError} from "@apollo/client/link/error";
 
 
 function Login() { // Todo Объединить со страницей регистрацией
-    const [newToken] = useMutation(AUTH) // Todo Вынести как отдельный сервис?
+    const [newToken] = useMutation(AUTH) // Todo Вынести как отдельный сервис на сервер?
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [captcha, setCaptcha] = useState('')
+    const [inputErrors, setInputErrors] = useState([])
+    const [checkCaptcha, {data, loading, error}] = useLazyQuery(CHECK_CAPTCHA)
     const auth = useContext(AuthContext)
 
     const getToken = () => {
-        newToken({
-            variables: {email, password}
-        }).then(({data, loading, error}) => {
-            auth.login(data.authenticateUserWithPassword.token, email)
-            document.location.href = '/'
-
-        }).catch(e => {
-            console.log(e);
-        })
+        newToken({variables: {email, password}})
+            .then(({data})=>{
+                auth.login(data.authenticateUserWithPassword.token, email)
+                document.location.href = '/'
+            })
+            .catch(error => {
+                setInputErrors(prevState => [error.message]);
+            })
     }
 
     const authUser = (e) => {
         e.preventDefault()
-        getToken(e)
+        setInputErrors(prevState => [])
+        checkCaptcha({variables: {captcha}})
+            .then(({data}) => {
+            data.checkCaptcha ? getToken() : setInputErrors(prevState => ['Капча введена неправильно']);
+        })
+
     }
 
     return (
@@ -140,10 +149,11 @@ function Login() { // Todo Объединить со страницей реги
                 <input type="password" className="registration-form__input tl-input"
                        name="password" placeholder='Пароль' onChange={e => setPassword(e.target.value)} required/>
                 <button type='button' className="forget-password">Забыли пароль?</button>
-                <Captcha/>
+                <Captcha setCaptcha={setCaptcha}/>
                 <p className="registration-form__text">Нет аккаунта?
                     <a href="/registration" className="registration-form__enter-link"> Зарегистрироваться</a>
                 </p>
+                <p className='registration-form__errors'>{inputErrors.map(inputError => inputError + '\n')}</p>
                 <button type='submit' className="registration-form__submit tl_btn">Войти</button>
                 <a href='/' className="close-btn">
                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -12,6 +12,7 @@ const bcrypt = require('bcryptjs');
 const {createImg} = require('./apps/createCaptcha')
 const UserSchema = require('./lists/User')
 const NewsArticleSchema = require('./lists/NewsArtice') //Todo Разбить на файлы
+const {ApolloError} = require('apollo-server-errors')
 
 const knex = Knex({
     client: process.env.CLIENT,
@@ -58,11 +59,34 @@ keystone.extendGraphQLSchema({
             schema: 'getCaptcha: String!',
             resolver: async (_, {}, context) => {
                 const {img, text} = await createImg()
-                const hashCaptcha = bcrypt.hashSync(text,3)
+                const hashCaptcha = bcrypt.hashSync(text, 3)
                 context.req.session.captcha = hashCaptcha
                 return img
             },
         },
+        {
+            schema: 'checkCaptcha(receivedCaptcha: String!): Boolean',
+            resolver: (_, {receivedCaptcha}, context) => {
+                return bcrypt.compareSync(receivedCaptcha, context.req.session.captcha)
+            },
+        },
+        // {
+        //     schema: 'auth(email: String!, password: String!): String!',
+        //     resolver: async (_, {email, password}, context) => {
+        //         if (!!!email.match(/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/)) throw new ApolloError('Введен некорректный email') //Todo Вывод сразу всех ошибок
+        //         if (password.length < 8) throw new ApolloError('Пароль должен содержать не менее 8 символов')
+        //         const {data, errors} = await keystone.executeGraphQL({
+        //             query: `mutation ($email: String, $password: String){
+        //                     authenticateUserWithPassword(email: $email, password: $password) {
+        //                       token
+        //                     }
+        //                   }`,
+        //             variables: {email, password},
+        //         });
+        //         if(errors) return errors
+        //         return data.authenticateUserWithPassword.token
+        //     },
+        // },
     ]
 })
 
@@ -72,11 +96,10 @@ const authStrategy = keystone.createAuthStrategy({
     hooks: {
         validateAuthInput: async ({originalInput, addValidationError, context}) => {
             console.log(originalInput)
-            console.log(`SessionID: ${context.req.sessionID}, Captcha: ${context.req.session.captcha}`, )
-            !!!originalInput.email.match(/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/) ?
-                addValidationError('Введен некорректный email') : null
-            originalInput.password.length < 8 ?
-                addValidationError('Пароль должен содержать не менее 8 символов') : null
+            console.log(`SessionID: ${context.req.sessionID}, Captcha: ${context.req.session.captcha}`,)
+
+            if (!!!originalInput.email.match(/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/)) throw new ApolloError('Введен некорректный email') //Todo Вывод сразу всех ошибок
+            if (originalInput.password.length < 8) throw new ApolloError('Пароль должен содержать не менее 8 символов')
         }
     }
 })
@@ -85,7 +108,17 @@ module.exports = {
     keystone,
     apps: [
         new GraphQLApp({
-            apollo: {}
+            apollo: {
+                formatError: (err) => {
+                    // Don't give the specific errors to the client.
+                    if (err.message.startsWith('[passwordAuth:failure]')) {
+                        return new ApolloError('Логин или пароль неверны');
+                    }
+                    // Otherwise return the original error. The error can also
+                    // be manipulated in other ways, as long as it's returned.
+                    return err;
+                },
+            }
         }),
         new AdminUIApp({
             name: 'Link Music',
