@@ -14,6 +14,7 @@ import CreateProfile from "./pages/СreateProfile/СreateProfile";
 import NewRelease from "./pages/NewRelease/NewRelease";
 import {AuthContext} from "./context/AuthContext";
 import {useAuth} from "./hooks/auth.hooks";
+import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 
 function App() {
     const {token, userId, login, logout} = useAuth()
@@ -35,6 +36,7 @@ function App() {
                         <Route path="new-release" element={<NewRelease/>}/>
                         <Route path="registration" element={<Registration/>}/>
                         <Route path="login" element={<Login/>}/>
+                        <Route path="forgot-password" element={<ForgotPassword/>}/>
                         <Route path="*" element={<Main/>}/>
                     </Routes>
                 </AuthContext.Provider>
@@ -53,6 +55,7 @@ function App() {
                     <Route path="card" element={<ArtistCard/>}/>
                     <Route path="registration" element={<Registration/>}/>
                     <Route path="login" element={<Login/>}/>
+                    <Route path="forgot-password" element={<ForgotPassword/>}/>
                     <Route path="*" element={<Login/>}/>
                 </Routes>
             </AuthContext.Provider>

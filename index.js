@@ -4,10 +4,12 @@ const {KnexAdapter} = require('@keystonejs/adapter-knex')
 const session = require('express-session');
 const KnexSessionStore = require('connect-session-knex')(session);
 const Knex = require('knex');
+
 const {PasswordAuthStrategy} = require('@keystonejs/auth-password');
 const {AdminUIApp} = require('@keystonejs/app-admin-ui');
 const {GraphQLApp} = require('@keystonejs/app-graphql');
 const {StaticApp} = require('@keystonejs/app-static');
+
 const bcrypt = require('bcryptjs');
 const {createImg} = require('./apps/createCaptcha')
 const UserSchema = require('./lists/User')
@@ -70,23 +72,6 @@ keystone.extendGraphQLSchema({
                 return bcrypt.compareSync(receivedCaptcha, context.req.session.captcha)
             },
         },
-        // {
-        //     schema: 'auth(email: String!, password: String!): String!',
-        //     resolver: async (_, {email, password}, context) => {
-        //         if (!!!email.match(/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/)) throw new ApolloError('Введен некорректный email') //Todo Вывод сразу всех ошибок
-        //         if (password.length < 8) throw new ApolloError('Пароль должен содержать не менее 8 символов')
-        //         const {data, errors} = await keystone.executeGraphQL({
-        //             query: `mutation ($email: String, $password: String){
-        //                     authenticateUserWithPassword(email: $email, password: $password) {
-        //                       token
-        //                     }
-        //                   }`,
-        //             variables: {email, password},
-        //         });
-        //         if(errors) return errors
-        //         return data.authenticateUserWithPassword.token
-        //     },
-        // },
     ]
 })
 

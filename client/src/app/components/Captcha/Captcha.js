@@ -6,7 +6,10 @@ import {GET_CAPTCHA} from "../../query/getCaptcha";
 function Captcha(props) {
     const {data, loading, error, refetch} = useQuery(GET_CAPTCHA)
     const [img, setImg] = useState('')
-    const {setCaptcha} = props
+    const {setCaptcha, inputError} = props
+    let inputClass = 'captcha__input'
+
+    if(inputError) inputClass+=' captcha__input_err'
 
     const reloadCaptcha = (e) => {
         e.preventDefault()
@@ -22,8 +25,8 @@ function Captcha(props) {
             <label htmlFor="" className="captcha__label">Введите указанное слово</label>
             <div className="captcha__row">
                 <input type="text" pattern='^[а-яА-ЯёЁ0-9]+$'
-                       onChange={e => setCaptcha(e.target.value)}
-                       className="captcha__input" required/>
+                       onChange={e => setCaptcha(e.target.value.toLowerCase())}
+                       className={inputClass} required/>
                 <div className="captcha__img" onClick={reloadCaptcha}>
                     <img src={img} alt=""/>
                 </div>

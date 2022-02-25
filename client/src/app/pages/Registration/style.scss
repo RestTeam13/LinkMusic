@@ -1,10 +1,10 @@
-.registration-wrapper {
+.form-page-wrapper {
   background: #0000FF;
   justify-content: center;
   align-items: center;
 }
 
-.registration-form {
+.form-page {
   display: flex;
   flex-flow: wrap;
   padding: 40px;
@@ -24,7 +24,7 @@
   }
 }
 
-.registration-form__title {
+.form-page__title {
   margin: 0;
   font-size: 35px;
   line-height: 35px;
@@ -34,7 +34,7 @@
   }
 }
 
-.registration-form__input {
+.form-page__input {
   margin-top: 30px;
 
   &:first-of-type {
@@ -50,14 +50,18 @@
   }
 }
 
-.registration-form__checkbox-row {
+.form-page__input_error{
+  border-bottom-color: #BC012E;
+}
+
+.form-page__checkbox-row {
   display: flex;
   align-items: center;
   width: 100%;
   margin-top: 25px;
 }
 
-.registration-form__checkbox-label {
+.form-page__checkbox-label {
   position: relative;
   width: 20px;
   height: 20px;
@@ -83,28 +87,28 @@
   }
 }
 
-.registration-form__checkbox {
+.form-page__checkbox {
   position: absolute;
   visibility: hidden;
 
-  &:checked + .registration-form__checkbox-label::before {
+  &:checked + .form-page__checkbox-label::before {
     opacity: 1;
   }
 }
 
-.registration-form__checkbox-icon {
+.form-page__checkbox-icon {
   border-radius: 1px;
   width: 8px;
   height: 8px;
   background: #D4AA00;
 }
 
-.registration-form__checkbox-text {
+.form-page__checkbox-text {
   color: #050505;
   margin-bottom: 0;
 }
 
-.registration-form__link {
+.form-page__link {
   color: #050505;
   text-decoration: underline;
 
@@ -113,14 +117,14 @@
   }
 }
 
-.registration-form__text {
+.form-page__text {
   margin-top: 50px;
   margin-bottom: 0;
   text-align: center;
   width: 100%;
 }
 
-.registration-form__enter-link {
+.form-page__enter-link {
   font-weight: 600;
   font-size: 14px;
   line-height: 150%;
@@ -133,7 +137,7 @@
   }
 }
 
-.registration-form__errors{
+.form-page__errors{
   width: 100%;
   font-weight: 600;
   font-size: 14px;
@@ -142,11 +146,14 @@
   text-align: center;
 }
 
-.registration-form__submit {
+.form-page__submit {
   margin-top: 15px;
   max-width: 100%;
   width: 100%;
   margin-right: 0;
+  &:disabled{
+    filter: grayscale(100);
+  }
 }
 
 .close-btn {
@@ -187,10 +194,19 @@
   }
 }
 
-.registration__notes{
+.form-page__notes{
   position: absolute;
   width: 269px;
   height: 186px;
   top: calc((100% - 186px) /2 );
   left: calc((100% - 269px) /2 - 335px);
+}
+
+.forgot-password{
+  color: #0000FF;
+  margin-top: 10px;
+  &:hover{
+    color: #D4AA00;
+    text-decoration: none;
+  }
 }
