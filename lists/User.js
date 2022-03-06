@@ -1,5 +1,5 @@
 const {Text, Password, Checkbox, Url, Relationship, File} = require('@keystonejs/fields')
-const { LocalFileAdapter } = require('@keystonejs/file-adapters');
+const {LocalFileAdapter} = require('@keystonejs/file-adapters');
 
 const userAvatarAdapter = new LocalFileAdapter({
     src: './files/avatars',
@@ -19,6 +19,10 @@ module.exports = {
             type: Text,
             isRequired: true,
             isUnique: true
+        },
+        phone: {
+            type: Text,
+            isRequired: true
         },
         password: {
             type: Password,
@@ -47,7 +51,7 @@ module.exports = {
             type: File,
             adapter: userAvatarAdapter,
             hooks: {
-                beforeChange: async ({ existingItem }) => {
+                beforeChange: async ({existingItem}) => {
                     if (existingItem && existingItem.file) {
                         await userAvatarAdapter.delete(existingItem.file);
                     }
@@ -61,8 +65,8 @@ module.exports = {
             type: Checkbox
         },
     },
-    hooks:{
-        afterDelete: async ({ existingItem }) => {
+    hooks: {
+        afterDelete: async ({existingItem}) => {
             if (existingItem.file) {
                 await userAvatarAdapter.delete(existingItem.file);
             }

@@ -2,8 +2,8 @@ const {Text, Url, File, CalendarDay} = require('@keystonejs/fields')
 const { LocalFileAdapter } = require('@keystonejs/file-adapters');
 
 const newsImagesAdapter = new LocalFileAdapter({
-    src: './files',
-    path: '/newsImgs'
+    src: './files/newsImgs',
+    path: '/files/newsImgs'
 })
 
 module.exports = {

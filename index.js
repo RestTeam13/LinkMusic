@@ -62,6 +62,7 @@ const keystone = new Keystone({
     //                 data: {
     //                     name: 'Admin',
     //                     email: 'admin@admin.admin',
+    //                     phone: '',
     //                     password: 'adminadmin',
     //                 },
     //             },
