@@ -3,6 +3,7 @@ const {Keystone} = require('@keystonejs/keystone')
 const {KnexAdapter} = require('@keystonejs/adapter-knex')
 const session = require('express-session');
 const KnexSessionStore = require('connect-session-knex')(session);
+const {createItems, getItem} = require('@keystonejs/server-side-graphql-client');
 const Knex = require('knex');
 
 const {PasswordAuthStrategy} = require('@keystonejs/auth-password');
@@ -13,6 +14,8 @@ const {StaticApp} = require('@keystonejs/app-static');
 const bcrypt = require('bcryptjs');
 const {createImg} = require('./apps/createCaptcha')
 const UserSchema = require('./lists/User')
+const SocialLinkSchema = require('./lists/SocialLink')
+const ReleaseSchema = require('./lists/Release')
 const NewsArticleSchema = require('./lists/NewsArtice') //Todo Разбить на файлы
 const {ApolloError} = require('apollo-server-errors')
 
@@ -49,9 +52,26 @@ const keystone = new Keystone({
     sessionStore: new KnexSessionStore({
         knex,
         tablename: process.env.SESSIONTABLENAME,
-    })
+    }),
+    // onConnect: async keystone => {
+    //     await createItems({
+    //         keystone,
+    //         listKey: 'User',
+    //         items: [
+    //             {
+    //                 data: {
+    //                     name: 'Admin',
+    //                     email: 'admin@admin.admin',
+    //                     password: 'adminadmin',
+    //                 },
+    //             },
+    //         ],
+    //     });
+    // }
 })
 
+keystone.createList('SocialLink', SocialLinkSchema)
+keystone.createList('Release', ReleaseSchema)
 keystone.createList('User', UserSchema)
 keystone.createList('NewsArticle', NewsArticleSchema)
 
