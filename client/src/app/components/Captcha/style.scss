@@ -21,6 +21,10 @@
   margin-right: 10px;
 }
 
+.captcha__label_error {
+  color: #BC012E;
+}
+
 .captcha__row {
   margin-top: 10px;
   display: flex;
@@ -44,7 +48,7 @@
   }
 }
 
-.captcha__input_err{
+.captcha__input_err {
   border-color: #BC012E;
 }
 
@@ -57,9 +61,13 @@
   justify-content: center;
   overflow: hidden;
 
-  img{
+  img {
     width: auto;
     object-fit: cover;
+  }
+
+  &:disabled{
+    filter: grayscale(0.5);
   }
 }
 
@@ -77,5 +85,10 @@
 
   &:hover {
     background: #808080;
+  }
+
+
+  &:disabled{
+    filter: grayscale(0.5);
   }
 }

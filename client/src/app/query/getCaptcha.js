@@ -2,7 +2,7 @@ import {gql} from '@apollo/client'
 
 
 export const GET_CAPTCHA = gql`
-    query {
-        getCaptcha
+    query ($width: Int!, $height: Int!){
+        getCaptcha(width: $width,height: $height)
     }
 `

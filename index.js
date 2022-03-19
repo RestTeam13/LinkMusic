@@ -79,9 +79,9 @@ keystone.createList('NewsArticle', NewsArticleSchema)
 keystone.extendGraphQLSchema({
     queries: [
         {
-            schema: 'getCaptcha: String!',
-            resolver: async (_, {}, context) => {
-                const {img, text} = await createImg()
+            schema: 'getCaptcha(width: Int!, height: Int!): String!',
+            resolver: async (_, {width,height}, context) => {
+                const {img, text} = await createImg(width,height)
                 const hashCaptcha = bcrypt.hashSync(text, 3)
                 context.req.session.captcha = hashCaptcha
                 return img

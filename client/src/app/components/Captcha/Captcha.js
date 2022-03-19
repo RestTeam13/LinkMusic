@@ -1,36 +1,54 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef} from "react";
 import './style.css'
-import {useQuery} from "@apollo/client";
-import {GET_CAPTCHA} from "../../query/getCaptcha";
+import useCaptchaImage from "../../hooks/captcha.hooks";
+
 
 function Captcha(props) {
-    const {data, loading, error, refetch} = useQuery(GET_CAPTCHA)
-    const [img, setImg] = useState('')
     const {setCaptcha, inputError} = props
-    let inputClass = 'captcha__input'
+    const captchaImgBlock = useRef()
+    const [getCaptchaImg, img, loading, error] = useCaptchaImage()
+    const options = useRef({
+        variables: {
+            width: 0,
+            height: 0
+        }
+    })
 
-    if(inputError) inputClass+=' captcha__input_err'
+    let inputClass = inputError ? 'captcha__input' + ' captcha__input_err' : 'captcha__input',
+        labelClass = error ? 'captcha__label' + ' captcha__label_error' : 'captcha__label'
 
     const reloadCaptcha = (e) => {
         e.preventDefault()
-        refetch()
+        getCaptchaImg(options.current)
     }
 
     useEffect(() => {
-        if (!loading) setImg(data.getCaptcha)
-    }, [data])
+        options.current = {
+            variables: {
+                width: Math.floor(captchaImgBlock.current.getBoundingClientRect().width),
+                height: Math.floor(captchaImgBlock.current.getBoundingClientRect().height)
+            }
+        }
+        getCaptchaImg(options.current)
+    }, [])
+
 
     return (
         <div className="captcha">
-            <label htmlFor="" className="captcha__label">Введите указанное слово</label>
+            <label htmlFor=""
+                   className={labelClass}>
+                {error ? 'Ошибка при получении капчи' : 'Введите указанное слово'}
+            </label>
             <div className="captcha__row">
                 <input type="text" pattern='^[а-яА-ЯёЁ0-9]+$'
                        onChange={e => setCaptcha(e.target.value.toLowerCase())}
                        className={inputClass} required/>
-                <div className="captcha__img" onClick={reloadCaptcha}>
-                    <img src={img} alt=""/>
-                </div>
-                <div className="captcha__refresh-btn" onClick={reloadCaptcha}/>
+                <button className="captcha__img" disabled={loading} onClick={reloadCaptcha} ref={captchaImgBlock}>
+                    {
+                        loading ? <p>Загрузка изображения</p> : <img src={img} alt=""/>
+                    }
+                </button>
+                <button className="captcha__refresh-btn" disabled={loading} onClick={reloadCaptcha}/>
             </div>
         </div>
     )

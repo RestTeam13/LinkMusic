@@ -8,7 +8,7 @@ import {CHECK_CAPTCHA} from "../../query/checkCaptcha";
 import {AuthContext} from "../../context/AuthContext";
 
 
-function Login() {
+function Login() {//Todo useInput hook
     const [newToken] = useMutation(AUTH) // Todo Вынести как отдельный сервис
     const [checkCaptcha] = useLazyQuery(CHECK_CAPTCHA)
 

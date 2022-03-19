@@ -4,7 +4,7 @@ function createSVG(width, height, text, hslColor) {
     let textHtml = ``
     for (let i = 0; i < text.length; i++) {
         const nearColor = `hsla(${hslColor + getRandomNearColor()}, 25%, ${50 + getRandomNearColor()}%, 1)`,
-            randomSize = Math.random() * 20 + 30,
+            randomSize = Math.floor(Math.random() * 20 + 30),
             randomWeight = allFontWeights[Math.floor(Math.random() * allFontWeights.length)],
             dy = Math.floor((Math.random() * 2 - 1) * 3)
         textHtml += `
@@ -18,7 +18,7 @@ function createSVG(width, height, text, hslColor) {
     return `
  <svg width="${width}" height="${height}">
        <style>
-      tspan {font-style: italic; margin-left: -10px;}
+      tspan {font-style: italic; margin-left: -10px; font-family: Arial,sans-serif}
       </style>
       <text x="50%" y="70%" text-anchor="middle">${textHtml}</text>
  </svg>
@@ -68,13 +68,11 @@ const allTexts = [
         'соло',
         'альт'
     ],
-    allFontWeights = [100, 200, 300, 400, 500, 600, 700, 800, 900],
-    width = 241,
-    height = 46
+    allFontWeights = [100, 200, 300, 400, 500, 600, 700, 800, 900]
 
 
 module.exports = {
-    async createImg() {
+    async createImg(width,height) {
         let base64img = 'data:image/png;base64,'
 
         const text = allTexts[Math.floor(Math.random() * allTexts.length)],

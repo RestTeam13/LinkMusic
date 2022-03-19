@@ -19,6 +19,10 @@
   margin-right: 10px;
 }
 
+.captcha__label_error {
+  color: #BC012E;
+}
+
 .captcha__row {
   margin-top: 10px;
   display: flex;
@@ -58,6 +62,9 @@
   width: auto;
   object-fit: cover;
 }
+.captcha__img:disabled {
+  filter: grayscale(0.5);
+}
 
 .captcha__refresh-btn {
   position: absolute;
@@ -72,6 +79,9 @@
 }
 .captcha__refresh-btn:hover {
   background: #808080;
+}
+.captcha__refresh-btn:disabled {
+  filter: grayscale(0.5);
 }
 
 /*# sourceMappingURL=style.css.map */

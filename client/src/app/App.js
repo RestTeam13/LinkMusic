@@ -17,7 +17,7 @@ import {useAuth} from "./hooks/auth.hooks";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 
 function App() {
-    const {token, userId, login, logout} = useAuth()
+    const {token, userId, login, logout} = useAuth()//Todo вынести на уровень выше? вместе с AuthContext.Provider
     const isAuthenticated = !!token
 
     if (isAuthenticated) {

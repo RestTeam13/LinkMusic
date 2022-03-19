@@ -9,7 +9,8 @@ const userAvatarAdapter = new LocalFileAdapter({
 module.exports = {
     fields: {
         name: {
-            type: Text
+            type: Text,
+            defaultValue: 'Новый артист'
         },
         description: {
             type: Text,
@@ -45,7 +46,8 @@ module.exports = {
             many: true
         },
         canBookPerformance: {
-            type: Checkbox
+            type: Checkbox,
+            defaultValue: false
         },
         avatar: {
             type: File,
@@ -59,10 +61,12 @@ module.exports = {
             }
         },
         isPartner: {
-            type: Checkbox
+            type: Checkbox,
+            defaultValue: false
         },
         isAdmin: {
-            type: Checkbox
+            type: Checkbox,
+            defaultValue: false
         },
     },
     hooks: {

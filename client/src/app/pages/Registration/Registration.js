@@ -33,8 +33,7 @@ function Registration() {
     const createUser = () => {
         singUp({
             variables: {
-                //data: {email, phone, password, userAgreement}
-                data: {name: "testTest", email, password, isAdmin: false}
+                data: {email, phone, password}
             }
         }).then(data => console.log(data))
             .catch(e => console.log(e))
