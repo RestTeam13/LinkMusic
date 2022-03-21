@@ -36,7 +36,7 @@ function Registration() {
                 data: {email, phone, password}
             }
         }).then(data => console.log(data))
-            .catch(e => console.log(e))
+            .catch(e => setInputErrors(prevState => [e.message]))
     }
 
     const submitHandler = (e) => {

@@ -2,8 +2,8 @@ const {Text, Password, Checkbox, Url, Relationship, File} = require('@keystonejs
 const {LocalFileAdapter} = require('@keystonejs/file-adapters');
 
 const userAvatarAdapter = new LocalFileAdapter({
-    src: './files/avatars',
-    path: '/files/avatars' //Todo Заменить на нормальный адрес
+    src: './client/build/files/avatars',
+    path: '/files/avatars'
 })
 
 module.exports = {

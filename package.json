@@ -11,7 +11,8 @@
     "start": "cross-env NODE_ENV=production keystone start",
     "create-tables": "cross-env keystone create-tables",
     "client": "npm run start --prefix client",
-    "start:dev": "concurrently \"npm run dev\" \"npm run client\""
+    "start:dev": "concurrently \"npm run dev\" \"npm run client\"",
+    "start:build": "concurrently \"npm run build --prefix client\" \"npm run build\""
   },
   "dependencies": {
     "@keystonejs/adapter-knex": "^13.3.2",

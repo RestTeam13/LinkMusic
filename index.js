@@ -120,6 +120,10 @@ module.exports = {
                     if (err.message.startsWith('[passwordAuth:failure]')) {
                         return new ApolloError('Логин или пароль неверны');
                     }
+                    // Don't give the specific errors to the client.
+                    if (err.message.startsWith('insert into "public"."User"')) {
+                        return new ApolloError('Такой пользователь уже существует ');
+                    }
                     // Otherwise return the original error. The error can also
                     // be manipulated in other ways, as long as it's returned.
                     return err;
