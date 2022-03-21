@@ -4,19 +4,20 @@ function createSVG(width, height, text, hslColor) {
     let textHtml = ``
     for (let i = 0; i < text.length; i++) {
         const nearColor = `hsla(${hslColor + getRandomNearColor()}, 25%, ${50 + getRandomNearColor()}%, 1)`,
-            randomSize = Math.floor(Math.random() * 20 + 30),
             randomWeight = allFontWeights[Math.floor(Math.random() * allFontWeights.length)],
             dy = Math.floor((Math.random() * 2 - 1) * 3)
+        let randomSize = Math.floor((Math.random() * 20 + 50) / text.length)
+        randomSize > 9 ? randomSize = 9 : null
         textHtml += `
       <style>
-      .title-${i} { fill: ${nearColor}; font-size: ${randomSize}px; font-weight: ${randomWeight};}
+      .title-${i} { fill: ${nearColor}; font-size: 0.${randomSize}em; font-weight: ${randomWeight};}
       </style>
-      <tspan class="title-${i}" dx="-10" dy="${dy}">${text[i]}</tspan>`
+      <tspan class="title-${i}" dx="-15" dy="${dy}">${text[i]}</tspan>`
     }
 
 
     return `
- <svg width="${width}" height="${height}">
+ <svg width="${width}" height="${height}" font-size="30px">
        <style>
       tspan {font-style: italic; margin-left: -10px; font-family: Arial,sans-serif}
       </style>
@@ -72,7 +73,7 @@ const allTexts = [
 
 
 module.exports = {
-    async createImg(width,height) {
+    async createImg(width, height) {
         let base64img = 'data:image/png;base64,'
 
         const text = allTexts[Math.floor(Math.random() * allTexts.length)],
