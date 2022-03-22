@@ -141,6 +141,12 @@
 .artist-card__title-btn {
   margin-top: 50px;
   max-width: 264px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.artist-card__title-btn:hover {
+  text-decoration: none;
 }
 @media (max-width: 767px) {
   .artist-card__title-btn {

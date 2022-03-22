@@ -1,15 +1,36 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import './style.css'
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import {useLazyQuery} from "@apollo/client";
+import {GET_USERPROFILE_INFO} from "../../query/getUserInfo";
 
 
 function CreateProfile() {
+    const [userInfo, setUserInfo] = useState({
+        name: '',
+        description: '',
+        emailAddress: '',
+        siteAddress: '',
+        canBookPerformance: '',
+    })
+    const [getUserInfo, {data, loading, error}] = useLazyQuery(GET_USERPROFILE_INFO)
+
+
+    useEffect(() => {
+        getUserInfo()
+    }, [])
+
+    useEffect(() => {
+        if (data) setUserInfo(data.authenticatedUser)
+    }, [data])
+
     return (
         <div className='wrapper'>
             <Header/>
             <section className="block block-create block_first-on-page">
-                <svg className="vector__bg vector__bg_right-top" width="149" height="313" viewBox="0 0 149 313" fill="none"
+                <svg className="vector__bg vector__bg_right-top" width="149" height="313" viewBox="0 0 149 313"
+                     fill="none"
                      xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M178.877 25.3372C178.877 25.3372 119.293 26.0007 105.278 85.6469C91.5691 143.983 46.7518 132.345 28.0592 160.622C9.36651 188.898 21.0609 238.524 71.9876 241.084C117.418 243.368 116.981 270.909 126.976 286.209C136.971 301.509 159.729 310.928 159.729 310.928"
@@ -70,14 +91,22 @@ function CreateProfile() {
                         <div className="create__right-column">
                             <form action="#" className="create__form">
                                 <div className="create-form__block">
-                                    <div className="create-form__title create-form__title_mob-mt50">Основная информация</div>
-                                    <input type="text" className="block-form__input-row" placeholder='Имя артиста / Название группы'/>
-                                    <label htmlFor="#" className="create-form__label">Задаётся один раз, без возможности изменения</label>
+                                    <div className="create-form__title create-form__title_mob-mt50">Основная
+                                        информация
+                                    </div>
+                                    <input type="text" className="block-form__input-row"
+                                           placeholder='Имя артиста / Название группы' defaultValue={userInfo.name}/>
+                                    <label htmlFor="#" className="create-form__label">Задаётся один раз, без возможности
+                                        изменения</label>
                                     <p className="form__description">Краткое описание </p>
-                                    <textarea type="text" className="block-form__input-row block-form__input-row_textarea" style={{marginTop: 0, outline: 'none'}}/>
+                                    <textarea type="text"
+                                              className="block-form__input-row block-form__input-row_textarea"
+                                              style={{marginTop: 0, outline: 'none'}} defaultValue={userInfo.description}/>
                                     <div className="block-form__input-group block-form__input-group_create-profile">
-                                        <input type="text" className="block-form__input-row block-form__input-row_half" placeholder='Адрес эл. почты '/>
-                                        <input type="text" className="block-form__input-row block-form__input-row_half" placeholder='Адрес сайта '/>
+                                        <input type="text" className="block-form__input-row block-form__input-row_half"
+                                               placeholder='Адрес эл. почты ' defaultValue={userInfo.emailAddress}/>
+                                        <input type="text" className="block-form__input-row block-form__input-row_half"
+                                               placeholder='Адрес сайта ' defaultValue={userInfo.siteAddress}/>
                                     </div>
                                 </div>
 
@@ -90,27 +119,34 @@ function CreateProfile() {
                                 </div>
                                 <div className="create-form__block">
 
-                                    <div className="create-form__title create-form__title_mt30">Кнопка «Заказать выступление»</div>
+                                    <div className="create-form__title create-form__title_mt30">Кнопка «Заказать
+                                        выступление»
+                                    </div>
 
                                     <div className="create-form__radio-row">
                                         <div className="create-form__radio-item">
                                             <label htmlFor="radio1" className="create-form__radio-label">
-                                                <input type="radio" id='radio1' name='order' value='1' className="create-form__radio"/>
+                                                <input type="radio" id='radio1' name='order' value='1'
+                                                       className="create-form__radio" checked={userInfo.canBookPerformance}/>
                                                 <span className="create-form__radio-label-checkbox"/>
                                                 <p>Доступна</p>
                                             </label>
                                         </div>
                                         <div className="create-form__radio-item">
                                             <label htmlFor="radio2" className="create-form__radio-label">
-                                                <input type="radio" id='radio2' name='order' value='2' className="create-form__radio"/>
+                                                <input type="radio" id='radio2' name='order' value='2'
+                                                       className="create-form__radio" checked={!userInfo.canBookPerformance}/>
                                                 <span className="create-form__radio-label-checkbox"/>
                                                 <p>Недоступна</p>
                                             </label>
                                         </div>
                                         <button className="help-btn">
-                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <circle opacity="0.2" cx="11" cy="11" r="10" stroke="#050505"/>
-                                                <path opacity="0.25" d="M11.595 12.64H10.1C10.1 12.2933 10.178 11.9683 10.334 11.665C10.49 11.353 10.6807 11.0887 10.906 10.872C11.1313 10.6467 11.3567 10.4343 11.582 10.235C11.8073 10.027 11.998 9.80167 12.154 9.559C12.31 9.31633 12.388 9.06933 12.388 8.818C12.388 8.46267 12.2623 8.18533 12.011 7.986C11.7597 7.78667 11.4217 7.687 10.997 7.687C10.5897 7.687 10.2387 7.791 9.944 7.999C9.64933 8.207 9.437 8.50167 9.307 8.883L8.02 8.155C8.254 7.54833 8.63967 7.076 9.177 6.738C9.723 6.4 10.3427 6.231 11.036 6.231C11.816 6.231 12.4833 6.452 13.038 6.894C13.6013 7.336 13.883 7.947 13.883 8.727C13.883 9.08233 13.805 9.42033 13.649 9.741C13.493 10.0617 13.3023 10.3347 13.077 10.56C12.8517 10.7853 12.6263 11.0063 12.401 11.223C12.1757 11.431 11.985 11.6563 11.829 11.899C11.673 12.1417 11.595 12.3887 11.595 12.64ZM10.854 13.706C11.1227 13.706 11.3523 13.8013 11.543 13.992C11.7337 14.1827 11.829 14.4123 11.829 14.681C11.829 14.9497 11.7337 15.1793 11.543 15.37C11.3523 15.5607 11.1227 15.656 10.854 15.656C10.5853 15.656 10.3557 15.5607 10.165 15.37C9.97433 15.1793 9.879 14.9497 9.879 14.681C9.879 14.4123 9.97 14.1827 10.152 13.992C10.3427 13.8013 10.5767 13.706 10.854 13.706Z" fill="black"/>
+                                                <path opacity="0.25"
+                                                      d="M11.595 12.64H10.1C10.1 12.2933 10.178 11.9683 10.334 11.665C10.49 11.353 10.6807 11.0887 10.906 10.872C11.1313 10.6467 11.3567 10.4343 11.582 10.235C11.8073 10.027 11.998 9.80167 12.154 9.559C12.31 9.31633 12.388 9.06933 12.388 8.818C12.388 8.46267 12.2623 8.18533 12.011 7.986C11.7597 7.78667 11.4217 7.687 10.997 7.687C10.5897 7.687 10.2387 7.791 9.944 7.999C9.64933 8.207 9.437 8.50167 9.307 8.883L8.02 8.155C8.254 7.54833 8.63967 7.076 9.177 6.738C9.723 6.4 10.3427 6.231 11.036 6.231C11.816 6.231 12.4833 6.452 13.038 6.894C13.6013 7.336 13.883 7.947 13.883 8.727C13.883 9.08233 13.805 9.42033 13.649 9.741C13.493 10.0617 13.3023 10.3347 13.077 10.56C12.8517 10.7853 12.6263 11.0063 12.401 11.223C12.1757 11.431 11.985 11.6563 11.829 11.899C11.673 12.1417 11.595 12.3887 11.595 12.64ZM10.854 13.706C11.1227 13.706 11.3523 13.8013 11.543 13.992C11.7337 14.1827 11.829 14.4123 11.829 14.681C11.829 14.9497 11.7337 15.1793 11.543 15.37C11.3523 15.5607 11.1227 15.656 10.854 15.656C10.5853 15.656 10.3557 15.5607 10.165 15.37C9.97433 15.1793 9.879 14.9497 9.879 14.681C9.879 14.4123 9.97 14.1827 10.152 13.992C10.3427 13.8013 10.5767 13.706 10.854 13.706Z"
+                                                      fill="black"/>
                                             </svg>
                                         </button>
                                     </div>

@@ -141,7 +141,7 @@ function Suggestion() {
 
     return (
         <div className="block block-suggestion">
-            <span id='services' className="block__anchor"/>
+            <span key='services-anchor' id='services' className="block__anchor"/>
             <div className="content">
                 <div className="suggestion-row">
                     <div className="suggestion-column__text-part">

@@ -2,6 +2,7 @@ import React from "react";
 import '../../styles.css'
 import artistBg from "./images/artist-card-img.png"
 import SocialLinks from "../../components/SocialLinks/SocialLinks";
+import {Link} from "react-router-dom";
 
 const socialLinksData = [
     {
@@ -81,7 +82,7 @@ function ArtistProfile(props) {
                                 {artistLink}
                             </a>
                             <SocialLinks data={socialLinksData} className='social-links social-links_artist-card'/>
-                            <button className={classNameBtn} >{btn}</button>
+                            <Link to='/create-profile' className={classNameBtn} >{btn}</Link>
                         </div>
                     </div>
                 </div>

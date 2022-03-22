@@ -1,10 +1,11 @@
 import React from "react";
 import './style.css'
+import {Link} from "react-router-dom";
 
 function Logo(props) {
     const {className} = props
     return (
-        <a href='/' className={className}>
+        <Link to='/' className={className}>
             <svg viewBox="0 0 411 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g className="logo__lines">
                     <path d="M157.73 102.34H148.1V62.64H157.73V102.34Z" fill="#D4AA03"/>
@@ -26,7 +27,7 @@ function Logo(props) {
                 <path d="M346.5 85.92H342.15V57.68H346.57L346.5 85.92Z" fill="#1111FE"/>
                 <path d="M64.51 86.25H60V57.97H64.51V86.25Z" fill="#1111FE"/>
             </svg>
-        </a>
+        </Link>
     );
 }
 

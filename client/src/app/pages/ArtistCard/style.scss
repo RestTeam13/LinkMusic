@@ -59,11 +59,7 @@
   background: #5A5A5A;
   @media (max-width: 767px) {
     clip-path: polygon(0 0, 100% 0%, 100% 37%, 0 37%);
-
-
   }
-
-
 }
 
 .artist-card__img-bg {
@@ -74,8 +70,6 @@
   height: 105%;
   @media (max-width: 767px) {
     filter: blur(20px) brightness(40%);
-
-
   }
 }
 
@@ -149,13 +143,19 @@
 .artist-card__title-btn {
   margin-top: 50px;
   max-width: 264px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    text-decoration: none;
+  }
+
   @media (max-width: 767px) {
     max-width: 280px;
     margin: 40px 0 0 0;
     font-size: 12px;
     height: 40px;
-
-
   }
 }
 
@@ -177,9 +177,10 @@
 }
 
 .tl_btn_my-releases {
-  svg{
+  svg {
     display: none;
   }
+
   @media (max-width: 767px) {
     font-size: 0;
     width: 34px;
@@ -189,7 +190,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    svg{
+    svg {
       display: block;
     }
   }
@@ -220,7 +221,7 @@
       overflow: hidden;
     }
 
-    .slick-track{
+    .slick-track {
       display: flex;
     }
   }

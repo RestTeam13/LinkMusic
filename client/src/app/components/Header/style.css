@@ -148,6 +148,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 43px;
+  height: 43px;
 }
 .main-menu__personal-area-button::before {
   position: absolute;
