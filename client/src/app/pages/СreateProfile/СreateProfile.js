@@ -17,9 +17,7 @@ function CreateProfile() {
     const [getUserInfo, {data, loading, error}] = useLazyQuery(GET_USERPROFILE_INFO)
 
 
-    useEffect(() => {
-        getUserInfo()
-    }, [])
+    useEffect(() => {getUserInfo()}, [])
 
     useEffect(() => {
         if (data) setUserInfo(data.authenticatedUser)
@@ -127,7 +125,7 @@ function CreateProfile() {
                                         <div className="create-form__radio-item">
                                             <label htmlFor="radio1" className="create-form__radio-label">
                                                 <input type="radio" id='radio1' name='order' value='1'
-                                                       className="create-form__radio" checked={userInfo.canBookPerformance}/>
+                                                       className="create-form__radio" defaultChecked={userInfo.canBookPerformance}/>
                                                 <span className="create-form__radio-label-checkbox"/>
                                                 <p>Доступна</p>
                                             </label>
@@ -135,7 +133,7 @@ function CreateProfile() {
                                         <div className="create-form__radio-item">
                                             <label htmlFor="radio2" className="create-form__radio-label">
                                                 <input type="radio" id='radio2' name='order' value='2'
-                                                       className="create-form__radio" checked={!userInfo.canBookPerformance}/>
+                                                       className="create-form__radio" defaultChecked={!userInfo.canBookPerformance}/>
                                                 <span className="create-form__radio-label-checkbox"/>
                                                 <p>Недоступна</p>
                                             </label>

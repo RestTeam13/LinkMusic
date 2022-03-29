@@ -2,7 +2,7 @@ const {Text, Password, Checkbox, Url, Relationship, File} = require('@keystonejs
 const {LocalFileAdapter} = require('@keystonejs/file-adapters');
 
 const userAvatarAdapter = new LocalFileAdapter({
-    src: './client/build/files/avatars',
+    src: process.env.NODE_ENV === 'production' ? './dist/client/build/files/avatars' : './client/build/files/avatars',
     path: '/files/avatars'
 })
 
@@ -64,6 +64,10 @@ module.exports = {
             type: Checkbox,
             defaultValue: false
         },
+        // isEmailVerified: {
+        //     type: Checkbox,
+        //     defaultValue: false
+        // },
         isAdmin: {
             type: Checkbox,
             defaultValue: false

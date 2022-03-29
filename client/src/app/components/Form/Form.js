@@ -27,8 +27,7 @@ function Form() {
                         <form action="#" className="block-form__form">
                             <div className="block-form__title">Напишите нам</div>
                             <FormControl fullWidth className='block-form__input-row block-form__input-row_select'>
-                                <InputLabel
-                                            id="message-form-label">Тема сообщения</InputLabel>
+                                <InputLabel id="message-form-label">Тема сообщения</InputLabel>
                                 <Select labelId="message-form-label" id="message-form" label="Message">
                                     <MenuItem value={10}>Тема 1</MenuItem>
                                     <MenuItem value={20}>Тема 2</MenuItem>
@@ -70,7 +69,7 @@ function Form() {
                                            className="block-form__input block-form__input_file"/>
                                 </label>
                             </div>
-                            <Captcha/>
+                            <Captcha setCaptchaVerified={()=>{}}/>
                             <div className="block-form__btn-row">
                                 <Button className="block-form__btn tl_btn">Отправить</Button>
                                 <p className="block-form__politic">

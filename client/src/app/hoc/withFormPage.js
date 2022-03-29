@@ -1,6 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 
 const withFormPage = FormComponent => props => {
+    const [loading, setLoading] = useState(false)
+    const [inputErrors, setInputErrors] = useState([])
+    const [isCaptchaVerified, setCaptchaVerified] = useState(false)
+
+    const errors = {
+        emailError: !!inputErrors.includes('Логин или пароль неверны') || !!inputErrors.includes('Введен некорректный email'),
+        passwordError: !!inputErrors.includes('Логин или пароль неверны') || !!inputErrors.includes('Пароль должен содержать не менее 8 символов'),
+        captchaError: !!inputErrors.includes('Капча введена неправильно'),
+        phoneError: false
+    }
+
+
     return (
         <div className='wrapper form-page-wrapper'>
             <div className="vector__bg vector__bg_reg1">
@@ -105,7 +117,15 @@ const withFormPage = FormComponent => props => {
             <img src="images/music-services1.png" alt="" className="music-services music-services_reg2"/>
             <img src="images/music-services5.svg" alt="" className="music-services music-services_reg3"/>
             <img src="images/music-services6.png" alt="" className="music-services music-services_reg4"/>
-            <FormComponent {...props}/>
+                <FormComponent {...props}
+                               isCaptchaVerified={isCaptchaVerified}
+                               setCaptchaVerified={setCaptchaVerified}
+                               loading={loading}
+                               setLoading={setLoading}
+                               errors={errors}
+                               inputErrors={inputErrors}
+                               setInputErrors={setInputErrors}
+                />
         </div>
     )
 }

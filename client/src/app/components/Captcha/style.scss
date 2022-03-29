@@ -52,6 +52,10 @@
   border-color: #BC012E;
 }
 
+.captcha__input_done{
+  border-color: #0000FF;
+}
+
 .captcha__img {
   max-width: 241px;
   max-height: 46px;
@@ -82,13 +86,27 @@
   background: #D4AA00;
   cursor: pointer;
   transition: ease-in-out all 0.3s;
+  animation: 2s loadingCaptcha linear infinite paused;
 
   &:hover {
     background: #808080;
   }
 
+  &.loading{
+    animation-play-state: running;
+  }
+
 
   &:disabled{
     filter: grayscale(0.5);
+  }
+}
+
+@keyframes loadingCaptcha {
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
   }
 }

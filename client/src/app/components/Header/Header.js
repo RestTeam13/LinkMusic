@@ -4,12 +4,12 @@ import login from './images/login.svg'
 import Logo from "../Logo/Logo";
 import {AuthContext} from "../../context/AuthContext";
 import {Link} from "react-router-dom";
-import useAvatar from "../../hooks/user.hooks";
+import {useAvatar} from "../../hooks/user.hooks";
 
 export default function Header() {
     const [hasBg, toggleBg] = useState(false)
     const [openMenu, toggleMenu] = useState(false)
-    const [getUserAvatar, avatar, loading, error] = useAvatar()
+    const {getUserAvatar, avatar, loading, error} = useAvatar()
 
     const headerClasses = hasBg ? 'header header_bg' : 'header'
     const burgerClasses = openMenu ? 'main-menu__burger active' : 'main-menu__burger'
@@ -17,10 +17,9 @@ export default function Header() {
     const auth = useContext(AuthContext)
     const isAuthenticated = auth.isAuthenticated
 
-    const addBg = (e) => {
+    const addBg = () => {
         const isTop = window.scrollY < 100
         !isTop ? toggleBg(true) : toggleBg(false)
-        console.log('w')
     }
 
     useEffect(() => {
