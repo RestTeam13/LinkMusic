@@ -178,6 +178,13 @@
   resize: none;
 }
 
+.block-form__input-row_textarea-profile {
+  margin-top: 0;
+  outline: none;
+  resize: none;
+  height: auto;
+}
+
 .block-form__input-row_file {
   flex-flow: column;
   padding-bottom: 0;

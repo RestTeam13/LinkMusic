@@ -1,11 +1,10 @@
 import React from "react";
 import './style.css'
-import Header from "../../components/Header/Header";
 import ArtistProfile from "./ArtistProfile";
 import List from "../../components/List/List";
-import Footer from "../../components/Footer/Footer";
 import Slider from 'react-slick'
 import ListItem from "../../components/ListItem/ListItem";
+import withStandardLayout from "../../hoc/withStandardLayout";
 
 const listData = [
     {
@@ -73,8 +72,6 @@ const tablet = window.matchMedia('(max-width: 1023px) and (min-width: 768px)').m
 
 function ArtistCard() {
     return (
-        <div className='wrapper'>
-            <Header/>
             <section className="block block-artist-card block_first-on-page">
                 <ArtistProfile artistName={artistProfileData[0].artistName}
                                presentName={artistProfileData[0].presentName} label={artistProfileData[0].label}
@@ -108,10 +105,8 @@ function ArtistCard() {
                 </div>
 
             </section>
-            <Footer/>
-        </div>
     );
 }
 
-export default ArtistCard;
+export default withStandardLayout(ArtistCard);
 
