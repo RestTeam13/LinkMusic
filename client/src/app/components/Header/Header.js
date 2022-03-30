@@ -17,7 +17,7 @@ export default function Header() {
     const {userInfo, userInfoLoading, userInfoError, isAuthenticated} = useContext(AuthContext)
 
     const addBg = () => {
-        !window.scrollY < 100 ? toggleBg(true) : toggleBg(false)
+        !(window.scrollY < 100) ? toggleBg(true) : toggleBg(false)
     }
 
     useEffect(() => {
