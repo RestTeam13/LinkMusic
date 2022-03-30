@@ -10,7 +10,7 @@ import MyReleases from "./pages/MyReleases/MyReleases";
 import Registration from "./pages/Registration/Registration";
 import Login from "./pages/Login/Login";
 import Statistics from "./pages/Statistics/Statistics";
-import CreateProfile from "./pages/СreateProfile/СreateProfile";
+import CreateProfile from "./pages/ProfilePage/ProfilePage";
 import NewRelease from "./pages/NewRelease/NewRelease";
 import {AuthContext} from "./context/AuthContext";
 import {useAuth} from "./hooks/auth.hooks";
@@ -33,7 +33,7 @@ function App() {
                         <Route path="card" element={<ArtistCard/>}/>
                         <Route path="my-releases" element={<MyReleases/>}/>
                         <Route path="statistics" element={<Statistics/>}/>
-                        <Route path="create-profile" element={<CreateProfile/>}/>
+                        <Route path="profile" element={<CreateProfile/>}/>
                         <Route path="new-release" element={<NewRelease/>}/>
                         <Route path="registration" element={<Registration/>}/>
                         <Route path="login" element={<Login/>}/>

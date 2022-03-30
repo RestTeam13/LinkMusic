@@ -24,10 +24,10 @@ function MyReleases() {
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
                             <rect x="0.9" y="6.04286" width="12.2" height="1.91429" fill="white" stroke="white"
-                                  stroke-width="0.2"/>
+                                  strokeWidth="0.2"/>
                             <rect x="7.95547" y="0.9" width="12.2" height="1.91429"
                                   transform="rotate(90 7.95547 0.9)" fill="white" stroke="white"
-                                  stroke-width="0.2"/>
+                                  strokeWidth="0.2"/>
                         </svg>
                     </Link>
                 </div>

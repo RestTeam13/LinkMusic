@@ -74,7 +74,7 @@ function ArtistProfile(props) {
                         <div className="artist-card__title-name">{description}</div>
                         <a href={siteAddress} className="artist-card__title-link">{siteAddress}</a>
                         <SocialLinks data={socialLinksData} className='social-links social-links_artist-card'/>
-                        <Link to='/create-profile' className={classNameBtn}>{btn}</Link>
+                        <Link to='/profile' className={classNameBtn}>{btn}</Link>
                     </div>
                 </div>
             </div>
