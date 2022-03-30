@@ -178,6 +178,14 @@
   }
 }
 
+.tl_btn_my-releases {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tl_btn_my-releases:hover {
+  text-decoration: none;
+}
 .tl_btn_my-releases svg {
   display: none;
 }

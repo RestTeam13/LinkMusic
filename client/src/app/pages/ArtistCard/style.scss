@@ -177,6 +177,14 @@
 }
 
 .tl_btn_my-releases {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover{
+    text-decoration: none;
+  }
+
   svg {
     display: none;
   }

@@ -1,27 +1,14 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import './style.css'
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import {useLazyQuery} from "@apollo/client";
 import {GET_USERPROFILE_INFO} from "../../query/getUserInfo";
+import {AuthContext} from "../../context/AuthContext";
 
 
 function CreateProfile() {
-    const [userInfo, setUserInfo] = useState({
-        name: '',
-        description: '',
-        emailAddress: '',
-        siteAddress: '',
-        canBookPerformance: '',
-    })
-    const [getUserInfo, {data, loading, error}] = useLazyQuery(GET_USERPROFILE_INFO)
-
-
-    useEffect(() => {getUserInfo()}, [])
-
-    useEffect(() => {
-        if (data) setUserInfo(data.authenticatedUser)
-    }, [data])
+    const {userInfo, userInfoLoading, userInfoError} = useContext(AuthContext)
 
     return (
         <div className='wrapper'>
@@ -99,7 +86,8 @@ function CreateProfile() {
                                     <p className="form__description">Краткое описание </p>
                                     <textarea type="text"
                                               className="block-form__input-row block-form__input-row_textarea"
-                                              style={{marginTop: 0, outline: 'none'}} defaultValue={userInfo.description}/>
+                                              style={{marginTop: 0, outline: 'none'}}
+                                              defaultValue={userInfo.description}/>
                                     <div className="block-form__input-group block-form__input-group_create-profile">
                                         <input type="text" className="block-form__input-row block-form__input-row_half"
                                                placeholder='Адрес эл. почты ' defaultValue={userInfo.emailAddress}/>
@@ -110,22 +98,23 @@ function CreateProfile() {
 
                                 <div className="create-form__block">
                                     <div className="create-form__title create-form__title_mt30">Ссылки на соцсети</div>
-                                    <input type="text" className="block-form__input-row" placeholder='Вставьте ссылку'/>
-                                    <input type="text" className="block-form__input-row" placeholder='Вставьте ссылку'/>
-                                    <input type="text" className="block-form__input-row" placeholder='Вставьте ссылку'/>
+                                    {
+                                        userInfo.socialLinks.map(({link})=>{
+                                            return <input type="text" className="block-form__input-row" placeholder='Вставьте ссылку' value={link}/>
+                                        })
+                                    }
                                     <button className="create-form__add-btn">Добавить ещё</button>
                                 </div>
                                 <div className="create-form__block">
 
-                                    <div className="create-form__title create-form__title_mt30">Кнопка «Заказать
-                                        выступление»
-                                    </div>
+                                    <div className="create-form__title create-form__title_mt30">Кнопка «Заказать выступление»</div>
 
                                     <div className="create-form__radio-row">
                                         <div className="create-form__radio-item">
                                             <label htmlFor="radio1" className="create-form__radio-label">
                                                 <input type="radio" id='radio1' name='order' value='1'
-                                                       className="create-form__radio" defaultChecked={userInfo.canBookPerformance}/>
+                                                       className="create-form__radio"
+                                                       defaultChecked={userInfo.canBookPerformance}/>
                                                 <span className="create-form__radio-label-checkbox"/>
                                                 <p>Доступна</p>
                                             </label>
@@ -133,7 +122,8 @@ function CreateProfile() {
                                         <div className="create-form__radio-item">
                                             <label htmlFor="radio2" className="create-form__radio-label">
                                                 <input type="radio" id='radio2' name='order' value='2'
-                                                       className="create-form__radio" defaultChecked={!userInfo.canBookPerformance}/>
+                                                       className="create-form__radio"
+                                                       defaultChecked={!userInfo.canBookPerformance}/>
                                                 <span className="create-form__radio-label-checkbox"/>
                                                 <p>Недоступна</p>
                                             </label>
@@ -159,8 +149,6 @@ function CreateProfile() {
                             </form>
                         </div>
                     </div>
-
-
                 </div>
             </section>
             <Footer/>
